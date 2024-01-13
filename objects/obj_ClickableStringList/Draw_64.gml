@@ -1,6 +1,6 @@
 if (global.font != undefined)
 {
-	var listSize = array_length(stringArray);
+	var listSize = ds_list_size(stringList);
 	var lineHeight = font_get_size(global.font) + verticalChoicePadding;
 
 	draw_set_font(global.font);
@@ -13,6 +13,6 @@ if (global.font != undefined)
 		{
 			draw_set_color(global.textHighlightColor);
 		}
-		draw_text(self.x, self.y + i*lineHeight, stringArray[i]);
+		draw_text(self.x, self.y + i*lineHeight, ds_list_find_value(stringList, i));
 	}
 }
