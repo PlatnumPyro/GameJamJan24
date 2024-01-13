@@ -11,3 +11,8 @@ if (keyboard_check(vk_right))
 {
 	self.x++;
 }
+
+if (keyboard_check(vk_down))
+{
+	self.y++;
+}
