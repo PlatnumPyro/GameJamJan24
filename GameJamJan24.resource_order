@@ -16,5 +16,8 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
-  "ResourceOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"room_HexWorldMap","order":1,"path":"rooms/room_HexWorldMap/room_HexWorldMap.yy",},
+    {"name":"room_Overworld","order":2,"path":"rooms/room_Overworld/room_Overworld.yy",},
+  ],
 }

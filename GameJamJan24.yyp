@@ -34,12 +34,16 @@
     "IDEVersion": "2023.11.1.129",
   },
   "resources": [
-    {"id":{"name":"Object1","path":"objects/Object1/Object1.yy",},},
-    {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
+    {"id":{"name":"spr_TestPlayerSprite","path":"sprites/spr_TestPlayerSprite/spr_TestPlayerSprite.yy",},},
+    {"id":{"name":"room_HexWorldMap","path":"rooms/room_HexWorldMap/room_HexWorldMap.yy",},},
+    {"id":{"name":"room_Overworld","path":"rooms/room_Overworld/room_Overworld.yy",},},
+    {"id":{"name":"room_TitleScreen","path":"rooms/room_TitleScreen/room_TitleScreen.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"room_TitleScreen","path":"rooms/room_TitleScreen/room_TitleScreen.yy",},},
+    {"roomId":{"name":"room_HexWorldMap","path":"rooms/room_HexWorldMap/room_HexWorldMap.yy",},},
+    {"roomId":{"name":"room_Overworld","path":"rooms/room_Overworld/room_Overworld.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
