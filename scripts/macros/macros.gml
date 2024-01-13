@@ -1,0 +1,16 @@
+enum KEYBOARD_CONTROLS
+{
+    MOVE_UP = 0,
+    MOVE_DOWN = 1,
+    MOVE_LEFT = 2,
+    MOVE_RIGHT = 3,
+    FULL_SCREEN_WINDOW = 4,
+    ESCAPE = 5,
+}
+
+enum ROOM_INDEX
+{
+	TITLE = 0,
+	HEX_WORLD_MAP = 1,
+	OVERWORLD = 2
+}

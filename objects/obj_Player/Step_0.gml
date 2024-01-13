@@ -2,17 +2,22 @@
 // You can write your code in this editor
 
 
-if (keyboard_check(vk_up))
+if (keyboard_check(global.keyboardControlArray[KEYBOARD_CONTROLS.MOVE_UP]))
 {
-	self.y--;
+	self.y -= 3;
 }
 
-if (keyboard_check(vk_right))
+if (keyboard_check(global.keyboardControlArray[KEYBOARD_CONTROLS.MOVE_DOWN]))
 {
-	self.x++;
+	self.y += 3;
 }
 
-if (keyboard_check(vk_down))
+if (keyboard_check(global.keyboardControlArray[KEYBOARD_CONTROLS.MOVE_RIGHT]))
 {
-	self.y++;
+	self.x += 3;
+}
+
+if (keyboard_check(global.keyboardControlArray[KEYBOARD_CONTROLS.MOVE_LEFT]))
+{
+	self.x -= 3;
 }

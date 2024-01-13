@@ -34,10 +34,16 @@
     "IDEVersion": "2023.11.1.129",
   },
   "resources": [
+    {"id":{"name":"macros","path":"scripts/macros/macros.yy",},},
+    {"id":{"name":"obj_ClickableStringList","path":"objects/obj_ClickableStringList/obj_ClickableStringList.yy",},},
     {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
     {"id":{"name":"spr_TestPlayerSprite","path":"sprites/spr_TestPlayerSprite/spr_TestPlayerSprite.yy",},},
+    {"id":{"name":"spr_TestBackground","path":"sprites/spr_TestBackground/spr_TestBackground.yy",},},
     {"id":{"name":"room_HexWorldMap","path":"rooms/room_HexWorldMap/room_HexWorldMap.yy",},},
     {"id":{"name":"room_Overworld","path":"rooms/room_Overworld/room_Overworld.yy",},},
+    {"id":{"name":"scr_InitializeKeyboardControlArray","path":"scripts/scr_InitializeKeyboardControlArray/scr_InitializeKeyboardControlArray.yy",},},
+    {"id":{"name":"font_placeholderMonospaceFont","path":"fonts/font_placeholderMonospaceFont/font_placeholderMonospaceFont.yy",},},
+    {"id":{"name":"obj_GameManager","path":"objects/obj_GameManager/obj_GameManager.yy",},},
     {"id":{"name":"room_TitleScreen","path":"rooms/room_TitleScreen/room_TitleScreen.yy",},},
   ],
   "RoomOrderNodes": [
