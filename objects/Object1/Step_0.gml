@@ -6,3 +6,8 @@ if (keyboard_check(vk_up))
 {
 	self.y--;
 }
+
+if (keyboard_check(vk_right))
+{
+	self.x++;
+}
