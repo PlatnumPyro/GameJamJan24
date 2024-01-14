@@ -21,8 +21,10 @@
     {"name":"obj_ClickableStringList","order":2,"path":"objects/obj_ClickableStringList/obj_ClickableStringList.yy",},
     {"name":"spr_TestBackground","order":1,"path":"sprites/spr_TestBackground/spr_TestBackground.yy",},
     {"name":"scr_KeycodeMapCreate","order":2,"path":"scripts/scr_KeycodeMapCreate/scr_KeycodeMapCreate.yy",},
+    {"name":"spr_noTexture","order":2,"path":"sprites/spr_noTexture/spr_noTexture.yy",},
     {"name":"room_HexWorldMap","order":1,"path":"rooms/room_HexWorldMap/room_HexWorldMap.yy",},
     {"name":"room_Overworld","order":2,"path":"rooms/room_Overworld/room_Overworld.yy",},
+    {"name":"obj_obstacle","order":3,"path":"objects/obj_obstacle/obj_obstacle.yy",},
     {"name":"obj_GameManager","order":1,"path":"objects/obj_GameManager/obj_GameManager.yy",},
   ],
 }
