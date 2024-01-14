@@ -7,4 +7,3 @@ global.isPaused = false;
 
 clickableList = undefined;
 
-scr_InitializeKeyboardControlArray();

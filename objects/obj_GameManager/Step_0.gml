@@ -1,4 +1,4 @@
-if (listeningForKeyboardInput)
+if (listeningForKeyboardInput == true)
 {
 	if (keyboard_check_pressed(vk_anykey))
 	{
@@ -8,28 +8,30 @@ if (listeningForKeyboardInput)
 	}
 	return;	
 }
-
-if (keyboard_check_pressed(global.keyboardControlArray[KEYBOARD_CONTROLS.ESCAPE]))
+else
 {
-	if (room != room_first)
+	if (keyboard_check_pressed(global.keyboardControlArray[KEYBOARD_CONTROLS.ESCAPE]))
 	{
-		global.isPaused = !global.isPaused;
-	
-		if (global.isPaused)
+		if (room != room_first)
 		{
-			clickableList = instance_create_layer(room_width/2, 300, "Instances", obj_ClickableStringList);
+			global.isPaused = !global.isPaused;
 	
-			clickableList.stringArray = ["Resume", "Return to Title"];
-		}
-		else if (clickableList != undefined)
-		{
-			instance_destroy(clickableList);
-			clickableList = undefined;
+			if (global.isPaused)
+			{
+				clickableList = instance_create_layer(room_width/2, 100, "Instances", obj_ClickableStringList);
+	
+				clickableList.stringList = pauseMenuStringList;
+			}
+			else if (clickableList != undefined)
+			{
+				instance_destroy(clickableList);
+				clickableList = undefined;
+			}
 		}
 	}
-}
 
-if (keyboard_check_pressed(global.keyboardControlArray[KEYBOARD_CONTROLS.FULL_SCREEN_WINDOW]))
-{
-	//TODO currently does nothing
+	if (keyboard_check_pressed(global.keyboardControlArray[KEYBOARD_CONTROLS.FULL_SCREEN_WINDOW]))
+	{
+		//TODO currently does nothing
+	}
 }

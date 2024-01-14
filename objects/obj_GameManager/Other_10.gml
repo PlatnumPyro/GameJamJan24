@@ -3,13 +3,15 @@ if (clickableList != undefined)
 {
 	var optionSelected = clickableList.highlightedChoiceIndex;
 	var optionString = undefined;
+	var adjustedOptionString = undefined; // need this to check for labels without keybinds
 
 	if (optionSelected != -1)
 	{
 		optionString = ds_list_find_value(clickableList.stringList, optionSelected);
 		
+		adjustedOptionString = string_split(optionString, " - ")[0];
 		
-		switch (optionString)
+		switch (adjustedOptionString)
 		{
 			case "Start Game":
 				room_goto(ROOM_INDEX.OVERWORLD);
@@ -62,7 +64,7 @@ if (clickableList != undefined)
 			case "Pause":
 			case "Full Screen Toggle":
 				ds_list_replace(keyboardControlsMenuStringList, ds_list_find_index(keyboardControlsMenuStringList, optionString), "Press Any Key to Rebind");
-				keyToBeChanged = optionString;
+				keyToBeChanged = adjustedOptionString;
 				listeningForKeyboardInput = true;
 				break;
 				

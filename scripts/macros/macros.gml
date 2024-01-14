@@ -6,6 +6,7 @@ enum KEYBOARD_CONTROLS
     MOVE_RIGHT = 3,
     FULL_SCREEN_WINDOW = 4,
     ESCAPE = 5,
+	RUN = 6,
 }
 
 enum ROOM_INDEX

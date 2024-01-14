@@ -1,5 +1,7 @@
 // this is called when the user has pressed a key when the menu is listening for a key press
 
+var keyDecoded = undefined;
+
 switch (keyToBeChanged)
 {
 	case "Up":
@@ -26,4 +28,7 @@ switch (keyToBeChanged)
 		global.keyboardControlArray[KEYBOARD_CONTROLS.FULL_SCREEN_WINDOW] = keyListenedPressed;
 		break;
 }
-ds_list_replace(keyboardControlsMenuStringList, ds_list_find_index(keyboardControlsMenuStringList, "Press Any Key to Rebind"), keyToBeChanged);
+
+keyDecoded = ds_map_find_value(global.keyLookupMap, keyListenedPressed);
+
+ds_list_replace(keyboardControlsMenuStringList, ds_list_find_index(keyboardControlsMenuStringList, "Press Any Key to Rebind"), keyToBeChanged + " - " + keyDecoded);
