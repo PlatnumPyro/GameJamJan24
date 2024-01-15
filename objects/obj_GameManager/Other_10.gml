@@ -1,3 +1,4 @@
+/// @description user clicked menu
 // This is called when the user clicks on an option from a clickable string list
 if (clickableList != undefined)
 {
@@ -14,7 +15,7 @@ if (clickableList != undefined)
 		switch (adjustedOptionString)
 		{
 			case "Start Game":
-				room_goto(ROOM_INDEX.OVERWORLD);
+				room_goto(ROOM_INDEX.HEX_WORLD_MAP);
 				break;
 				
 			case "Options":

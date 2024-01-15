@@ -4,3 +4,7 @@ if (room == room_first)
 	
 	clickableList.stringList = titleMenuStringList;
 }
+else if(room == room_HexWorldMap)
+{
+	hexMap = instance_create_layer(room_width/2, room_height/2, "Instances", obj_HexMap);
+}

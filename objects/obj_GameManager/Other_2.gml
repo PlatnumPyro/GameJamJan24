@@ -6,4 +6,9 @@ global.gameManager = self;
 global.isPaused = false;
 
 clickableList = undefined;
+hexMap = undefined;
+
+//IMPORTANT!!  will randomize the seed so you dont get the same game every time
+randomize();
+
 
