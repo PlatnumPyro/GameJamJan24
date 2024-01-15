@@ -35,3 +35,10 @@ else
 		//TODO currently does nothing
 	}
 }
+
+
+//Debug
+if(mouse_check_button_pressed(mb_left) && !instance_exists(obj_testdialog)) {
+	textbox = instance_create_layer(0,0,"GUI",obj_testdialog)
+	textbox.text = ["[wave]Hello [rainbow]World[/rainbow]!","I'm a second textbox!"]
+}

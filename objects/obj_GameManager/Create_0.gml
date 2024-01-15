@@ -1,10 +1,13 @@
 listeningForKeyboardInput = false;
 keyListenedPressed = undefined;
 keyToBeChanged = undefined;
+textbox = noone
 
 var keycode = undefined;
 var keyMenuLabel = undefined;
 var keyDecoded = undefined;
+
+
 
 scr_InitializeKeyboardControlArray();
 scr_KeycodeMapCreate();
@@ -33,3 +36,4 @@ for (var i = 0; i < array_length(global.keyboardControlArray); i++)
 	ds_list_add(keyboardControlsMenuStringList, keyMenuLabel + " - " + keyDecoded);
 }
 ds_list_add(keyboardControlsMenuStringList, "Back");
+
