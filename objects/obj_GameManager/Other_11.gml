@@ -1,3 +1,4 @@
+/// @description key pressed during listen
 // this is called when the user has pressed a key when the menu is listening for a key press
 
 var keyDecoded = undefined;
