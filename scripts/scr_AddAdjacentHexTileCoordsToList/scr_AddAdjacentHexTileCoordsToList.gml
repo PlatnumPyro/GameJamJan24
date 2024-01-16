@@ -10,7 +10,7 @@ function scr_AddAdjacentHexTileCoordsToList(pListToAddCoordsTo, pAlreadyUsedCoor
 		//NE
 		if (pTileY - 0.5 >= -floor(MAXIMUM_MAP_HEIGHT_IN_HEX_TILES/2))
 		{
-			if (ds_list_find_index(pAlreadyUsedCoords, [pTileX + 0.75, pTileY - 0.5]) == -1)
+			if (scr_FindArrayValuesInList(pAlreadyUsedCoords, [pTileX + 0.75, pTileY - 0.5]) == false)
 			{
 				ds_list_add(pListToAddCoordsTo, [pTileX + 0.75, pTileY - 0.5])
 			}
@@ -19,7 +19,7 @@ function scr_AddAdjacentHexTileCoordsToList(pListToAddCoordsTo, pAlreadyUsedCoor
 		//SE
 		if (pTileY + 0.5 <= floor(MAXIMUM_MAP_HEIGHT_IN_HEX_TILES/2))
 		{
-			if (ds_list_find_index(pAlreadyUsedCoords, [pTileX + 0.75, pTileY + 0.5]) == -1)
+			if (scr_FindArrayValuesInList(pAlreadyUsedCoords, [pTileX + 0.75, pTileY + 0.5]) == false)
 			{
 				ds_list_add(pListToAddCoordsTo, [pTileX + 0.75, pTileY + 0.5])
 			}
@@ -31,7 +31,7 @@ function scr_AddAdjacentHexTileCoordsToList(pListToAddCoordsTo, pAlreadyUsedCoor
 		//NW
 		if (pTileY - 0.5 >= -floor(MAXIMUM_MAP_HEIGHT_IN_HEX_TILES/2))
 		{
-			if (ds_list_find_index(pAlreadyUsedCoords, [pTileX - 0.75, pTileY - 0.5]) == -1)
+			if (scr_FindArrayValuesInList(pAlreadyUsedCoords, [pTileX - 0.75, pTileY - 0.5]) == false)
 			{
 				ds_list_add(pListToAddCoordsTo, [pTileX - 0.75, pTileY - 0.5])
 			}
@@ -40,7 +40,7 @@ function scr_AddAdjacentHexTileCoordsToList(pListToAddCoordsTo, pAlreadyUsedCoor
 		//SW
 		if (pTileY + 0.5 <= floor(MAXIMUM_MAP_HEIGHT_IN_HEX_TILES/2))
 		{
-			if (ds_list_find_index(pAlreadyUsedCoords, [pTileX - 0.75, pTileY + 0.5]) == -1)
+			if (scr_FindArrayValuesInList(pAlreadyUsedCoords, [pTileX - 0.75, pTileY + 0.5]) == false)
 			{
 				ds_list_add(pListToAddCoordsTo, [pTileX - 0.75, pTileY + 0.5])
 			}
@@ -50,7 +50,7 @@ function scr_AddAdjacentHexTileCoordsToList(pListToAddCoordsTo, pAlreadyUsedCoor
 	//N
 	if (pTileY - 1 >= -floor(MAXIMUM_MAP_HEIGHT_IN_HEX_TILES/2))
 	{
-		if (ds_list_find_index(pAlreadyUsedCoords, [pTileX, pTileY - 1]) == -1)
+		if (scr_FindArrayValuesInList(pAlreadyUsedCoords, [pTileX, pTileY - 1]) == false)
 		{
 			ds_list_add(pListToAddCoordsTo, [pTileX , pTileY - 1])
 		}
@@ -59,7 +59,7 @@ function scr_AddAdjacentHexTileCoordsToList(pListToAddCoordsTo, pAlreadyUsedCoor
 	//S
 	if (pTileY + 1 <= floor(MAXIMUM_MAP_HEIGHT_IN_HEX_TILES/2))
 	{
-		if (ds_list_find_index(pAlreadyUsedCoords, [pTileX, pTileY + 1]) == -1)
+		if (scr_FindArrayValuesInList(pAlreadyUsedCoords, [pTileX, pTileY + 1]) == false)
 		{
 			ds_list_add(pListToAddCoordsTo, [pTileX , pTileY + 1])
 		}
