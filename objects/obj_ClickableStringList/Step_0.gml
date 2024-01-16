@@ -1,6 +1,6 @@
 if (global.font != undefined)
 {
-	var fontInfo = font_get_info(global.font)
+	var fontInfo = font_get_info(global.font);
 	var lineHeight = fontInfo.size + verticalChoicePadding;
 	var ascenderHeight = fontInfo.ascender;
 	

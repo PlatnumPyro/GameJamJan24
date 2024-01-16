@@ -55,6 +55,7 @@
     {"name":"scribble_anim_wheel","order":8,"path":"scripts/scribble_anim_wheel/scribble_anim_wheel.yy",},
     {"name":"string_height_scribble","order":2,"path":"scripts/string_height_scribble/string_height_scribble.yy",},
     {"name":"spr_test_dialog","order":3,"path":"sprites/spr_test_dialog/spr_test_dialog.yy",},
+    {"name":"Font3","order":1,"path":"fonts/Font3/Font3.yy",},
     {"name":"scribble_color_set","order":1,"path":"scripts/scribble_color_set/scribble_color_set.yy",},
     {"name":"scribble_rgb_to_bgr","order":2,"path":"scripts/scribble_rgb_to_bgr/scribble_rgb_to_bgr.yy",},
     {"name":"__scribble_tick","order":11,"path":"scripts/__scribble_tick/__scribble_tick.yy",},

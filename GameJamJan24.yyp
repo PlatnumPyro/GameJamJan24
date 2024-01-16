@@ -72,6 +72,7 @@
     {"id":{"name":"scribble_anim_wheel","path":"scripts/scribble_anim_wheel/scribble_anim_wheel.yy",},},
     {"id":{"name":"string_height_scribble","path":"scripts/string_height_scribble/string_height_scribble.yy",},},
     {"id":{"name":"spr_test_dialog","path":"sprites/spr_test_dialog/spr_test_dialog.yy",},},
+    {"id":{"name":"Font3","path":"fonts/Font3/Font3.yy",},},
     {"id":{"name":"scribble_color_set","path":"scripts/scribble_color_set/scribble_color_set.yy",},},
     {"id":{"name":"scribble_anim_blink","path":"scripts/scribble_anim_blink/scribble_anim_blink.yy",},},
     {"id":{"name":"scribble_rgb_to_bgr","path":"scripts/scribble_rgb_to_bgr/scribble_rgb_to_bgr.yy",},},
