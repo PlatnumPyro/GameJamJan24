@@ -47,7 +47,7 @@ for (var i = 1; i < numHexTiles; i++)
 	tileX = tileCoordsOfSelectedPotentialTileLocation[0];
 	tileY = tileCoordsOfSelectedPotentialTileLocation[1];
 	
-	currentTile = instance_create_layer(self.x + (tileX * HEX_TILE_HEIGHT), self.y + (tileY * HEX_TILE_HEIGHT), "Instances", obj_HexMapTile);
+	currentTile = instance_create_layer(self.x + round(tileX * HEX_TILE_HEIGHT * HEX_TILE_CONVERSION_RATIO), self.y + (tileY * HEX_TILE_HEIGHT), "Instances", obj_HexMapTile);
 	
 	currentTile.tileID = i;
 	currentTile.tileType = HEX_TILE_TYPES.FOREST;
