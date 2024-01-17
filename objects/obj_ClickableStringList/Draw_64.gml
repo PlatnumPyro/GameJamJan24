@@ -13,6 +13,6 @@ if (global.font != undefined)
 		{
 			draw_set_color(global.textHighlightColor);
 		}
-		draw_text(self.x, self.y + i*lineHeight, ds_list_find_value(stringList, i));
+		draw_text(viewPosX, viewPosY + i*lineHeight, ds_list_find_value(stringList, i));
 	}
 }

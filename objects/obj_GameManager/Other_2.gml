@@ -6,6 +6,7 @@ global.textBasetColor = c_white;
 global.textHighlightColor = c_red;
 global.gameManager = self;
 global.isPaused = false;
+global.player = undefined;
 
 clickableList = undefined;
 hexMap = undefined;

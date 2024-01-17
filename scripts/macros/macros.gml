@@ -4,6 +4,9 @@
 #macro MAXIMUM_MAP_HEIGHT_IN_HEX_TILES 4  //wider than tall to better fit monitor dimensions
 #macro HEX_TILE_HEIGHT 128  //number of pixels from flat side to flat side on the hex tile (used for scaling)
 #macro HEX_TILE_CONVERSION_RATIO 1.1547005 //flat to flat vs point to point
+#macro CAMERA_VIEWPORT_WIDTH 1920
+#macro CAMERA_VIEWPORT_HEIGHT 1080
+#macro CAMERA_SLACK_IN_PIXELS 0 // how much the player needs to move to start pushing the camera with
 
 enum KEYBOARD_CONTROLS
 {

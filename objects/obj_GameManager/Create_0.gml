@@ -1,18 +1,16 @@
 listeningForKeyboardInput = false;
 keyListenedPressed = undefined;
 keyToBeChanged = undefined;
-textbox = noone
+textbox = undefined;
+hud = undefined;
 
+var camera = undefined;
 var keycode = undefined;
 var keyMenuLabel = undefined;
 var keyDecoded = undefined;
 
-
-
 scr_InitializeKeyboardControlArray();
 scr_KeycodeMapCreate();
-
-show_debug_message("HOPE THIS ONLY SHOWS UP ONCE OTHERWISE I AM GOING TO SCREAM");
 
 //menu lists
 pauseMenuStringList = ds_list_create();
@@ -36,4 +34,3 @@ for (var i = 0; i < array_length(global.keyboardControlArray); i++)
 	ds_list_add(keyboardControlsMenuStringList, keyMenuLabel + " - " + keyDecoded);
 }
 ds_list_add(keyboardControlsMenuStringList, "Back");
-

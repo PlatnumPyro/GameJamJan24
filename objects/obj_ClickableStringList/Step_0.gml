@@ -6,9 +6,9 @@ if (global.font != undefined)
 	
 	highlightedChoiceIndex = -1;
 	
-	if (abs(self.x - mouse_x) < halfSelectionWidth)
+	if (abs(viewPosX - display_mouse_get_x()) < halfSelectionWidth) 
 	{
-		var relativeMouseYPos = mouse_y - (self.y + ascenderHeight + round(verticalChoicePadding/2));
+		var relativeMouseYPos = display_mouse_get_y() - (viewPosY + ascenderHeight + round(verticalChoicePadding/2));
 	
 		highlightedChoiceIndex = round((relativeMouseYPos-(lineHeight/2))/lineHeight) +1;
 	
