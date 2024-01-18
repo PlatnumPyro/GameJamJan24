@@ -15,4 +15,4 @@ tileMap = obj_HexMap;  //to be set by the map itself for event calling
 imageScale = (HEX_TILE_HEIGHT/sprite_get_width(spr_TileForest))*HEX_TILE_CONVERSION_RATIO
 focusedImageScale = imageScale * 1.1;
 
-forestHexGlowColor = make_color_rgb(123, 230, 140);
+forestHexGlowColor = make_color_rgb(21, 219, 51);
