@@ -7,5 +7,6 @@ if (isFocused == false)
 }
 else
 {
+	draw_sprite_ext(spr_TileFocusGlow, 0, self.x, self.y, focusedImageScale, focusedImageScale, 0, forestHexGlowColor, 1);
 	draw_sprite_ext(spr_TileForest, 0, self.x, self.y, focusedImageScale, focusedImageScale, 0, c_white, 1);
 }
