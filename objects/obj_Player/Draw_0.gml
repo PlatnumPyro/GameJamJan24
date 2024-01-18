@@ -7,3 +7,5 @@ draw_set_alpha(1);
 
 draw_sprite_ext(spr_PlayerFrontFacing, 0, x, y, 0.3, 0.3, 0, c_white, 100);
 
+collision_circle(x, y, 50, obj_Player, false, false)
+
