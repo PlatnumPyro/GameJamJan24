@@ -5,6 +5,8 @@ tileID = undefined;
 tileType = undefined;
 tileLocation = undefined; //the tile positon in units of HEX_TILE_HEIGHT
 tileCurseLevel = undefined;
+tileDifficulty = undefined;
+tileAreaSize = undefined;
 isFocused = false;
 
 tileMap = obj_HexMap;  //to be set by the map itself for event calling

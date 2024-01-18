@@ -40,7 +40,11 @@ else
 
 
 //Debug
-if(mouse_check_button_pressed(mb_left) && !instance_exists(obj_testdialog)) {
-	textbox = instance_create_layer(0,0,"GUI",obj_testdialog)
-	textbox.text = ["[wave]Hello [rainbow]World[/rainbow]!","I'm a second textbox!"]
+if(mouse_check_button_pressed(mb_left) && !instance_exists(obj_testdialog)) 
+{
+	if (layer_exists("GUI"))
+	{
+		textbox = instance_create_layer(0,0,"GUI",obj_testdialog)
+		textbox.text = ["[wave]Hello [rainbow]World[/rainbow]!","I'm a second textbox!"]
+	}
 }

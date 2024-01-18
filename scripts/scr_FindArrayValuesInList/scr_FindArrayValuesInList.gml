@@ -12,12 +12,6 @@ function scr_FindArrayValuesInList(pList, pValue, pRemove = false)
 		for(var i = 0; i < listSize; i++)
 		{
 			currentValueToCheck = ds_list_find_value(pList, i);
-		
-			show_debug_message("pValue: {0}", pValue);
-			show_debug_message("currentValueToCheck: {0}", currentValueToCheck);
-			show_debug_message("i: {0}", i);
-			show_debug_message("listSize: {0}", listSize);
-		
 			
 			if (is_array(pValue) && is_array(currentValueToCheck))
 			{

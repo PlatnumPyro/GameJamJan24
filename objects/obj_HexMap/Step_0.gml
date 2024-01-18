@@ -11,7 +11,11 @@ if (mouse_check_button_pressed(mb_left))
 		currentTile = ds_list_find_value(hexTiles, i);
 		if (currentTile.isFocused == true)
 		{
-			selectedHexTileIndex = currentTile.tileID;
+			selectedHexTileData = ds_list_create();
+			ds_list_add(selectedHexTileData, currentTile.tileType);
+			ds_list_add(selectedHexTileData, currentTile.tileCurseLevel);
+			ds_list_add(selectedHexTileData, currentTile.tileDifficulty);
+			ds_list_add(selectedHexTileData, currentTile.tileAreaSize);
 			
 			with (global.gameManager)
 			{
