@@ -18,3 +18,5 @@ imageScale = (HEX_TILE_HEIGHT/sprite_get_width(spr_TileForest))*HEX_TILE_CONVERS
 focusedImageScale = imageScale * 1.1;
 
 forestHexGlowColor = make_color_rgb(21, 219, 51);
+glowPulseNum = 100;
+glowIsFadingIn = true;
