@@ -10,7 +10,6 @@ var isRunning = keyboard_check(global.keyboardControlArray[KEYBOARD_CONTROLS.RUN
 var xInput = inputRight - inputLeft;
 var yInput = inputDown - inputUp;
 
-
 if (isRunning)
 {
 	move_and_collide(xInput * runningSpeed, yInput * runningSpeed, all);

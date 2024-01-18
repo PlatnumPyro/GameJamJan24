@@ -81,6 +81,7 @@
     {"name":"scr_KeycodeMapCreate","order":2,"path":"scripts/scr_KeycodeMapCreate/scr_KeycodeMapCreate.yy",},
     {"name":"__scribble_class_event","order":1,"path":"scripts/__scribble_class_event/__scribble_class_event.yy",},
     {"name":"spr_noTexture","order":2,"path":"sprites/spr_noTexture/spr_noTexture.yy",},
+    {"name":"spr_PlayerWalkDown","order":15,"path":"sprites/spr_PlayerWalkDown/spr_PlayerWalkDown.yy",},
     {"name":"__shd_scribble_bake_shadow","order":4,"path":"shaders/__shd_scribble_bake_shadow/__shd_scribble_bake_shadow.yy",},
     {"name":"__scribble_get_state","order":14,"path":"scripts/__scribble_get_state/__scribble_get_state.yy",},
     {"name":"__scribble_gen_5_finalize_bidi","order":5,"path":"scripts/__scribble_gen_5_finalize_bidi/__scribble_gen_5_finalize_bidi.yy",},

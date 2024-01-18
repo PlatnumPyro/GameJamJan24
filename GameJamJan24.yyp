@@ -103,6 +103,7 @@
     {"id":{"name":"__scribble_class_event","path":"scripts/__scribble_class_event/__scribble_class_event.yy",},},
     {"id":{"name":"scribble_super_clear","path":"scripts/scribble_super_clear/scribble_super_clear.yy",},},
     {"id":{"name":"spr_noTexture","path":"sprites/spr_noTexture/spr_noTexture.yy",},},
+    {"id":{"name":"spr_PlayerWalkDown","path":"sprites/spr_PlayerWalkDown/spr_PlayerWalkDown.yy",},},
     {"id":{"name":"__shd_scribble_bake_shadow","path":"shaders/__shd_scribble_bake_shadow/__shd_scribble_bake_shadow.yy",},},
     {"id":{"name":"__scribble_get_state","path":"scripts/__scribble_get_state/__scribble_get_state.yy",},},
     {"id":{"name":"__scribble_gen_5_finalize_bidi","path":"scripts/__scribble_gen_5_finalize_bidi/__scribble_gen_5_finalize_bidi.yy",},},
