@@ -10,9 +10,42 @@ var isRunning = keyboard_check(global.keyboardControlArray[KEYBOARD_CONTROLS.RUN
 var xInput = inputRight - inputLeft;
 var yInput = inputDown - inputUp;
 
-if (isRunning)
+
+if (inputRight)
+{
+	x += walkingSpeed;
+	image_speed = walkingSpeed / 3;
+	sprite_index = spr_PlayerWalkRight;
+}
+if (inputLeft)
+{
+	x -= walkingSpeed;
+	image_speed = walkingSpeed / 3;
+	sprite_index = spr_PlayerWalkLeft;
+}
+if (inputDown)
+{
+	y += walkingSpeed;
+	image_speed = walkingSpeed / 3;
+	sprite_index = spr_PlayerWalkDown;
+}
+if (inputUp)
+{
+	y -= walkingSpeed;
+	image_speed = walkingSpeed / 3;
+	sprite_index = spr_PlayerWalkUp;
+}
+if (keyboard_check(vk_nokey))
+{
+	
+	image_speed = 0;
+	image_index = 0;	
+}
+
+
+/*if (isRunning)
 {
 	move_and_collide(xInput * runningSpeed, yInput * runningSpeed, all);
 } else {
 	move_and_collide(xInput * walkingSpeed, yInput * walkingSpeed, all);	
-}
+}*/
