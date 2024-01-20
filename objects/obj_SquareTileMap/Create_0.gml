@@ -8,7 +8,7 @@ mapWidthInTiles = 0;
 mapTopBorderVariation = 3; 
 
 // how much we want to allow the top border to change between one tile and the tile to the right of it up or down
-mapTopBorderVariationMaximumIncrement = 2;
+mapTopBorderVariationMaximumIncrement = 1;
 
 //the map  \o/  praise the sun!
 squareTileMap = undefined;
