@@ -10,6 +10,9 @@ mapTopBorderVariation = 3;
 // how much we want to allow the top border to change between one tile and the tile to the right of it up or down
 mapTopBorderVariationMaximumIncrement = 1;
 
+//number of layers for the forest area to fade from solid line of trees to fewer/no trees
+mapSidetreeBorderFadeLayers = 4;
+
 //the map  \o/  praise the sun!
 squareTileMap = undefined;
 

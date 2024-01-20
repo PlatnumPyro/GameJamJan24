@@ -31,30 +31,75 @@ if (mapStyle == HEX_TILE_TYPES.FOREST)
 	{
 		topBoundryOffset = ds_list_find_value(topBorderTilePositions, tileX);
 		
-		for (var tileY = 0; tileY < mapHeightInTiles; tileY++)
+		for (var tileY = 0; tileY < mapHeightInTiles+2; tileY++)
 		{
-			if (tileY < topBoundryOffset - topBoundryMinimumY)
+			if (tileY < mapHeightInTiles)
 			{
-				tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
-			}
-			else if (tileY == topBoundryOffset - topBoundryMinimumY)
-			{
-				tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS_WALL_TOP, tileX, tileY);
-			}
-			else if (tileY == topBoundryOffset - (topBoundryMinimumY - 1))
-			{
-				tilemap_set(squareTileMap, SQUARE_TILE_TYPES.WALL_BOTTOM, tileX, tileY);
-			}
-			else
-			{
-				if (random(1) < 0.95)
+				if (tileY < topBoundryOffset - topBoundryMinimumY)
 				{
 					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
 				}
+				else if (tileY == topBoundryOffset - topBoundryMinimumY)
+				{
+					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS_WALL_TOP, tileX, tileY);
+				}
+				else if (tileY == topBoundryOffset - (topBoundryMinimumY - 1))
+				{
+					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.WALL_BOTTOM, tileX, tileY);
+				}
 				else
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS_WITH_ROCK, tileX, tileY);
+					if (tileX == 0 || tileX == mapWidthInTiles-1)
+					{
+						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+						instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
+					}
+					else if (tileX > 0 && tileX < mapSidetreeBorderFadeLayers)
+					{
+						if (random(1) < (mapSidetreeBorderFadeLayers - tileX)/mapSidetreeBorderFadeLayers)
+						{
+							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+							instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
+						}
+						else
+						{
+							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
+						}
+					}
+					else if (tileX < mapWidthInTiles-1 && mapWidthInTiles - tileX <mapSidetreeBorderFadeLayers)
+					{
+						if (random(1) < (mapWidthInTiles - tileX)/mapSidetreeBorderFadeLayers)
+						{
+							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+							instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
+						}
+						else
+						{
+							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
+						}
+					}
+					else if (random(1) < 0.98)
+					{
+						if (random(1) > 0.85)
+						{
+							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+							instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
+						}
+						else
+						{
+							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
+						}
+					}
+					else
+					{
+						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS_WITH_ROCK, tileX, tileY);
+					}
 				}
+			}
+			else
+			{
+				//add some trees below the map so it doesnt just end randomly
+				instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
 			}
 		}
 	}
