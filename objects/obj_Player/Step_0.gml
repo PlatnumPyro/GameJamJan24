@@ -15,6 +15,10 @@ var lookingRight =
 
 self.depth = -self.y
 
+
+//TODO: Add collision
+
+
 if (inputUseAbility)
 {
 	if (direction == 90) sprite_index = spr_PlayerUseAbilityRight;
