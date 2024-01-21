@@ -9,37 +9,46 @@ var isRunning = keyboard_check(global.keyboardControlArray[KEYBOARD_CONTROLS.RUN
 // These two lines set up for the dx and dy paramaters of move_and_collide(3)
 var xInput = inputRight - inputLeft;
 var yInput = inputDown - inputUp;
+var currentSpeed = walkingSpeed;
+
+self.depth = -self.y
+
+if (isRunning)
+{
+	currentSpeed = runningSpeed;
+	image_speed = runningSpeed / 3;
+}
+else
+{
+	currentSpeed = walkingSpeed;
+	image_speed = walkingSpeed / 3;
+}
 
 self.depth = -self.y
 
 
 if (inputRight)
 {
-	x += walkingSpeed;
-	image_speed = walkingSpeed / 3;
+	x += currentSpeed;
 	sprite_index = spr_PlayerWalkRight;
-}
+} 
 if (inputLeft)
 {
-	x -= walkingSpeed;
-	image_speed = walkingSpeed / 3;
+	x -= currentSpeed;
 	sprite_index = spr_PlayerWalkLeft;
-}
+} 
 if (inputDown)
 {
-	y += walkingSpeed;
-	image_speed = walkingSpeed / 3;
+	y += currentSpeed;
 	sprite_index = spr_PlayerWalkDown;
-}
+} 
 if (inputUp)
 {
-	y -= walkingSpeed;
-	image_speed = walkingSpeed / 3;
+	y -= currentSpeed;
 	sprite_index = spr_PlayerWalkUp;
-}
+} 
 if (keyboard_check(vk_nokey))
 {
-	
 	image_speed = 0;
 	image_index = 0;	
 }
