@@ -7,6 +7,7 @@ function scr_InitializeKeyboardControlArray()
     global.keyboardControlArray[KEYBOARD_CONTROLS.FULL_SCREEN_WINDOW] = vk_f11;
     global.keyboardControlArray[KEYBOARD_CONTROLS.ESCAPE] = vk_escape;
     global.keyboardControlArray[KEYBOARD_CONTROLS.RUN] = vk_shift;
+	global.keyboardControlArray[KEYBOARD_CONTROLS.USE_ABILITY] = vk_space;
 	
 	global.keyboardArrayToMenuOptions = ds_map_create();
 	ds_map_add(global.keyboardArrayToMenuOptions, KEYBOARD_CONTROLS.MOVE_UP, "Up");
@@ -16,4 +17,5 @@ function scr_InitializeKeyboardControlArray()
 	ds_map_add(global.keyboardArrayToMenuOptions, KEYBOARD_CONTROLS.ESCAPE, "Pause");
 	ds_map_add(global.keyboardArrayToMenuOptions, KEYBOARD_CONTROLS.FULL_SCREEN_WINDOW, "Toggle Full Screen");
 	ds_map_add(global.keyboardArrayToMenuOptions, KEYBOARD_CONTROLS.RUN, "Run");
+	ds_map_add(global.keyboardArrayToMenuOptions, KEYBOARD_CONTROLS.USE_ABILITY, "Use Ability");
 }
