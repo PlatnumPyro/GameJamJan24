@@ -37,6 +37,8 @@ if (inputRight)
 	image_speed = currentSpeed / 3;
 	sprite_index = spr_PlayerWalkRight;
 	direction = 90;
+	if (inputUseAbility)
+		sprite_index = spr_PlayerUseAbilityRight;
 } 
 if (inputLeft)
 {
@@ -44,6 +46,8 @@ if (inputLeft)
 	image_speed = currentSpeed / 3;
 	sprite_index = spr_PlayerWalkLeft;
 	direction = 270;
+	if (inputUseAbility)
+		sprite_index = spr_PlayerUseAbilityLeft;
 } 
 if (inputDown)
 {
@@ -51,6 +55,8 @@ if (inputDown)
 	image_speed = currentSpeed / 3;
 	sprite_index = spr_PlayerWalkDown;
 	direction = 180;
+	if (inputUseAbility)
+		sprite_index = spr_PlayerUseAbilityDown;
 } 
 if (inputUp)
 {
@@ -58,6 +64,8 @@ if (inputUp)
 	image_speed = currentSpeed / 3;
 	sprite_index = spr_PlayerWalkUp;
 	direction = 0;
+	if (inputUseAbility)
+		sprite_index = spr_PlayerUseAbilityUp;
 } 
 if (keyboard_check(vk_nokey))
 {
