@@ -3,8 +3,8 @@
 cursebar = undefined;
 healthbar = undefined;
 
-curseAmount = 100;
-curseMax = 1;
+curseAmount = 50;
+curseMax = 100;
 cursebarWidth = CAMERA_VIEWPORT_WIDTH / 4; 
 cursebarHeight = 32;
 //cursebarX = CAMERA_VIEWPORT_WIDTH / 3;
