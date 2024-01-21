@@ -10,6 +10,8 @@ var isRunning = keyboard_check(global.keyboardControlArray[KEYBOARD_CONTROLS.RUN
 var xInput = inputRight - inputLeft;
 var yInput = inputDown - inputUp;
 
+self.depth = -self.y
+
 
 if (inputRight)
 {
