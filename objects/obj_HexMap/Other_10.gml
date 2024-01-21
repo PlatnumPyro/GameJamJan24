@@ -24,6 +24,11 @@ currentTile.tileLocation = [tileX, tileY];
 currentTile.tileCurseLevel = 0;
 currentTile.tileMap = self;  //to be set by the map itself for event calling
 
+with (currentTile)
+{
+	event_perform(ev_other, ev_user0);
+}
+	
 ds_list_add(hexTiles, currentTile);
 ds_list_add(actualTileLocations, [tileX, tileY]);
 scr_AddAdjacentHexTileCoordsToList(potentialTileLocations, actualTileLocations, tileX, tileY);
@@ -46,12 +51,17 @@ for (var i = 1; i < numHexTiles; i++)
 	currentTile = instance_create_layer(self.x + round(tileX * HEX_TILE_HEIGHT * HEX_TILE_CONVERSION_RATIO), self.y + (tileY * HEX_TILE_HEIGHT), "Instances", obj_HexMapTile);
 	
 	currentTile.tileID = i;
-	currentTile.tileType = HEX_TILE_TYPES.FOREST;
+	currentTile.tileType = irandom(2);//HEX_TILE_TYPES.FOREST;
 	currentTile.tileLocation = [tileX, tileY];
 	currentTile.tileCurseLevel = 0;
 	currentTile.tileDifficulty = 0;
 	currentTile.tileAreaSize = MAP_SIZES.MEDIUM;
 	currentTile.tileMap = self;  //to be set by the map itself for event calling
+	
+	with (currentTile)
+	{
+		event_perform(ev_other, ev_user0);
+	}
 	
 	ds_list_add(hexTiles, currentTile);
 	ds_list_add(actualTileLocations, [tileX, tileY]);

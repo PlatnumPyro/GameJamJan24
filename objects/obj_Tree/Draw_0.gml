@@ -10,11 +10,5 @@ if (global.player.y < self.y && (global.player.y - playerYOffset) > self.y - (tr
 		alpha = 0.7;
 	}
 }
-if (treeType == 0)
-{
-	draw_sprite_ext(spr_Tree1, 0, self.x, self.y, imageScale, treeVariationHeight, 0, treeVariationColor, alpha);
-}
-else if (treeType == 1)
-{
-	draw_sprite_ext(spr_Tree2, 0, self.x, self.y, imageScale, treeVariationHeight, 0, treeVariationColor, alpha);
-}
+	
+draw_sprite_ext(treeSprite, 0, self.x, self.y, imageScale, treeVariationHeight, 0, treeVariationColor, alpha);

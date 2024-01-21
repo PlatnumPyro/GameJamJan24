@@ -151,7 +151,7 @@
     {"id":{"name":"__shd_scribble_bake_outline_8dir_2px","path":"shaders/__shd_scribble_bake_outline_8dir_2px/__shd_scribble_bake_outline_8dir_2px.yy",},},
     {"id":{"name":"spr_Tree1","path":"sprites/spr_Tree1/spr_Tree1.yy",},},
     {"id":{"name":"room_Overworld","path":"rooms/room_Overworld/room_Overworld.yy",},},
-    {"id":{"name":"spr_TileForest","path":"sprites/spr_TileForest/spr_TileForest.yy",},},
+    {"id":{"name":"spr_HexTiles","path":"sprites/spr_HexTiles/spr_HexTiles.yy",},},
     {"id":{"name":"scribble_kerning_pair_get","path":"scripts/scribble_kerning_pair_get/scribble_kerning_pair_get.yy",},},
     {"id":{"name":"spr_PlayerWalkUp","path":"sprites/spr_PlayerWalkUp/spr_PlayerWalkUp.yy",},},
     {"id":{"name":"__scribble_get_effects_map","path":"scripts/__scribble_get_effects_map/__scribble_get_effects_map.yy",},},

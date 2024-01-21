@@ -1,23 +1,17 @@
 /// @description object vars
 
 self.depth = -self.y;
-imageHeight = -1;
-imageWidth = -1;
+treeSprite = spr_Tree1;
 
-if (random(100) < 95)
+// in rare cases we want this to be the hollow tree
+if (random(100) > 95)
 {
-	treeType = 0;
-	imageHeight = sprite_get_height(spr_Tree1);
-	imageWidth = sprite_get_width(spr_Tree1);
-}
-else
-{
-	treeType = 1;
-	imageHeight = sprite_get_height(spr_Tree2);
-	imageWidth = sprite_get_width(spr_Tree2);
+	treeSprite = spr_Tree2;
 }
 
 imageScale = 0.5;
+imageHeight = sprite_get_height(treeSprite);
+imageWidth = sprite_get_width(treeSprite);
 treeVariationColor = make_color_rgb(140 + irandom(115), 100 + irandom(80), irandom(80));
 treeVariationHeight = (imageScale - 0.1) + random(0.3);
 halfImageWidthForAlphaCheck = round((imageWidth * imageScale) / 2)

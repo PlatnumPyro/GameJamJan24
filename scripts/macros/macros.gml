@@ -36,7 +36,9 @@ enum ROOM_INDEX
 
 enum HEX_TILE_TYPES
 {
-	FOREST = 0
+	FOREST = 0,
+	MOUNTAIN = 1,
+	BEACH = 2
 }
 
 enum HEX_TILE_DATA
