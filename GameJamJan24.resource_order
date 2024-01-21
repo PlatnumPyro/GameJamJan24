@@ -110,6 +110,7 @@
     {"name":"scribble_font_add_all","order":1,"path":"scripts/scribble_font_add_all/scribble_font_add_all.yy",},
     {"name":"scribble_external_sound_exists","order":1,"path":"scripts/scribble_external_sound_exists/scribble_external_sound_exists.yy",},
     {"name":"scr_TextboxFunctions","order":5,"path":"scripts/scr_TextboxFunctions/scr_TextboxFunctions.yy",},
+    {"name":"spr_Healthbar","order":19,"path":"sprites/spr_Healthbar/spr_Healthbar.yy",},
     {"name":"__scribble_class_typist","order":6,"path":"scripts/__scribble_class_typist/__scribble_class_typist.yy",},
     {"name":"scribble_super_glyph_copy_all","order":3,"path":"scripts/scribble_super_glyph_copy_all/scribble_super_glyph_copy_all.yy",},
     {"name":"scr_GameScript","order":6,"path":"scripts/scr_GameScript/scr_GameScript.yy",},

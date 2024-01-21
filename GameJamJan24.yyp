@@ -135,6 +135,7 @@
     {"id":{"name":"scribble_font_add_all","path":"scripts/scribble_font_add_all/scribble_font_add_all.yy",},},
     {"id":{"name":"scribble_external_sound_exists","path":"scripts/scribble_external_sound_exists/scribble_external_sound_exists.yy",},},
     {"id":{"name":"scr_TextboxFunctions","path":"scripts/scr_TextboxFunctions/scr_TextboxFunctions.yy",},},
+    {"id":{"name":"spr_Healthbar","path":"sprites/spr_Healthbar/spr_Healthbar.yy",},},
     {"id":{"name":"__scribble_class_typist","path":"scripts/__scribble_class_typist/__scribble_class_typist.yy",},},
     {"id":{"name":"scribble_super_glyph_copy_all","path":"scripts/scribble_super_glyph_copy_all/scribble_super_glyph_copy_all.yy",},},
     {"id":{"name":"__scribble_config_behaviours","path":"scripts/__scribble_config_behaviours/__scribble_config_behaviours.yy",},},
