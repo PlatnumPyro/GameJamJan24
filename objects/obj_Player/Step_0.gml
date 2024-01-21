@@ -26,12 +26,6 @@ self.depth = -self.y
 if (isRunning)
 {
 	currentSpeed = runningSpeed;
-	image_speed = runningSpeed / 3;
-}
-else
-{
-	currentSpeed = walkingSpeed;
-	image_speed = walkingSpeed / 3;
 }
 
 self.depth = -self.y
@@ -40,21 +34,25 @@ self.depth = -self.y
 if (inputRight)
 {
 	x += currentSpeed;
+	image_speed = currentSpeed / 3;
 	sprite_index = spr_PlayerWalkRight;
 } 
 if (inputLeft)
 {
 	x -= currentSpeed;
+	image_speed = currentSpeed / 3;
 	sprite_index = spr_PlayerWalkLeft;
 } 
 if (inputDown)
 {
 	y += currentSpeed;
+	image_speed = currentSpeed / 3;
 	sprite_index = spr_PlayerWalkDown;
 } 
 if (inputUp)
 {
 	y -= currentSpeed;
+	image_speed = currentSpeed / 3;
 	sprite_index = spr_PlayerWalkUp;
 } 
 if (keyboard_check(vk_nokey))
