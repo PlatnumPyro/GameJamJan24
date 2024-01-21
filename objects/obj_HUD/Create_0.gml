@@ -4,11 +4,11 @@ cursebar = undefined;
 healthbar = undefined;
 
 curseAmount = 50;
-curseMax = 1;
-cursebarWidth = room_width / 3; // TODO: Make not brainded
+curseMax = 5;
+cursebarWidth = CAMERA_VIEWPORT_WIDTH / 3; 
 cursebarHeight = 64;
-cursebarX = 0;
-cursebarY = 0;
+cursebarX = CAMERA_VIEWPORT_WIDTH / 3;
+cursebarY = 64;
 
 flash = 0;
 
