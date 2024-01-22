@@ -7,10 +7,13 @@ var character_sprite = undefined
 switch (speaker) {
 	case 1:
 		character_sprite = spr_PlayerDialogue
+		break;
 	case 2:
 		character_sprite = spr_FireDialogue
+		break;
 	case 3:
 		character_sprite = spr_WaterDialogue
+		break;
 	case 4:
 		character_sprite = spr_LightningDialogue
 		break;
@@ -41,7 +44,7 @@ if (option_number > 0)
 			draw_text_scribble_ext(132,CAMERA_VIEWPORT_HEIGHT-120+(40*i),option[i],1720,1720)
 		}
 
-	draw_sprite_ext(spr_noTexture,0, 96, CAMERA_VIEWPORT_HEIGHT-110+(40*option_position), 0.25,0.25,0,c_white,1)
+	draw_sprite_ext(spr_optionSelector,0, 90, CAMERA_VIEWPORT_HEIGHT-120+(40*option_position), 0.5,0.5,0,c_white,1)
 	}
 }
 
