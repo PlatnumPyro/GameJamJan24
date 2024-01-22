@@ -15,6 +15,10 @@ if (clickableList != undefined)
 		switch (adjustedOptionString)
 		{
 			case "Start Game":
+				room_goto(ROOM_INDEX.MINIGAME);
+				break;
+				
+			case "Skip Minigame (remove me)":
 				room_goto(ROOM_INDEX.HEX_WORLD_MAP);
 				break;
 				
