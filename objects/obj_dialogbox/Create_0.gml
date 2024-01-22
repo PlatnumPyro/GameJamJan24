@@ -6,7 +6,7 @@ timer=0
 timerSpeed=5
 
 speaker = 0
-speaker_names = ["", "Protagonist","Fire","Water","Lightning","Potion"]
+speaker_names = ["", "Protagonist","Fire","Water","Lightning"]
 
 text = []
 currentPage = 0
@@ -15,3 +15,6 @@ totalPages = 0
 option[0] = ""
 option_id[0] = -1
 option_number = 0
+option_position = 0
+
+global.isPaused = true

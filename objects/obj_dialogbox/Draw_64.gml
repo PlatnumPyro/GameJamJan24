@@ -7,6 +7,12 @@ var character_sprite = undefined
 switch (speaker) {
 	case 1:
 		character_sprite = spr_PlayerDialogue
+	case 2:
+		character_sprite = spr_FireDialogue
+	case 3:
+		character_sprite = spr_WaterDialogue
+	case 4:
+		character_sprite = spr_LightningDialogue
 		break;
 }
 
@@ -24,3 +30,19 @@ draw_set_halign(fa_left);
 
 draw_text_scribble_ext(96,CAMERA_VIEWPORT_HEIGHT-240,speaker_names[speaker],2000,2000)
 draw_text_scribble_ext(112,CAMERA_VIEWPORT_HEIGHT-200,text[currentPage],1720,letterCount) 
+
+//------------- Draw options
+if (option_number > 0)
+{
+	// Only on the last page
+	if (letterCount >= string_length(text[currentPage]) && currentPage = totalPages-1)
+	{
+		for (var i = 0; i < option_number; i++) {
+			draw_text_scribble_ext(132,CAMERA_VIEWPORT_HEIGHT-120+(40*i),option[i],1720,1720)
+		}
+
+	draw_sprite_ext(spr_noTexture,0, 96, CAMERA_VIEWPORT_HEIGHT-110+(40*option_position), 0.25,0.25,0,c_white,1)
+	}
+}
+
+

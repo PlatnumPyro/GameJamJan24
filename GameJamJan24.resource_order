@@ -30,6 +30,7 @@
     {"name":"player","order":16,"path":"folders/Sprites/player.yy",},
     {"name":"Tile Sets","order":1,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":7,"path":"folders/Timelines.yy",},
+    {"name":"NPCs","order":22,"path":"folders/Sprites/NPCs.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"__scribble_system","order":10,"path":"scripts/__scribble_system/__scribble_system.yy",},
@@ -139,6 +140,8 @@
     {"name":"__scribble_get_macros_map","order":13,"path":"scripts/__scribble_get_macros_map/__scribble_get_macros_map.yy",},
     {"name":"__scribble_class_font","order":2,"path":"scripts/__scribble_class_font/__scribble_class_font.yy",},
     {"name":"scribble_kerning_pair_set","order":19,"path":"scripts/scribble_kerning_pair_set/scribble_kerning_pair_set.yy",},
+    {"name":"spr_FireDialogue","order":2,"path":"sprites/spr_FireDialogue/spr_FireDialogue.yy",},
+    {"name":"spr_WaterDialogue","order":1,"path":"sprites/spr_WaterDialogue/spr_WaterDialogue.yy",},
     {"name":"__scribble_class_page","order":5,"path":"scripts/__scribble_class_page/__scribble_class_page.yy",},
     {"name":"scribble_anim_jitter","order":2,"path":"scripts/scribble_anim_jitter/scribble_anim_jitter.yy",},
     {"name":"scribble_font_set_default","order":14,"path":"scripts/scribble_font_set_default/scribble_font_set_default.yy",},

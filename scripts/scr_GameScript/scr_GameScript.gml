@@ -20,10 +20,10 @@ function scr_GameScript(_text_id){
 				scr_option("No","debug-no")
 			break;
 		case "debug-yes":
-			scr_text("Hooray!")
+			scr_text("Hooray!",SPEAKERS.PROTAGONIST)
 			break;
 		case "debug-no":
-			scr_text("Aww...")
+			scr_text("Aww...",SPEAKERS.PROTAGONIST)
 			break;
 	}
 
