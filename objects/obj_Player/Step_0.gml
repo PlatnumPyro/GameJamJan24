@@ -11,7 +11,6 @@ var isRunning = keyboard_check(global.keyboardControlArray[KEYBOARD_CONTROLS.RUN
 var xInput = inputRight - inputLeft;
 var yInput = inputDown - inputUp;
 var currentSpeed = walkingSpeed;
-var lookingRight = 
 
 self.depth = -self.y
 

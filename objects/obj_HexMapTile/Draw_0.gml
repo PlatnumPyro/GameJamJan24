@@ -2,7 +2,7 @@
 // You can write your code in this editor
 var pulseAlphaAdjust = 0;
 
-if (isFocused == false)
+if (isFocused == false || global.isPaused == true)
 {
 	glowPulseNum = 100;
 	draw_sprite_ext(spr_HexTiles, tileType, self.x, self.y, imageScale, imageScale, 0, c_white, 1);

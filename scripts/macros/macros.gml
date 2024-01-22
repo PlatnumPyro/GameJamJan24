@@ -39,7 +39,8 @@ enum HEX_TILE_TYPES
 {
 	FOREST = 0,
 	MOUNTAIN = 1,
-	BEACH = 2
+	BEACH = 2,
+	CAVE = 3
 }
 
 enum HEX_TILE_DATA
@@ -58,6 +59,20 @@ enum SQUARE_TILE_TYPES
 	SAND = 3,
 	WALL_BOTTOM = 4,
 	GRASS_WALL_TOP = 5
+}
+
+enum SQUARE_TILE_OVERLAY_TYPES
+{
+	NONE = 0, //placeholder required by game maker for an empty tile
+	CURSE_LEVEL_ONE = 1,
+	CURSE_LEVEL_TWO = 2,
+	CURSE_LEVEL_THREE = 3,
+	SAND_SHADE_ONE = 4,
+	SAND_SHADE_TWO = 5,
+	SAND_SHADE_THREE = 6,
+	WATER_SHADE_ONE = 7,
+	WATER_SHADE_TWO = 8,
+	WATER_SHADE_THREE = 9
 }
 
 enum MAP_SIZES

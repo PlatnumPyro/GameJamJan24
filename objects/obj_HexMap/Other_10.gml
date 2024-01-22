@@ -51,7 +51,7 @@ for (var i = 1; i < numHexTiles; i++)
 	currentTile = instance_create_layer(self.x + round(tileX * HEX_TILE_HEIGHT * HEX_TILE_CONVERSION_RATIO), self.y + (tileY * HEX_TILE_HEIGHT), "Instances", obj_HexMapTile);
 	
 	currentTile.tileID = i;
-	currentTile.tileType = irandom(2);//HEX_TILE_TYPES.FOREST;
+	currentTile.tileType = irandom(3);//HEX_TILE_TYPES.FOREST;
 	currentTile.tileLocation = [tileX, tileY];
 	currentTile.tileCurseLevel = 0;
 	currentTile.tileDifficulty = 0;

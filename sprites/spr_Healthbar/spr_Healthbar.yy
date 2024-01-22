@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_cursebar",
+  "name": "spr_Healthbar",
   "bbox_bottom": 63,
   "bbox_left": 0,
   "bbox_right": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"31b58db8-a6d1-4fc4-a4ce-fa58a9edf9e3",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"23a3b56b-4e58-4c8a-b5d1-0e9ab3ff90f6",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 64,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"57ae5963-4f5e-4a92-9fc8-453e86a0aa39","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"fb1993f1-1e3a-467d-8c42-377e991d8484","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 3,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_cursebar",
+    "name": "spr_Healthbar",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"31b58db8-a6d1-4fc4-a4ce-fa58a9edf9e3","path":"sprites/spr_cursebar/spr_cursebar.yy",},},},"Disabled":false,"id":"c5d91182-e81e-4b19-afbf-c23005efcfb5","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"23a3b56b-4e58-4c8a-b5d1-0e9ab3ff90f6","path":"sprites/spr_Healthbar/spr_Healthbar.yy",},},},"Disabled":false,"id":"5d692ff1-528d-4296-a9dd-2ac56cfe7871","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
