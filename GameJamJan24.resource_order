@@ -83,6 +83,7 @@
     {"name":"scribble_anim_cycle","order":1,"path":"scripts/scribble_anim_cycle/scribble_anim_cycle.yy",},
     {"name":"scribble_font_get_glyph_ranges","order":10,"path":"scripts/scribble_font_get_glyph_ranges/scribble_font_get_glyph_ranges.yy",},
     {"name":"scribble_typewriter_add_character_delay","order":6,"path":"scripts/scribble_typewriter_add_character_delay/scribble_typewriter_add_character_delay.yy",},
+    {"name":"Sprite29","order":24,"path":"sprites/Sprite29/Sprite29.yy",},
     {"name":"scr_KeycodeMapCreate","order":2,"path":"scripts/scr_KeycodeMapCreate/scr_KeycodeMapCreate.yy",},
     {"name":"__scribble_class_event","order":1,"path":"scripts/__scribble_class_event/__scribble_class_event.yy",},
     {"name":"spr_PlayerUseAbilityLeft","order":7,"path":"sprites/spr_PlayerUseAbilityLeft/spr_PlayerUseAbilityLeft.yy",},
