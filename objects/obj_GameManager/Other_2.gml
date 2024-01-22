@@ -3,7 +3,7 @@ global.font = font_placeholderMonospaceFont;
 //global.font = font_add("fonts\dpsdbeyond\DPSDbeyond.otf", 32, false, false, 32, 128); //TODO change this to the font we select
 //font_enable_sdf(global.font, true);
 global.textBaseColor = c_white;
-global.textHighlightColor = c_red;
+global.textHighlightColor = make_color_rgb(221, 148, 255);
 global.gameManager = self;
 global.isPaused = false;
 global.player = undefined;

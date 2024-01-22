@@ -60,6 +60,20 @@ enum SQUARE_TILE_TYPES
 	GRASS_WALL_TOP = 5
 }
 
+enum SQUARE_TILE_OVERLAY_TYPES
+{
+	NONE = 0, //placeholder required by game maker for an empty tile
+	CURSE_LEVEL_ONE = 1,
+	CURSE_LEVEL_TWO = 2,
+	CURSE_LEVEL_THREE = 3,
+	SAND_SHADE_ONE = 4,
+	SAND_SHADE_TWO = 5,
+	SAND_SHADE_THREE = 6,
+	WATER_SHADE_ONE = 7,
+	WATER_SHADE_TWO = 8,
+	WATER_SHADE_THREE = 9
+}
+
 enum MAP_SIZES
 {
 	SMALL = 0,
