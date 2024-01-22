@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "spr_dialogbox",
   "bbox_bottom": 255,
-  "bbox_left": 64,
-  "bbox_right": 1855,
+  "bbox_left": 65,
+  "bbox_right": 1854,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6c514387-ae52-4567-9dcc-ada90a5dba4c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"28945013-ec75-4668-a8a3-ddeab176298f",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 256,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ece9bc84-09b7-4d60-abdb-ce3322d2058a","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5053af0f-a609-47c4-994c-068e46cd4a17","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6c514387-ae52-4567-9dcc-ada90a5dba4c","path":"sprites/spr_dialogbox/spr_dialogbox.yy",},},},"Disabled":false,"id":"9206366a-5399-477c-9df3-65a15ee2017e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"28945013-ec75-4668-a8a3-ddeab176298f","path":"sprites/spr_dialogbox/spr_dialogbox.yy",},},},"Disabled":false,"id":"9737cba8-c3d0-44b4-b424-cf5835c14122","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

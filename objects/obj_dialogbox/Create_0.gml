@@ -6,7 +6,7 @@ timer=0
 timerSpeed=5
 
 speaker = 0
-speaker_names = ["Protagonist","Fire","Water","Lightning","Potion"]
+speaker_names = ["", "Protagonist","Fire","Water","Lightning","Potion"]
 
 text = []
 currentPage = 0
