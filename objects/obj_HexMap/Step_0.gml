@@ -1,25 +1,27 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-if (mouse_check_button_pressed(mb_left))
+if (global.isPaused == false)
 {
-	var numTiles = ds_list_size(hexTiles);
-	var currentTile = undefined;
-	
-	for (var i = 0; i < numTiles; i++)
+	if (mouse_check_button_pressed(mb_left))
 	{
-		currentTile = ds_list_find_value(hexTiles, i);
-		if (currentTile.isFocused == true)
+		var numTiles = ds_list_size(hexTiles);
+		var currentTile = undefined;
+	
+		for (var i = 0; i < numTiles; i++)
 		{
-			selectedHexTileData = ds_list_create();
-			ds_list_add(selectedHexTileData, currentTile.tileType);
-			ds_list_add(selectedHexTileData, currentTile.tileCurseLevel);
-			ds_list_add(selectedHexTileData, currentTile.tileDifficulty);
-			ds_list_add(selectedHexTileData, currentTile.tileAreaSize);
-			
-			with (global.gameManager)
+			currentTile = ds_list_find_value(hexTiles, i);
+			if (currentTile.isFocused == true)
 			{
-				event_perform(ev_other, ev_user2);
+				selectedHexTileData = ds_list_create();
+				ds_list_add(selectedHexTileData, currentTile.tileType);
+				ds_list_add(selectedHexTileData, currentTile.tileCurseLevel);
+				ds_list_add(selectedHexTileData, currentTile.tileDifficulty);
+				ds_list_add(selectedHexTileData, currentTile.tileAreaSize);
+			
+				with (global.gameManager)
+				{
+					event_perform(ev_other, ev_user2);
+				}
 			}
 		}
 	}
