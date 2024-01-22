@@ -116,6 +116,7 @@
     {"name":"scribble_super_glyph_copy_all","order":3,"path":"scripts/scribble_super_glyph_copy_all/scribble_super_glyph_copy_all.yy",},
     {"name":"scr_GameScript","order":6,"path":"scripts/scr_GameScript/scr_GameScript.yy",},
     {"name":"__scribble_font_add_from_project","order":7,"path":"scripts/__scribble_font_add_from_project/__scribble_font_add_from_project.yy",},
+    {"name":"spr_Healthbar","order":21,"path":"sprites/spr_Healthbar/spr_Healthbar.yy",},
     {"name":"__scribble_get_anim_properties","order":1,"path":"scripts/__scribble_get_anim_properties/__scribble_get_anim_properties.yy",},
     {"name":"__scribble_get_typewriter_events_map","order":15,"path":"scripts/__scribble_get_typewriter_events_map/__scribble_get_typewriter_events_map.yy",},
     {"name":"scribble_font_rename","order":12,"path":"scripts/scribble_font_rename/scribble_font_rename.yy",},
