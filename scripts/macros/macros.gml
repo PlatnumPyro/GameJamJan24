@@ -39,7 +39,8 @@ enum HEX_TILE_TYPES
 {
 	FOREST = 0,
 	MOUNTAIN = 1,
-	BEACH = 2
+	BEACH = 2,
+	CAVE = 3
 }
 
 enum HEX_TILE_DATA

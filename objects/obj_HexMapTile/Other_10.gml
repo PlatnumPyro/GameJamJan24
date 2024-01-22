@@ -11,6 +11,9 @@ switch (tileType)
 	case HEX_TILE_TYPES.BEACH:
 		hexGlowColor = make_color_rgb(99, 72, 255);
 		break;
+	case HEX_TILE_TYPES.CAVE:
+		hexGlowColor = make_color_rgb(204, 167, 143);
+		break;
 }
 
 
