@@ -12,6 +12,6 @@ draw_text(cursebarX + 100, cursebarY, currentCurseAmountString);
 
 draw_rectangle(healthbarX, healthbarY, healthbarX + healthbarWidth, healthbarY + healthbarHeight, true);
 draw_rectangle(healthbarX, healthbarY, healthbarX + healthbarWidth, healthbarY + healthbarHeight, false);
-draw_sprite_stretched(spr_Healthbar, 0, healthbarX, healthbarY, (global.player.playerHealth / global.player.playerHealth) * healthbarWidth, healthbarHeight);
+//draw_sprite_stretched(spr_Healthbar, 0, healthbarX, healthbarY, (global.player.playerHealth / global.player.playerHealth) * healthbarWidth, healthbarHeight);
 draw_text(healthbarX + 100, healthbarY, currentHealthString);
 

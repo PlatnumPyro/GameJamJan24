@@ -9,7 +9,6 @@ var topBoundryOffset = 0;
 
 squareTileMap = layer_tilemap_create("TileMap", 0, 0, ts_SquareTiles, mapWidthInTiles, mapHeightInTiles);
 	
-	
 //TODO: place player intelligently
 playerStartPosition = [(mapWidthInTiles * SQUARE_TILE_SIZE)/2, (mapHeightInTiles * SQUARE_TILE_SIZE)/2];
 	

@@ -8,11 +8,13 @@ if (global.font != undefined)
 	
 	for (var i = 0; i < listSize; i++)
 	{
-		draw_set_color(global.textBasetColor);
 		if (i == highlightedChoiceIndex)
 		{
-			draw_set_color(global.textHighlightColor);
+			draw_text_color(viewPosX, viewPosY + i*lineHeight, ds_list_find_value(stringList, i), global.textHighlightColor, global.textHighlightColor, global.textHighlightColor, global.textHighlightColor, 1);
 		}
-		draw_text(viewPosX, viewPosY + i*lineHeight, ds_list_find_value(stringList, i));
+		else
+		{
+			draw_text_color(viewPosX, viewPosY + i*lineHeight, ds_list_find_value(stringList, i), global.textBaseColor, global.textBaseColor, global.textBaseColor, global.textBaseColor, 1);
+		}
 	}
 }
