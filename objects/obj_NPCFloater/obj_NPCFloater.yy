@@ -25,7 +25,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_FloaterAttack",
+    "path": "sprites/spr_FloaterAttack/spr_FloaterAttack.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }
