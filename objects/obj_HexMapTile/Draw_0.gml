@@ -6,6 +6,11 @@ if (isFocused == false || global.isPaused == true)
 {
 	glowPulseNum = 100;
 	draw_sprite_ext(spr_HexTiles, tileType, self.x, self.y, imageScale, imageScale, 0, c_white, 1);
+	if (tileCurseLevel > 0)
+	{
+		draw_sprite_ext(spr_HexTilesCurseOverlay, tileCurseLevel-1, self.x, self.y, imageScale, imageScale, 0, c_white, 1);
+		draw_text(self.x, self.y, string(tileCurseLevel));
+	}
 }
 else
 {
@@ -31,4 +36,9 @@ else
 	
 	draw_sprite_ext(spr_TileFocusGlow, 0, self.x, self.y, focusedImageScale, focusedImageScale, 0, hexGlowColor, pulseAlphaAdjust + 0.45);
 	draw_sprite_ext(spr_HexTiles, tileType, self.x, self.y, focusedImageScale, focusedImageScale, 0, c_white, 1);
+	if (tileCurseLevel > 0)
+	{
+		draw_sprite_ext(spr_HexTilesCurseOverlay, tileCurseLevel-1, self.x, self.y, focusedImageScale, focusedImageScale, 0, c_white, 1);
+		draw_text(self.x, self.y, string(tileCurseLevel));
+	}
 }

@@ -1,0 +1,85 @@
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function scr_AddAdjacentCursedHexTileCoordsToList(pListToAddCoordsTo, pAlreadyUsedCoords, pTileMapCoords, pTileX, pTileY)
+{
+	//check each potential side to be added to the possible list does not already have a tile before adding it to the pool
+	//also check to make sure that the coords being given do not exceed the MAXIMUMs set
+	
+	if (pTileX + 0.75 <= floor(MAXIMUM_MAP_WIDTH_IN_HEX_TILES/2))
+	{
+		//NE
+		if (pTileY - 0.5 >= -floor(MAXIMUM_MAP_HEIGHT_IN_HEX_TILES/2))
+		{
+			if (scr_FindArrayValuesInList(pAlreadyUsedCoords, [pTileX + 0.75, pTileY - 0.5]) == false)
+			{
+				if (scr_FindArrayValuesInList(pTileMapCoords, [pTileX + 0.75, pTileY - 0.5]) == true)
+				{
+					ds_list_add(pListToAddCoordsTo, [pTileX + 0.75, pTileY - 0.5]);
+				}
+			}
+		}
+		
+		//SE
+		if (pTileY + 0.5 <= floor(MAXIMUM_MAP_HEIGHT_IN_HEX_TILES/2))
+		{
+			if (scr_FindArrayValuesInList(pAlreadyUsedCoords, [pTileX + 0.75, pTileY + 0.5]) == false)
+			{
+				if (scr_FindArrayValuesInList(pTileMapCoords, [pTileX + 0.75, pTileY + 0.5]) == true)
+				{
+					ds_list_add(pListToAddCoordsTo, [pTileX + 0.75, pTileY + 0.5]);
+				}
+			}
+		}
+	}
+	
+	if (pTileX - 0.75 >= -floor(MAXIMUM_MAP_WIDTH_IN_HEX_TILES/2))
+	{
+		//NW
+		if (pTileY - 0.5 >= -floor(MAXIMUM_MAP_HEIGHT_IN_HEX_TILES/2))
+		{
+			if (scr_FindArrayValuesInList(pAlreadyUsedCoords, [pTileX - 0.75, pTileY - 0.5]) == false)
+			{
+				if (scr_FindArrayValuesInList(pTileMapCoords, [pTileX - 0.75, pTileY - 0.5]) == true)
+				{
+					ds_list_add(pListToAddCoordsTo, [pTileX - 0.75, pTileY - 0.5]);
+				}
+			}
+		}
+		
+		//SW
+		if (pTileY + 0.5 <= floor(MAXIMUM_MAP_HEIGHT_IN_HEX_TILES/2))
+		{
+			if (scr_FindArrayValuesInList(pAlreadyUsedCoords, [pTileX - 0.75, pTileY + 0.5]) == false)
+			{
+				if (scr_FindArrayValuesInList(pTileMapCoords, [pTileX - 0.75, pTileY + 0.5]) == true)
+				{
+					ds_list_add(pListToAddCoordsTo, [pTileX - 0.75, pTileY + 0.5]);
+				}
+			}
+		}
+	}
+	
+	//N
+	if (pTileY - 1 >= -floor(MAXIMUM_MAP_HEIGHT_IN_HEX_TILES/2))
+	{
+		if (scr_FindArrayValuesInList(pAlreadyUsedCoords, [pTileX, pTileY - 1]) == false)
+		{
+			if (scr_FindArrayValuesInList(pTileMapCoords, [pTileX, pTileY - 1]) == true)
+			{
+				ds_list_add(pListToAddCoordsTo, [pTileX , pTileY - 1]);
+			}
+		}
+	}
+	
+	//S
+	if (pTileY + 1 <= floor(MAXIMUM_MAP_HEIGHT_IN_HEX_TILES/2))
+	{
+		if (scr_FindArrayValuesInList(pAlreadyUsedCoords, [pTileX, pTileY + 1]) == false)
+		{
+			if (scr_FindArrayValuesInList(pTileMapCoords, [pTileX, pTileY + 1]) == true)
+			{
+				ds_list_add(pListToAddCoordsTo, [pTileX , pTileY + 1]);
+			}
+		}
+	}
+}

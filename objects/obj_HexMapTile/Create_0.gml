@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 tileID = undefined;
-tileType = undefined;
+tileType = HEX_TILE_TYPES.FOREST; // defaults to forest because if it cant draw the tile it explodes
 tileLocation = undefined; //the tile positon in units of HEX_TILE_HEIGHT
 tileCurseLevel = undefined;
 tileDifficulty = undefined;
