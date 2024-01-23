@@ -39,5 +39,7 @@ else if (room == room_Overworld)
 
 	//player must be created first so camera does not explode
 	global.player = instance_create_layer(squareMap.playerStartPosition[0], squareMap.playerStartPosition[1], "Instances", obj_Player); //position is a temporary measure
+	global.floater = instance_create_layer(squareMap.playerStartPosition[0] + 500, squareMap.playerStartPosition[1] + 500, "Instances", obj_NPCFloater); //position is a temporary measure)
+	global.snake = instance_create_layer(squareMap.playerStartPosition[0] - 500, squareMap.playerStartPosition[1] - 500, "Instances", obj_NPCSnake); //position is a temporary measure)
 	camera = instance_create_layer(0, 0, "Instances", obj_Camera);
 }
