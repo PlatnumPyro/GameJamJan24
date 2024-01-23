@@ -3,7 +3,9 @@
 
 
 npc_Health = 50;
-walkSpeed = 2.5
+walkSpeed = 2.5;
+attackRange = 50;
+sightRange = 200;
 
 image_speed = 0;
 image_xscale = 0.2;

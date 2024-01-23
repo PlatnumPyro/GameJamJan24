@@ -4,9 +4,9 @@
 var playerX = global.player.x;
 var playerY = global.player.y;
 var directionToPlayer = point_direction(playerX, playerY, x, y);
+var distanceToPlayer = point_distance(x, y, playerX, playerY);
 
-
-if point_distance(x, y, playerX, playerY) < 200
+if distanceToPlayer < attackRange
 {
 	image_speed = 1;
 } else {
@@ -14,11 +14,11 @@ if point_distance(x, y, playerX, playerY) < 200
 	draw_sprite(sprite_index, 0, self.x, self.y);
 }
 
-if point_distance(x, y, playerX, playerY) > 50
+if distanceToPlayer > attackRange
 {
 	move_towards_point(playerX, playerY, walkSpeed);
-} else {
-	speed = 0;
+} else if distanceToPlayer < attackRange {
+	speed = attackSpeed;
 }
 	
 
