@@ -17,6 +17,7 @@ var distanceToCenterOfMap = -1;
 var potentialTileLocations = ds_list_create();
 var actualTileLocations = ds_list_create();
 var tileCoordsOfSelectedPotentialTileLocation = [];
+var tileCoordsOfSelectedTileLocation = []; //used in cursing the tiles
 var listPos = 0;
 
 ds_list_add(potentialTileLocations, [0, 0]);
@@ -67,7 +68,7 @@ for (var i = 0; i < numHexTiles; i++)
 	scr_AddAdjacentHexTileCoordsToList(potentialTileLocations, actualTileLocations, tileX, tileY);
 }
 
-//swapping tile types to make a more coherant map
+//making the map using point radius calculations
 //for (var i = 0; i < numHexTiles; i++)
 //{
 //	currentTile = ds_list_find_value(hexTiles, i);

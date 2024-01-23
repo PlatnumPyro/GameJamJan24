@@ -8,6 +8,10 @@ global.gameManager = self;
 global.isPaused = false;
 global.player = undefined;
 
+global.cursePower = 15; //total levels of curse to spread (each tile getting 1 to 3 of those points)
+global.numCursedTiles = -1;  //to be set by the level generation
+global.maxAllowedCursedTiles = -1;  //to be set by the level generation
+
 clickableList = undefined;
 hexMap = undefined;
 squareMap = undefined;

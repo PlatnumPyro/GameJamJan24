@@ -18,11 +18,34 @@ if (global.isPaused == false)
 				ds_list_add(selectedHexTileData, currentTile.tileDifficulty);
 				ds_list_add(selectedHexTileData, currentTile.tileAreaSize);
 			
-				with (global.gameManager)
+				if (curseInitialized == true && displayedCursePower == global.cursePower)
 				{
-					event_perform(ev_other, ev_user2);
+					with (global.gameManager)
+					{
+						event_perform(ev_other, ev_user2);
+					}
+				}
+				else
+				{
+					curseInitialized = true;
+					curseStartingLocation = currentTile.tileLocation;
+					event_perform(ev_other, ev_user2);//start the curse
 				}
 			}
+		}
+	}
+	
+	if (curseInitialized == true && displayedCursePower < global.cursePower)
+	{
+		if (currentStepSinceLastCurseSpread < numStepsBetweenCurseSpread)
+		{
+			currentStepSinceLastCurseSpread++;
+		}
+		else
+		{
+			currentStepSinceLastCurseSpread = 0;
+			desiredCursePowerToDisplay++;
+			event_perform(ev_other, ev_user2);//start the curse
 		}
 	}
 }
