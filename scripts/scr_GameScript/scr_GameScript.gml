@@ -12,6 +12,12 @@ enum SPEAKERS {
 function scr_GameScript(_text_id){
 
 	switch(_text_id) {
+		
+		case "ingredient-potion":
+			scr_text("A potion!",SPEAKERS.PROTAGONIST)
+			break;
+		
+		
 		case "debug":
 			scr_text("[wave]Hello [rainbow]World[/rainbow]!",SPEAKERS.PROTAGONIST)
 			scr_text("This is textbox 2!")
@@ -24,6 +30,9 @@ function scr_GameScript(_text_id){
 			break;
 		case "debug-no":
 			scr_text("Aww...",SPEAKERS.PROTAGONIST)
+			break;
+		default:
+			scr_text("")
 			break;
 	}
 

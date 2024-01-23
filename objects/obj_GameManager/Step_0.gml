@@ -40,7 +40,7 @@ else
 
 
 //Debug
-if(mouse_check_button_pressed(mb_left) && !instance_exists(obj_dialogbox)) 
+if(keyboard_check_pressed(vk_lshift) && !instance_exists(obj_dialogbox)) 
 {
 	scr_textbox("debug")
 }
