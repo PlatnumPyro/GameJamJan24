@@ -3,6 +3,7 @@
 
 
 npc_Health = 50;
+walkSpeed = 3.5;
 
 image_speed = 0;
 image_xscale = 0.2;
