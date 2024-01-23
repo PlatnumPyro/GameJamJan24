@@ -4,6 +4,7 @@
 
 npc_Health = 50;
 walkSpeed = 2.5;
+attackSpeed = walkSpeed * 0.5;
 attackRange = 50;
 sightRange = 200;
 
