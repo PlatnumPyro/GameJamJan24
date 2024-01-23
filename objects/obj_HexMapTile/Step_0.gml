@@ -3,15 +3,18 @@
 
 if (point_distance(mouse_x, mouse_y, self.x, self.y) < HEX_TILE_HEIGHT/2)
 {
-	if (isFocused == false)
+	if (isFocused == false && global.currentMaximumAllowedCurseTileSelection >= tileCurseLevel && tileFocusDisabled == false)
 	{
-		with (tileMap)
+		if (allowNonCursedFocus == true || (allowNonCursedFocus == false && tileCurseLevel > 0))
 		{
-			event_perform(ev_other, ev_user1);
-		}
+			with (tileMap)
+			{
+				event_perform(ev_other, ev_user1);
+			}
 
-		isFocused = true;
-		depth = -10;
+			isFocused = true;
+			depth = -10;
+		}
 	}
 }
 
