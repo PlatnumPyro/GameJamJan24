@@ -2,13 +2,12 @@ if (global.font != undefined)
 {
 	var fontInfo = font_get_info(global.font);
 	var lineHeight = fontInfo.size + verticalChoicePadding;
-	var ascenderHeight = fontInfo.ascender;
 	
 	highlightedChoiceIndex = -1;
 	
 	if (abs(viewPosX - display_mouse_get_x()) < halfSelectionWidth) 
 	{
-		var relativeMouseYPos = display_mouse_get_y() - (viewPosY + ascenderHeight + round(verticalChoicePadding/2));
+		var relativeMouseYPos = display_mouse_get_y() - (viewPosY + round(verticalChoicePadding * 1.2));
 	
 		highlightedChoiceIndex = round((relativeMouseYPos-(lineHeight/2))/lineHeight) +1;
 	
