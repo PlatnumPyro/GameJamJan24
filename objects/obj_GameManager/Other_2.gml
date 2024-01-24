@@ -27,4 +27,7 @@ ds_list_add(areaSizeMappedToEnum, [MAP_SIZE_LARGE_WIDTH_IN_TILES, MAP_SIZE_LARGE
 //IMPORTANT!!  will randomize the seed so you dont get the same game every time
 randomize();
 
+//load the game
+event_perform(ev_other, ev_user4);
+
 

@@ -3,6 +3,9 @@ keyListenedPressed = undefined;
 keyToBeChanged = undefined;
 textbox = undefined;
 hud = undefined;
+hexTileLoadData = undefined;
+
+curseStats = [0,0,0];
 
 var camera = undefined;
 var keycode = undefined;

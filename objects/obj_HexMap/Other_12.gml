@@ -21,6 +21,7 @@ var level1CursedTiles = scr_GetListOfCursedTiles(hexTiles, 1);
 var level2CursedTiles = scr_GetListOfCursedTiles(hexTiles, 2);
 var level3CursedTiles = scr_GetListOfCursedTiles(hexTiles, 3);
 var needsToSpread = false;
+var canSpread = true;
 
 //create the potential positions list using the list of curse tiles
 listSize = ds_list_size(cursedTileLocations);
@@ -38,10 +39,15 @@ if (displayedCursePower == 0)
 	needsToSpread = true;
 }
 
+if (ds_list_size(cursedTilePotentialSpreadLocations) == 0)
+{
+	canSpread = false;
+}
+
 while (displayedCursePower < desiredCursePowerToDisplay)
 {
 	//grab a random potentialTile to make into an actualTile
-	if (needsToSpread == true)
+	if (needsToSpread == true && canSpread == true)
 	{
 		needsToSpread = false;
 		listSize = ds_list_size(cursedTilePotentialSpreadLocations);
@@ -63,12 +69,16 @@ while (displayedCursePower < desiredCursePowerToDisplay)
 		
 		ds_list_add(cursedTileLocations, [tileX, tileY]);
 		scr_AddAdjacentCursedHexTileCoordsToList(cursedTilePotentialSpreadLocations, cursedTileLocations, actualTileLocations, tileX, tileY);
+		if (ds_list_size(cursedTilePotentialSpreadLocations) == 0)
+		{
+			canSpread = false;
+		}
 	}
-	else if (ds_list_size(level1CursedTiles) < (ds_list_size(level2CursedTiles) * numLevel1sForEachLevel2)) //adds a 1
+	else if (ds_list_size(level1CursedTiles) < (ds_list_size(level2CursedTiles) * numLevel1sForEachLevel2) && canSpread == true) //adds a 1
 	{
 		needsToSpread = true;
 	}
-	else if (ds_list_size(level2CursedTiles) <= (ds_list_size(level3CursedTiles) * numLevel2sForEachLevel3)) //updates a 1 to a 2
+	else if ((ds_list_size(level2CursedTiles) <= (ds_list_size(level3CursedTiles) * numLevel2sForEachLevel3)) || (canSpread == false && ds_list_size(level1CursedTiles) > 0)) //updates a 1 to a 2
 	{
 		listSize = ds_list_size(level1CursedTiles);
 		listPos = irandom(listSize-1);
