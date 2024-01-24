@@ -7,8 +7,6 @@ hexTileLoadData = undefined;
 
 curseStats = [0,0,0];
 
-curseStats = [0,0,0]
-
 var camera = undefined;
 var keycode = undefined;
 var keyMenuLabel = undefined;

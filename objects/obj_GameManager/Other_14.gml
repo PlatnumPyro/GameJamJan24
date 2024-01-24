@@ -34,7 +34,7 @@ if (file_exists("saveData.txt"))
 
 	for (var i = 0; i < length; i++)
 	{
-		curseStats[i] = array_shift(data);
+		curseStats[i] = real(array_shift(data));
 	}
 	
 	file_text_close(saveFile);

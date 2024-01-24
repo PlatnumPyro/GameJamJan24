@@ -31,9 +31,12 @@ else {
 		if place_meeting(mouse_x,mouse_y,obj_minigameCauldron) {
 			self.y = -100
 			
-			obj_GameManager.curseStats[0] += stats[0]
-			obj_GameManager.curseStats[1] += stats[1]
-			obj_GameManager.curseStats[2] += stats[2]
+			show_debug_message(string(global.gameManager.curseStats[0]))
+			show_debug_message(string(stats[0]))
+			
+			global.gameManager.curseStats[0] += stats[0];
+			global.gameManager.curseStats[1] += stats[1];
+			global.gameManager.curseStats[2] += stats[2];
 			
 			obj_MinigameManager.items++
 			
