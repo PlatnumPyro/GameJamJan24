@@ -17,4 +17,6 @@ option_id[0] = -1
 option_number = 0
 option_position = 0
 
+room_id = undefined
+
 global.isPaused = true

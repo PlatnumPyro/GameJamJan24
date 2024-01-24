@@ -24,7 +24,7 @@ if(!is_undefined(character_sprite)) {
 }
 
 //------------ Draw Text
-draw_sprite(spr_dialogbox,0,0,CAMERA_VIEWPORT_HEIGHT-256)
+draw_sprite_ext(spr_dialogbox,0,0,CAMERA_VIEWPORT_HEIGHT-256,1,1,0,c_white,1)
 
 draw_set_alpha(1)
 draw_set_color(c_white)

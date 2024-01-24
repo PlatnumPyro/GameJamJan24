@@ -16,6 +16,7 @@ function scr_GameScript(_text_id){
 		// Pressing Start Game
 		case "progress-start":
 			scr_text("Jesse we have to cook!",SPEAKERS.PROTAGONIST)
+			scr_room(room_Minigame)
 			break;
 		// Potion is finished
 		case "progress-potion":

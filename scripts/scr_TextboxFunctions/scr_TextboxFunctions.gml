@@ -17,6 +17,10 @@ function scr_option(_option, _option_id) {
 	option_number++
 }
 
+function scr_room(_room_id) {
+	room_id = _room_id
+}
+
 function scr_textbox(_text_id)
 {
 	var _textbox = noone

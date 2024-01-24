@@ -7,3 +7,6 @@ maxItems = 5
 
 textbox = scr_textbox("potion-five")
 textbox.depth = 1
+
+depth=-10
+opacity = 1

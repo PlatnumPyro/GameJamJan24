@@ -106,6 +106,7 @@
     {"id":{"name":"scribble_font_get_default","path":"scripts/scribble_font_get_default/scribble_font_get_default.yy",},},
     {"id":{"name":"__scribble_get_generator_state","path":"scripts/__scribble_get_generator_state/__scribble_get_generator_state.yy",},},
     {"id":{"name":"scribble_font_combine","path":"scripts/scribble_font_combine/scribble_font_combine.yy",},},
+    {"id":{"name":"obj_minigamePrologue","path":"objects/obj_minigamePrologue/obj_minigamePrologue.yy",},},
     {"id":{"name":"spr_ingredient8","path":"sprites/spr_ingredient8/spr_ingredient8.yy",},},
     {"id":{"name":"scribble_font_bake_outline","path":"scripts/scribble_font_bake_outline/scribble_font_bake_outline.yy",},},
     {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
@@ -203,6 +204,7 @@
     {"id":{"name":"string_length_scribble","path":"scripts/string_length_scribble/string_length_scribble.yy",},},
     {"id":{"name":"__shd_scribble_msdf","path":"shaders/__shd_scribble_msdf/__shd_scribble_msdf.yy",},},
     {"id":{"name":"__scribble_get_krutidev_lookup_map","path":"scripts/__scribble_get_krutidev_lookup_map/__scribble_get_krutidev_lookup_map.yy",},},
+    {"id":{"name":"room_MinigamePrologue","path":"rooms/room_MinigamePrologue/room_MinigamePrologue.yy",},},
     {"id":{"name":"__scribble_effects_maps_initialize","path":"scripts/__scribble_effects_maps_initialize/__scribble_effects_maps_initialize.yy",},},
     {"id":{"name":"scr_InitializeKeyboardControlArray","path":"scripts/scr_InitializeKeyboardControlArray/scr_InitializeKeyboardControlArray.yy",},},
     {"id":{"name":"obj_NPCSnake","path":"objects/obj_NPCSnake/obj_NPCSnake.yy",},},
@@ -259,6 +261,7 @@
     {"roomId":{"name":"room_Minigame","path":"rooms/room_Minigame/room_Minigame.yy",},},
     {"roomId":{"name":"room_HexWorldMap","path":"rooms/room_HexWorldMap/room_HexWorldMap.yy",},},
     {"roomId":{"name":"room_Overworld","path":"rooms/room_Overworld/room_Overworld.yy",},},
+    {"roomId":{"name":"room_MinigamePrologue","path":"rooms/room_MinigamePrologue/room_MinigamePrologue.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
