@@ -3,7 +3,7 @@
 
 letterCount=0
 timer=0
-timerSpeed=5
+timerSpeed=3
 
 speaker = 0
 speaker_names = ["", "Protagonist","Fire","Water","Lightning"]

@@ -10,7 +10,7 @@ if (timer = timerSpeed && letterCount <= string_length(text[currentPage])) {
 }
 
 
-if(continueButton) {
+if(continueButton && room!=room_Minigame) {
 	if (letterCount < string_length(text[currentPage])) {
 		letterCount = string_length(text[currentPage])
 	}

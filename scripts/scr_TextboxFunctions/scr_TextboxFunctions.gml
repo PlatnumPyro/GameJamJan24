@@ -19,10 +19,16 @@ function scr_option(_option, _option_id) {
 
 function scr_textbox(_text_id)
 {
+	var _textbox = noone
+	
 	if (layer_exists("GUI"))
 	{
 		with(instance_create_layer(0,0,"GUI",obj_dialogbox)) {
 			scr_GameScript(_text_id)
+			
+			_textbox = id
 		}
 	}
+	
+	return _textbox
 }

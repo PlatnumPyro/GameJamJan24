@@ -4,7 +4,7 @@ keyToBeChanged = undefined;
 textbox = undefined;
 hud = undefined;
 
-curse_stats = [0,0,0]
+curseStats = [0,0,0]
 
 var camera = undefined;
 var keycode = undefined;
