@@ -16,6 +16,8 @@ switch (speaker) {
 		break;
 	case 4:
 		character_sprite = spr_LightningDialogue
+	default:
+		character_sprite = undefined
 		break;
 }
 
