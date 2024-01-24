@@ -1,4 +1,4 @@
-hexTiles = undefined;
+hexTiles = ds_list_create();
 selectedHexTileData = undefined;
 numHexTiles = -1;
 
@@ -16,3 +16,5 @@ curseInitialized = false;
 // we want a ratio of tiles   6 ones | 3 twos | 1 three  and spread when its out of wack
 numLevel1sForEachLevel2 = 2;
 numLevel2sForEachLevel3 = 3;
+
+hexTileLoadData = undefined; //for loading from data

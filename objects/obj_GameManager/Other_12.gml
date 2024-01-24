@@ -9,6 +9,9 @@ if (hexMap != undefined)
 
 if (room_exists(ROOM_INDEX.OVERWORLD))
 {
+	//save the game
+	event_perform(ev_other, ev_user3);
+	
 	//prep the room
 	areaSizeEnum = ds_list_find_value(selectedHexTileData, HEX_TILE_DATA.AREA_SIZE);
 	areaSize = ds_list_find_value(areaSizeMappedToEnum, areaSizeEnum);

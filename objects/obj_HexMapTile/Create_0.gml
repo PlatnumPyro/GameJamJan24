@@ -13,6 +13,8 @@ glowPulseNum = 100;
 glowIsFadingIn = true;
 
 tileMap = obj_HexMap;  //to be set by the map itself for event calling
+tileFocusDisabled = false;
+allowNonCursedFocus = true; // do we want the player to click a tile with level 0 curse
 
 //because the height is also the shorter side of the square, 
 //we do a little additional hexagon math to make the scale work

@@ -11,11 +11,23 @@ if (room == room_first)
 }
 else if(room == room_HexWorldMap)
 {
-	hexMap = instance_create_layer(room_width/2, room_height/2, "Instances", obj_HexMap);
-	hexMap.numHexTiles = irandom_range(MINIMUM_NUM_LEVELS, MAXIMUM_NUM_LEVELS);
-	with (hexMap)
+	if (hexTileLoadData == undefined)
 	{
-		event_perform(ev_other, ev_user0);
+		hexMap = instance_create_layer(room_width/2, room_height/2, "Instances", obj_HexMap);
+		hexMap.numHexTiles = irandom_range(MINIMUM_NUM_LEVELS, MAXIMUM_NUM_LEVELS);
+		with (hexMap)
+		{
+			event_perform(ev_other, ev_user0);
+		}
+	}
+	else
+	{
+		hexMap = instance_create_layer(room_width/2, room_height/2, "Instances", obj_HexMap);
+		hexMap.hexTileLoadData = hexTileLoadData;
+		with (hexMap)
+		{
+			event_perform(ev_other, ev_user3);
+		}
 	}
 }
 else if (room == room_Overworld)

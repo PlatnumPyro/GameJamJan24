@@ -1,8 +1,6 @@
 /// @description generate the map
 /// @description creates the map
 
-hexTiles = ds_list_create();
-
 // we create the first tile manually as we base all the others off this ones position
 var currentTile = undefined;
 var tileX = 0;
