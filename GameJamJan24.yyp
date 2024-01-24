@@ -68,6 +68,7 @@
     {"id":{"name":"obj_HUD","path":"objects/obj_HUD/obj_HUD.yy",},},
     {"id":{"name":"scribble_typewriter_add_event","path":"scripts/scribble_typewriter_add_event/scribble_typewriter_add_event.yy",},},
     {"id":{"name":"obj_Tree","path":"objects/obj_Tree/obj_Tree.yy",},},
+    {"id":{"name":"scr_AddAdjacentCursedSquareTileCoordsToList","path":"scripts/scr_AddAdjacentCursedSquareTileCoordsToList/scr_AddAdjacentCursedSquareTileCoordsToList.yy",},},
     {"id":{"name":"scribble_msdf_thickness_offset","path":"scripts/scribble_msdf_thickness_offset/scribble_msdf_thickness_offset.yy",},},
     {"id":{"name":"scribble_fallback_bulletpoint","path":"sprites/scribble_fallback_bulletpoint/scribble_fallback_bulletpoint.yy",},},
     {"id":{"name":"scribble_markdown_set_styles","path":"scripts/scribble_markdown_set_styles/scribble_markdown_set_styles.yy",},},

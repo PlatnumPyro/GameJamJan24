@@ -1,5 +1,6 @@
 var areaSizeEnum = -1;
 var areaSize = undefined;
+var curseLevel = 0;
 
 if (room == room_first)
 {
@@ -37,10 +38,17 @@ else if (room == room_Overworld)
 	//TODO: tailor the map data to the difficulty
 	areaSizeEnum = ds_list_find_value(selectedHexTileData, HEX_TILE_DATA.AREA_SIZE);
 	areaSize = ds_list_find_value(areaSizeMappedToEnum, areaSizeEnum);
+	curseLevel = ds_list_find_value(selectedHexTileData, HEX_TILE_DATA.CURSE_LEVEL);
+	
 	squareMap.mapWidthInTiles = areaSize[0];
 	squareMap.mapHeightInTiles = areaSize[1];
 	
 	squareMap.mapStyle = ds_list_find_value(selectedHexTileData, HEX_TILE_DATA.TYPE);
+	squareMap.curseStartingLocations = curseLevel;
+	
+	global.currentSquareTilesToCurse = curseLevel * 100; 
+	global.maximumAllowedSquareTilesToCurse = (curseLevel * 100) + 100; 
+	currentHexTileSelectedCurseLevel = curseLevel;
 	
 	with (squareMap)
 	{

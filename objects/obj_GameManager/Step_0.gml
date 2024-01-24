@@ -44,3 +44,14 @@ if(keyboard_check_pressed(vk_lshift) && !instance_exists(obj_dialogbox))
 {
 	scr_textbox("debug")
 }
+
+//Timings for the curse
+if (currentCurseSpreadStep == stepsPerCurseSpreadEvent)
+{
+	currentCurseSpreadStep = 0;
+	event_perform(ev_other, ev_user5);
+}
+else
+{
+	currentCurseSpreadStep++;
+}
