@@ -258,10 +258,10 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"room_TitleScreen","path":"rooms/room_TitleScreen/room_TitleScreen.yy",},},
+    {"roomId":{"name":"room_MinigamePrologue","path":"rooms/room_MinigamePrologue/room_MinigamePrologue.yy",},},
     {"roomId":{"name":"room_Minigame","path":"rooms/room_Minigame/room_Minigame.yy",},},
     {"roomId":{"name":"room_HexWorldMap","path":"rooms/room_HexWorldMap/room_HexWorldMap.yy",},},
     {"roomId":{"name":"room_Overworld","path":"rooms/room_Overworld/room_Overworld.yy",},},
-    {"roomId":{"name":"room_MinigamePrologue","path":"rooms/room_MinigamePrologue/room_MinigamePrologue.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

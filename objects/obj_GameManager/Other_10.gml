@@ -15,7 +15,7 @@ if (clickableList != undefined)
 		switch (adjustedOptionString)
 		{
 			case "Start Game":
-				room_goto(room_MinigamePrologue);
+				room_goto(ROOM_INDEX.MINIGAME_PROLOGUE);
 				break;
 				
 			case "Skip Minigame (remove me)":
