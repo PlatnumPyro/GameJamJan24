@@ -2,6 +2,11 @@
 // You can write your code in this editor
 
 if (curseParticles != tileCurseLevel) {
+	
+	if(particleSystem!=undefined && curseParticles != 0) {
+		part_emitter_destroy_all(particleSystem);
+	}
+	
 	//particle_stream
 	particleSystem = part_system_create();
 	part_system_draw_order(particleSystem, true);
