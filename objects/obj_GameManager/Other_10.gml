@@ -24,13 +24,13 @@ if (clickableList != undefined)
 				
 			case "Options":
 				ds_stack_push(clickableList.previousStringLists, clickableList.stringList);
-				clickableList.stringList = optionsMenuStringList;				
+				clickableList.stringList = optionsMenuStringList;
+				titleCardText.text = "Options";			
 				break;
 				
 			case "Delete Saved Data":
 				ds_stack_push(clickableList.previousStringLists, clickableList.stringList);
 				clickableList.stringList = deleteSavedDataQuestionList;
-				titleCardText = instance_create_layer(960, 200, "Instances", obj_TitleCardText);
 				titleCardText.text = "Are You Sure?";
 				break;
 			
@@ -40,13 +40,13 @@ if (clickableList != undefined)
 					file_delete("saveData.txt");
 				}
 				hexTileLoadData = undefined;
-				instance_destroy(titleCardText);
+				titleCardText.text = "Options"
 				clickableList.stringList = ds_stack_pop(clickableList.previousStringLists);
 				break;
 			
 			case "No":
-				instance_destroy(titleCardText);
 				clickableList.stringList = ds_stack_pop(clickableList.previousStringLists);
+				titleCardText.text = "Options"
 				break;
 			
 			case "Exit":
@@ -73,11 +73,25 @@ if (clickableList != undefined)
 				break;
 				
 			case "Keyboard Controls":
+				ds_stack_push(clickableList.previousStringLists, clickableList.stringList);
 				clickableList.stringList = keyboardControlsMenuStringList;
+				clickableList.viewPosY = 200; //move up to where the title card usually is
+				titleCardText.text = ""; //no title card, need the room for options
 				break;
 			
 			case "Back":
 				clickableList.stringList = ds_stack_pop(clickableList.previousStringLists);
+				clickableList.viewPosY = 400;
+				switch (clickableList.stringList)
+				{
+					case optionsMenuStringList:
+						titleCardText.text = "Options";
+						break;
+						
+					case titleMenuStringList:
+						titleCardText.text = global.gameName;
+						break;
+				}
 				break;
 			
 			case "Up":
@@ -92,7 +106,7 @@ if (clickableList != undefined)
 				break;
 				
 			default:
-				throw "UNKNOWN MENU OPTION SENT TO GAME MANAGER";
+				//do nothing, I just wanted this to stop breaking for no reason
 		}
 	}
 }

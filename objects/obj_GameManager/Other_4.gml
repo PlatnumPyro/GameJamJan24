@@ -5,6 +5,8 @@ var curseLevel = 0;
 if (room == room_first)
 {
 	clickableList = instance_create_layer(0, 0, "Instances", obj_ClickableStringList);
+	titleCardText = instance_create_layer(960, 200, "Instances", obj_TitleCardText);
+	titleCardText.text = global.gameName;
 	
 	clickableList.viewPosX = room_width/2;
 	clickableList.viewPosY = 400;
