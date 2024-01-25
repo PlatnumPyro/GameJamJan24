@@ -101,4 +101,5 @@ function scr_KeycodeMapCreate()
 	ds_map_add(global.keyLookupMap, vk_up, "Up Arrow");
 	ds_map_add(global.keyLookupMap, vk_down, "Down Arrow");
 	ds_map_add(global.keyLookupMap, vk_shift, "Shift");
+	ds_map_add(global.keyLookupMap, vk_control, "Control");
 }

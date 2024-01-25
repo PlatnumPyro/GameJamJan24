@@ -25,8 +25,12 @@ switch (keyToBeChanged)
 		global.keyboardControlArray[KEYBOARD_CONTROLS.ESCAPE] = keyListenedPressed;
 		break;
 		
-	case "Full Screen Toggle":
-		global.keyboardControlArray[KEYBOARD_CONTROLS.FULL_SCREEN_WINDOW] = keyListenedPressed;
+	case "Use Ability":
+		global.keyboardControlArray[KEYBOARD_CONTROLS.USE_ABILITY] = keyListenedPressed;
+		break;
+		
+	case "Cycle Ability":
+		global.keyboardControlArray[KEYBOARD_CONTROLS.CYCLE_ABILITY] = keyListenedPressed;
 		break;
 }
 

@@ -99,7 +99,9 @@ if (clickableList != undefined)
 			case "Left":
 			case "Right":
 			case "Pause":
-			case "Full Screen Toggle":
+			case "Run":
+			case "Use Ability":
+			case "Cycle Ability":
 				ds_list_replace(keyboardControlsMenuStringList, ds_list_find_index(keyboardControlsMenuStringList, optionString), "Press Any Key to Rebind");
 				keyToBeChanged = adjustedOptionString;
 				listeningForKeyboardInput = true;

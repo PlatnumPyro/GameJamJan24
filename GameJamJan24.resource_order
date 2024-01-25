@@ -1,4 +1,6 @@
 {
   "FolderOrderSettings": [],
-  "ResourceOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"obj_TitleCardText","order":1,"path":"objects/obj_TitleCardText/obj_TitleCardText.yy",},
+  ],
 }

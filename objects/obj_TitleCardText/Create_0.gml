@@ -1,6 +1,5 @@
-/// @description assigning the string to draw
+/// @description 
+
 text = undefined;
 color = c_white;
-scale = .5;
-depth = -200;
-
+scale = 0.5;

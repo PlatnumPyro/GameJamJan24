@@ -5,6 +5,8 @@ if (listeningForKeyboardInput == true)
 		listeningForKeyboardInput = false;
 		keyListenedPressed = keyboard_lastkey;
 		event_perform(ev_other, ev_user1);
+		
+		show_debug_message("keycode of last key: {0}", keyListenedPressed);
 	}
 	return;	
 }
@@ -31,13 +33,7 @@ else
 			}
 		}
 	}
-
-	if (keyboard_check_pressed(global.keyboardControlArray[KEYBOARD_CONTROLS.FULL_SCREEN_WINDOW]))
-	{
-		//TODO currently does nothing
-	}
 }
-
 
 //Debug
 if(keyboard_check_pressed(vk_lshift) && !instance_exists(obj_dialogbox)) 

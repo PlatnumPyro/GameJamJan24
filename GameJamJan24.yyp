@@ -106,6 +106,7 @@
     {"id":{"name":"scribble_flush_everything","path":"scripts/scribble_flush_everything/scribble_flush_everything.yy",},},
     {"id":{"name":"__scribble_font_add_all_from_project","path":"scripts/__scribble_font_add_all_from_project/__scribble_font_add_all_from_project.yy",},},
     {"id":{"name":"scribble_refresh_everything","path":"scripts/scribble_refresh_everything/scribble_refresh_everything.yy",},},
+    {"id":{"name":"obj_TitleCardText","path":"objects/obj_TitleCardText/obj_TitleCardText.yy",},},
     {"id":{"name":"scribble_font_bake_shadow","path":"scripts/scribble_font_bake_shadow/scribble_font_bake_shadow.yy",},},
     {"id":{"name":"scr_AddAdjacentHexTileCoordsToList","path":"scripts/scr_AddAdjacentHexTileCoordsToList/scr_AddAdjacentHexTileCoordsToList.yy",},},
     {"id":{"name":"scribble_font_get_default","path":"scripts/scribble_font_get_default/scribble_font_get_default.yy",},},
