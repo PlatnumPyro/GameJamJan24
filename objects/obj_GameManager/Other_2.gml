@@ -1,6 +1,7 @@
 global.currentRoom = room_first;
 //global.font = font_placeholderMonospaceFont;
 global.font = font_add("NiceSugar.otf", 32, true, false, 32, 128); //TODO change this to the font we select
+global.fontButCentered = font_add("NiceSugar.otf", 32, true, false, 32, 128);
 
 //font_enable_sdf(global.font, true);
 global.textBaseColor = c_white;
@@ -9,15 +10,18 @@ global.gameManager = self;
 global.isPaused = false;
 global.player = undefined;
 
-global.cursePower = 15; //total levels of curse to spread (each tile getting 1 to 3 of those points)
-global.numCursedTiles = -1;  //to be set by the square level generation
-global.maxAllowedCursedTiles = -1;  //to be set by the square level generation
+global.cursePower = 15; //total levels of curse to spread on HexTiles (each tile getting 1 to 3 of those points)
+global.currentSquareTilesToCurse = 0; //set in room start with the info from the hex tile selected
+global.maximumAllowedSquareTilesToCurse = 0; //set in room start with the info from the hex tile selected
 global.currentMaximumAllowedCurseTileSelection = 1;
 
 clickableList = undefined;
 hexMap = undefined;
 squareMap = undefined;
 selectedHexTileData = undefined;
+stepsPerCurseSpreadEvent = 600;
+currentCurseSpreadStep = 0;
+currentHexTileSelectedCurseLevel = 0;
 
 areaSizeMappedToEnum = ds_list_create();
 ds_list_add(areaSizeMappedToEnum, [MAP_SIZE_SMALL_WIDTH_IN_TILES, MAP_SIZE_SMALL_HEIGHT_IN_TILES]);

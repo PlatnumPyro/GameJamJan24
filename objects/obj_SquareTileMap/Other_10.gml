@@ -186,3 +186,23 @@ else if (mapStyle == HEX_TILE_TYPES.BEACH)
 		}
 	}
 }
+
+
+//ThE CURSE
+var selectedTileX = -1;
+var selectedTileY = -1;
+for (var i = 0; i < curseStartingLocations; i++)
+{
+	//while its highly unlikely that we pick the same tile multiple times, cant rule out the possibility
+	do
+	{
+		selectedTileX = irandom(mapWidthInTiles-1);
+		selectedTileY = irandom(mapHeightInTiles-1);
+	}
+	until (scr_FindArrayValuesInList(cursedTileLocations, [selectedTileX, selectedTileY]) == false)
+	
+	
+	ds_list_add(cursedTileLocations, [selectedTileX, selectedTileY]);
+}
+
+event_perform(ev_other, ev_user1);
