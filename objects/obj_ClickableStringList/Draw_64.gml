@@ -1,3 +1,11 @@
+
+if (global.isPaused == true || global.levelFailed == true)
+{
+	draw_set_alpha(0.7);
+	draw_rectangle_color(0, 0, CAMERA_VIEWPORT_WIDTH, CAMERA_VIEWPORT_HEIGHT, c_black, c_black, c_black, c_black, false);
+	draw_set_alpha(1);
+}
+
 if (global.font != undefined)
 {
 	var listSize = ds_list_size(stringList);

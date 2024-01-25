@@ -7,3 +7,5 @@ verticalChoicePadding = 50;
 // where on the screen this is being placed as self.x and self.y would not work with scrolling camera
 viewPosX = 0;
 viewPosY = 0;
+
+self.depth = -105;//slightly above the GameManager

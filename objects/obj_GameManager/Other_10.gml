@@ -26,6 +26,28 @@ if (clickableList != undefined)
 				ds_stack_push(clickableList.previousStringLists, clickableList.stringList);
 				clickableList.stringList = optionsMenuStringList;				
 				break;
+				
+			case "Delete Saved Data":
+				ds_stack_push(clickableList.previousStringLists, clickableList.stringList);
+				clickableList.stringList = deleteSavedDataQuestionList;
+				titleCardText = instance_create_layer(960, 200, "Instances", obj_TitleCardText);
+				titleCardText.text = "Are You Sure?";
+				break;
+			
+			case "Yes":
+				if (file_exists("saveData.txt"))
+				{
+					file_delete("saveData.txt");
+				}
+				hexTileLoadData = undefined;
+				instance_destroy(titleCardText);
+				clickableList.stringList = ds_stack_pop(clickableList.previousStringLists);
+				break;
+			
+			case "No":
+				instance_destroy(titleCardText);
+				clickableList.stringList = ds_stack_pop(clickableList.previousStringLists);
+				break;
 			
 			case "Exit":
 				game_end();
@@ -39,21 +61,17 @@ if (clickableList != undefined)
 			
 			case "Return to Title":
 				global.isPaused = false;
+				global.levelFailed = false;
 				instance_destroy(clickableList);
 				clickableList = undefined;
 				room_goto(ROOM_INDEX.TITLE);
 				break;
 				
-			case "Display":
-				ds_stack_push(clickableList.previousStringLists, clickableList.stringList);
-				clickableList.stringList = displayMenuStringList;
+			case "Continue":
+				global.isPaused = false;
+				room_goto(ROOM_INDEX.HEX_WORLD_MAP);
 				break;
-			
-			case "Sound":
-				ds_stack_push(clickableList.previousStringLists, clickableList.stringList);
-				clickableList.stringList = soundMenuStringList;
-				break;
-			
+				
 			case "Keyboard Controls":
 				clickableList.stringList = keyboardControlsMenuStringList;
 				break;

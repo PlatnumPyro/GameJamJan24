@@ -46,12 +46,57 @@ if(keyboard_check_pressed(vk_lshift) && !instance_exists(obj_dialogbox))
 }
 
 //Timings for the curse
-if (currentCurseSpreadStep == stepsPerCurseSpreadEvent)
+if (global.isPaused == false)
 {
-	currentCurseSpreadStep = 0;
-	event_perform(ev_other, ev_user5);
+	if (currentCurseSpreadStep == stepsPerCurseSpreadEvent)
+	{
+		currentCurseSpreadStep = 0;
+		event_perform(ev_other, ev_user5);
+	}
+	else
+	{
+		currentCurseSpreadStep++;
+	}
 }
-else
+
+//fail states for the game world, we might want to give them a different message if they failed in a different way
+if (room == ROOM_INDEX.OVERWORLD)
 {
-	currentCurseSpreadStep++;
+	if (global.levelFailed == false && global.isPaused == false)
+	{
+		if (global.currentSquareTilesToCurse >= global.maximumAllowedSquareTilesToCurse && (global.totalLevelsFailed < global.maximumAllowedFailedLevels))
+		{
+			global.levelFailed = true;
+			global.isPaused = true;
+		
+			clickableList = instance_create_layer(0, 0, "Instances", obj_ClickableStringList);
+				
+			clickableList.viewPosX = 960;
+			clickableList.viewPosY = 800;
+			clickableList.stringList = levelFailedStringList;
+			titleCardText = instance_create_layer(960, 200, "Instances", obj_TitleCardText);
+			titleCardText.text = "Level Consumed by the Curse";
+		}
+		else if (global.player.playerHealth <= 0 && (global.totalLevelsFailed < global.maximumAllowedFailedLevels))
+		{
+			global.levelFailed = true;
+			global.isPaused = true;
+		
+			clickableList = instance_create_layer(0, 0, "Instances", obj_ClickableStringList);
+			clickableList.viewPosX = 960;
+			clickableList.viewPosY = 400;
+			clickableList.stringList = levelFailedStringList;
+		}
+		else if (((global.currentSquareTilesToCurse >= global.maximumAllowedSquareTilesToCurse) || (global.player.playerHealth <= 0)) && global.totalLevelsFailed >= global.maximumAllowedFailedLevels)// game over
+		{
+			global.levelFailed = true;
+			global.isPaused = true;
+		
+			clickableList = instance_create_layer(0, 0, "Instances", obj_ClickableStringList);
+		
+			clickableList.viewPosX = 960;
+			clickableList.viewPosY = 400;
+			clickableList.stringList = gameOverStringList;
+		}
+	}
 }

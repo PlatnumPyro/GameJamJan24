@@ -4,8 +4,7 @@ keyToBeChanged = undefined;
 textbox = undefined;
 hud = undefined;
 hexTileLoadData = undefined;
-
-curseStats = [0,0,0];
+titleCardText = undefined;
 
 var camera = undefined;
 var keycode = undefined;
@@ -19,15 +18,17 @@ scr_KeycodeMapCreate();
 pauseMenuStringList = ds_list_create();
 titleMenuStringList = ds_list_create();
 optionsMenuStringList = ds_list_create();
-displayMenuStringList = ds_list_create();
-soundMenuStringList = ds_list_create();
 keyboardControlsMenuStringList = ds_list_create();
+levelFailedStringList = ds_list_create();
+gameOverStringList = ds_list_create();
+deleteSavedDataQuestionList = ds_list_create();
 
 ds_list_add(pauseMenuStringList, "Resume", "Return to Title");
 ds_list_add(titleMenuStringList, "Start Game", "Skip Minigame (remove me)", "Options", "Exit");
-ds_list_add(optionsMenuStringList, "Display", "Sound", "Keyboard Controls", "Back");
-ds_list_add(displayMenuStringList, "Resolution", "Option 2", "Option 3", "Option 4", "Back");	
-ds_list_add(soundMenuStringList, "Music Volume", "Sound Effects Volume", "Dialog Sounds Volume", "Back");
+ds_list_add(optionsMenuStringList, "Keyboard Controls", "Delete Saved Data", "Back");
+ds_list_add(deleteSavedDataQuestionList, "Yes", "No");
+ds_list_add(levelFailedStringList, "Continue", "Return to Title");
+ds_list_add(gameOverStringList, "Return to Title");
 
 for (var i = 0; i < array_length(global.keyboardControlArray); i++)
 {

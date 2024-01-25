@@ -25,9 +25,16 @@ else if(room == room_HexWorldMap)
 	{
 		hexMap = instance_create_layer(room_width/2, room_height/2, "Instances", obj_HexMap);
 		hexMap.hexTileLoadData = hexTileLoadData;
+		hexMap.curseInitialized = true;
 		with (hexMap)
 		{
 			event_perform(ev_other, ev_user3);
+		}
+		if (global.levelFailed == true)
+		{
+			global.cursePower += levelFailedCursePowerPenalty;
+			global.levelFailed = false;
+			hexMap.currentStepSinceLastCurseSpread = hexMap.numStepsBetweenCurseSpread; // so the spread starts faster
 		}
 	}
 }
