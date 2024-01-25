@@ -12,6 +12,9 @@ hexGlowColor = c_white;
 glowPulseNum = 100;
 glowIsFadingIn = true;
 
+particleSystem = undefined
+curseParticles = 0
+
 tileMap = obj_HexMap;  //to be set by the map itself for event calling
 tileFocusDisabled = false;
 allowNonCursedFocus = true; // do we want the player to click a tile with level 0 curse
