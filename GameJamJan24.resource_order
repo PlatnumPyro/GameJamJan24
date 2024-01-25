@@ -1,14 +1,4 @@
 {
   "FolderOrderSettings": [],
-  "ResourceOrderSettings": [
-    {"name":"spr_particle","order":1,"path":"sprites/spr_particle/spr_particle.yy",},
-    {"name":"scr_AddAdjacentCursedSquareTileCoordsToList","order":1,"path":"scripts/scr_AddAdjacentCursedSquareTileCoordsToList/scr_AddAdjacentCursedSquareTileCoordsToList.yy",},
-    {"name":"obj_minigamePrologue","order":2,"path":"objects/obj_minigamePrologue/obj_minigamePrologue.yy",},
-    {"name":"particle_burst","order":1,"path":"particles/particle_burst/particle_burst.yy",},
-    {"name":"spr_particle","order":2,"path":"sprites/spr_particle/spr_particle.yy",},
-    {"name":"room_MinigamePrologue","order":1,"path":"rooms/room_MinigamePrologue/room_MinigamePrologue.yy",},
-    {"name":"spr_cauldronMask","order":1,"path":"sprites/spr_cauldronMask/spr_cauldronMask.yy",},
-    {"name":"font_nicesugar","order":1,"path":"fonts/font_nicesugar/font_nicesugar.yy",},
-    {"name":"obj_MinigameManager","order":1,"path":"objects/obj_MinigameManager/obj_MinigameManager.yy",},
-  ],
+  "ResourceOrderSettings": [],
 }

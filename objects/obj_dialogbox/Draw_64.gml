@@ -4,7 +4,7 @@
 //----------- Draw speaker
 var character_sprite = undefined
 
-switch (speaker) {
+switch (speaker[currentPage]) {
 	case 1:
 		character_sprite = spr_PlayerDialogue
 		break;
@@ -33,7 +33,7 @@ draw_set_color(c_white)
 draw_set_font(font_nicesugar)
 draw_set_halign(fa_left);
 
-draw_text_scribble_ext(96,CAMERA_VIEWPORT_HEIGHT-240,speaker_names[speaker],2000,2000)
+draw_text_scribble_ext(96,CAMERA_VIEWPORT_HEIGHT-240,speaker_names[speaker[currentPage]],2000,2000)
 draw_text_scribble_ext(112,CAMERA_VIEWPORT_HEIGHT-200,text[currentPage],1720,letterCount) 
 
 //------------- Draw options

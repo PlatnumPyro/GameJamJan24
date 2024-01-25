@@ -6,7 +6,7 @@ enum SPEAKERS {
 	FIRE,
 	WATER,
 	LIGHTNING,
-	POTION
+	CARRIER
 }
 
 function scr_GameScript(_text_id){
@@ -15,7 +15,16 @@ function scr_GameScript(_text_id){
 		
 		// Pressing Start Game
 		case "progress-start":
-			scr_text("Jesse we have to cook!",SPEAKERS.PROTAGONIST)
+			scr_text("I`ve just been stuck on new ideas. I`ve been wanting to make something new and innovative, but I feel like nothing I make is original enough. The demand for stronger potions is at an all time high right now, and I have to jump on it, you know?",SPEAKERS.PROTAGONIST)
+			scr_text("hmm.",SPEAKERS.CARRIER)
+			scr_text("I mean, if I don`t step it up, Mildred on the next island over is going to put me out of business!",SPEAKERS.PROTAGONIST)
+			scr_text("hm.",SPEAKERS.CARRIER)
+			scr_text("...And if I`m out of business, you won`t be able to deliver your favorite alchemist`s potions across the island for everyone to enjoy!",SPEAKERS.PROTAGONIST)
+			scr_text("hmm.",SPEAKERS.CARRIER)
+			scr_text("...You`ve never been much of a talker but I know I`m your favorite shopkeep!",SPEAKERS.PROTAGONIST)
+			scr_text("You`re the only shopkeep. Now are you gonna let me deliver these or not?", SPEAKERS.CARRIER)
+			scr_text("...Fine. Thanks again, Mr. Ray of Sunshine!",SPEAKERS.PROTAGONIST)
+			scr_text("The carrier walks away, exasperated from the conversation, while you consider the originality of your ideas. You must find a way to improve your potions... lucky for you, there`s an ingredient you forgot about until this very moment. You run to your alchemy station, ready to throw together something amazing.",SPEAKERS.NONE)
 			scr_room(room_Minigame)
 			break;
 		// Potion is finished
@@ -59,31 +68,31 @@ function scr_GameScript(_text_id){
 			
 			
 		case "ingredient0":
-			scr_text("A potion 0!",SPEAKERS.PROTAGONIST)
+			scr_text("A potion of strength! Increases strength.",SPEAKERS.PROTAGONIST)
 			break;
 		case "ingredient1":
-			scr_text("A potion! 1",SPEAKERS.PROTAGONIST)
+			scr_text("A potion of defense! Increases defense.",SPEAKERS.PROTAGONIST)
 			break;
 		case "ingredient2":
-			scr_text("A potion! 2",SPEAKERS.PROTAGONIST)
+			scr_text("A potion of speed! Increases defense.",SPEAKERS.PROTAGONIST)
 			break;
 		case "ingredient3":
-			scr_text("A potion! 3",SPEAKERS.PROTAGONIST)
+			scr_text("Magic Dust! Greatly increases strength, but lowers defense.",SPEAKERS.PROTAGONIST)
 			break;
 		case "ingredient4":
-			scr_text("A potion! 4",SPEAKERS.PROTAGONIST)
+			scr_text("Magic Candy! Greatly increases strength, but lowers speed. Also boosts flavor!",SPEAKERS.PROTAGONIST)
 			break;
 		case "ingredient5":
-			scr_text("A potion! 5",SPEAKERS.PROTAGONIST)
+			scr_text("Fairy Dust! Greatly increases defense, but lowers strength.",SPEAKERS.PROTAGONIST)
 			break;
 		case "ingredient6":
-			scr_text("A potion! 6",SPEAKERS.PROTAGONIST)
+			scr_text("Magic Pollen! Greatly increases defense, but lowers speed.",SPEAKERS.PROTAGONIST)
 			break;
 		case "ingredient7":
-			scr_text("A potion! 7",SPEAKERS.PROTAGONIST)
+			scr_text("Enchanted Thistles! Greatly increases speed, but lowers strength.",SPEAKERS.PROTAGONIST)
 			break;
 		case "ingredient8":
-			scr_text("A potion! 8",SPEAKERS.PROTAGONIST)
+			scr_text("Pixie Dust! Greatly increases speed, but lowers defense",SPEAKERS.PROTAGONIST)
 			break;
 			
 		

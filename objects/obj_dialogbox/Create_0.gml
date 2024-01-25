@@ -3,9 +3,9 @@
 
 letterCount=0
 timer=0
-timerSpeed=3
+timerSpeed=2
 
-speaker = 0
+speaker[0] = 0
 speaker_names = ["", "Kai","Ignis","Litore","Lux", "Carrier"]
 
 text = []

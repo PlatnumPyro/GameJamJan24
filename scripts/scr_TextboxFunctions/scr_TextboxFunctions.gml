@@ -3,11 +3,12 @@
 
 function scr_text(_text, _speaker){
 	text[totalPages] = _text
-	totalPages++
 	
 	if(!is_undefined(_speaker)) {
-		speaker = _speaker	
+		speaker[totalPages] = _speaker	
 	}
+	
+	totalPages++
 }
 
 function scr_option(_option, _option_id) {
