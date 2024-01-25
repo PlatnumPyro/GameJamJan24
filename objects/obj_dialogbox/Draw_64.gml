@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+draw_text(32,32,speaker[currentPage])
+
 //----------- Draw speaker
 var character_sprite = undefined
 
@@ -16,6 +18,7 @@ switch (speaker[currentPage]) {
 		break;
 	case 4:
 		character_sprite = spr_LightningDialogue
+		break;
 	default:
 		character_sprite = undefined
 		break;
@@ -40,10 +43,10 @@ draw_text_scribble_ext(112,CAMERA_VIEWPORT_HEIGHT-200,text[currentPage],1720,let
 if (option_number > 0)
 {
 	// Only on the last page
-	if (letterCount >= string_length(text[currentPage]) && currentPage = totalPages-1)
+	if (letterCount > string_length(text[currentPage]) && currentPage = totalPages-1)
 	{
 		for (var i = 0; i < option_number; i++) {
-			draw_text_scribble_ext(132,CAMERA_VIEWPORT_HEIGHT-120+(40*i),option[i],1720,1720)
+			draw_text_scribble_ext(132,CAMERA_VIEWPORT_HEIGHT-130+(40*i),option[i],1720,1720)
 		}
 
 	draw_sprite_ext(spr_optionSelector,0, 90, CAMERA_VIEWPORT_HEIGHT-120+(40*option_position), 0.5,0.5,0,c_white,1)

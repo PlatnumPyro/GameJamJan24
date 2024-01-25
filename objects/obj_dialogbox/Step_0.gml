@@ -9,7 +9,6 @@ if (timer = timerSpeed && letterCount <= string_length(text[currentPage])) {
 	timer=0
 }
 
-
 if(continueButton && room!=room_Minigame) {
 	if (letterCount < string_length(text[currentPage])) {
 		letterCount = string_length(text[currentPage])
@@ -27,15 +26,15 @@ if(continueButton && room!=room_Minigame) {
 if (option_number > 0)
 {
 	// Only on the last page
-	if (letterCount >= string_length(text[currentPage]) && currentPage = totalPages-1)
+	if (letterCount > string_length(text[currentPage]) && currentPage = totalPages-1)
 	{
 		if (keyboard_check_pressed(global.keyboardControlArray[KEYBOARD_CONTROLS.MOVE_UP]) && option_position>0)
 			option_position -= 1
 		if (keyboard_check_pressed(global.keyboardControlArray[KEYBOARD_CONTROLS.MOVE_DOWN]) && option_position<option_number-1)
 			option_position += 1
-	}
-	
-	if (continueButton) {
-		scr_textbox(option_id[option_position])
+			
+		if (continueButton) {
+			scr_textbox(option_id[option_position])
+		}
 	}
 }
