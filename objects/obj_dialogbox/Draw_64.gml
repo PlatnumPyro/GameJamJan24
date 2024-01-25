@@ -30,7 +30,7 @@ draw_sprite_ext(spr_dialogbox,0,0,CAMERA_VIEWPORT_HEIGHT-256,1,1,0,c_white,1)
 
 draw_set_alpha(1)
 draw_set_color(c_white)
-draw_set_font(font_monospaceSmall)
+draw_set_font(font_nicesugar)
 draw_set_halign(fa_left);
 
 draw_text_scribble_ext(96,CAMERA_VIEWPORT_HEIGHT-240,speaker_names[speaker],2000,2000)

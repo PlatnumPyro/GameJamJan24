@@ -224,6 +224,7 @@
     {"id":{"name":"string_width_scribble_ext","path":"scripts/string_width_scribble_ext/string_width_scribble_ext.yy",},},
     {"id":{"name":"draw_text_scribble_ext","path":"scripts/draw_text_scribble_ext/draw_text_scribble_ext.yy",},},
     {"id":{"name":"spr_cauldronMask","path":"sprites/spr_cauldronMask/spr_cauldronMask.yy",},},
+    {"id":{"name":"font_nicesugar","path":"fonts/font_nicesugar/font_nicesugar.yy",},},
     {"id":{"name":"obj_MinigameManager","path":"objects/obj_MinigameManager/obj_MinigameManager.yy",},},
     {"id":{"name":"__scribble_gen_1_model_limits_and_bezier_curves","path":"scripts/__scribble_gen_1_model_limits_and_bezier_curves/__scribble_gen_1_model_limits_and_bezier_curves.yy",},},
     {"id":{"name":"scribble_font_add","path":"scripts/scribble_font_add/scribble_font_add.yy",},},

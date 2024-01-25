@@ -10,6 +10,7 @@ if (isFocused == false || global.isPaused == true)
 	{
 		draw_sprite_ext(spr_HexTilesCurseOverlay, tileCurseLevel-1, self.x, self.y, imageScale, imageScale, 0, c_white, 1);
 		draw_text(self.x, self.y, string(tileCurseLevel));
+		event_perform(ev_other,ev_user1)
 	}
 }
 else
