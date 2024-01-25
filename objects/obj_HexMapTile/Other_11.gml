@@ -1,7 +1,7 @@
 /// @description Particle Stream
 // You can write your code in this editor
 
-if (curseParticles == false) {
+if (curseParticles != tileCurseLevel) {
 	//particle_stream
 	particleSystem = part_system_create();
 	part_system_draw_order(particleSystem, true);
@@ -26,5 +26,5 @@ if (curseParticles == false) {
 
 	part_system_position(particleSystem, x, y);
 	
-	curseParticles = true
+	curseParticles = tileCurseLevel
 }
