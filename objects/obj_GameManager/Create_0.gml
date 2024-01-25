@@ -5,6 +5,7 @@ textbox = undefined;
 hud = undefined;
 hexTileLoadData = undefined;
 titleCardText = undefined;
+deathAnimationForGameOver = undefined;
 
 var camera = undefined;
 var keycode = undefined;

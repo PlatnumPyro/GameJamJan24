@@ -24,15 +24,13 @@ if (inputUseAbility)
 	if (direction == 270) sprite_index = spr_PlayerUseAbilityLeft;
 	if (direction == 0) sprite_index = spr_PlayerUseAbilityUp;
 	if (direction == 180) sprite_index = spr_PlayerUseAbilityDown;
+	
 }
 
 if (isRunning)
 {
 	currentSpeed = runningSpeed;
 }
-
-self.depth = -self.y
-
 
 if (inputRight)
 {
@@ -41,7 +39,9 @@ if (inputRight)
 	sprite_index = spr_PlayerWalkRight;
 	direction = 90;
 	if (inputUseAbility)
+	{
 		sprite_index = spr_PlayerUseAbilityRight;
+	}
 } 
 if (inputLeft)
 {
@@ -50,7 +50,9 @@ if (inputLeft)
 	sprite_index = spr_PlayerWalkLeft;
 	direction = 270;
 	if (inputUseAbility)
+	{
 		sprite_index = spr_PlayerUseAbilityLeft;
+	}
 } 
 if (inputDown)
 {
@@ -59,7 +61,9 @@ if (inputDown)
 	sprite_index = spr_PlayerWalkDown;
 	direction = 180;
 	if (inputUseAbility)
+	{
 		sprite_index = spr_PlayerUseAbilityDown;
+	}
 } 
 if (inputUp)
 {
@@ -68,7 +72,9 @@ if (inputUp)
 	sprite_index = spr_PlayerWalkUp;
 	direction = 0;
 	if (inputUseAbility)
+	{
 		sprite_index = spr_PlayerUseAbilityUp;
+	}
 } 
 if (keyboard_check(vk_nokey))
 {
