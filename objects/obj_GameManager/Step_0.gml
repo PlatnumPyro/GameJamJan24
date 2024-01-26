@@ -70,8 +70,13 @@ if (room == ROOM_INDEX.OVERWORLD)
 			clickableList.viewPosX = 960;
 			clickableList.viewPosY = 800;
 			clickableList.stringList = levelFailedStringList;
+			
 			titleCardText = instance_create_layer(960, 200, "Instances", obj_TitleCardText);
 			titleCardText.text = "Level Consumed by the Curse";
+			
+			deathAnimationForGameOver = instance_create_layer(960, 600, "Instances", obj_PlayerDeathForGameOver);
+			
+			global.player.visible = false; //so we dont have two of them running around
 		}
 		else if (global.player.playerHealth <= 0 && (global.totalLevelsFailed < global.maximumAllowedFailedLevels))
 		{
@@ -82,6 +87,13 @@ if (room == ROOM_INDEX.OVERWORLD)
 			clickableList.viewPosX = 960;
 			clickableList.viewPosY = 400;
 			clickableList.stringList = levelFailedStringList;
+			
+			titleCardText = instance_create_layer(960, 200, "Instances", obj_TitleCardText);
+			titleCardText.text = "Defeated.";
+			
+			deathAnimationForGameOver = instance_create_layer(960, 600, "Instances", obj_PlayerDeathForGameOver);
+			
+			global.player.visible = false; //so we dont have two of them running around
 		}
 		else if (((global.currentSquareTilesToCurse >= global.maximumAllowedSquareTilesToCurse) || (global.player.playerHealth <= 0)) && global.totalLevelsFailed >= global.maximumAllowedFailedLevels)// game over
 		{

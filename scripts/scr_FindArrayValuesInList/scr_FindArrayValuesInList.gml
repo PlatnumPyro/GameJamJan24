@@ -41,7 +41,7 @@ function scr_FindArrayValuesInList(pList, pValue, pRemove = false)
 			}
 			else
 			{
-				throw "LOOKING FOR VALUE THAT IS NOT AN ARRAY";
+				// do nothing
 			}
 			
 			if (cleaned == false)
