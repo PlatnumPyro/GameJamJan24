@@ -28,6 +28,7 @@ if ( i != items) {
 			break;
 		case 5:
 			scr_textbox("progress-potion")
+			progress = true
 			break;
 	}
 }

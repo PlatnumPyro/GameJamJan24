@@ -9,17 +9,20 @@ if (timer = timerSpeed && letterCount <= string_length(text[currentPage])) {
 	timer=0
 }
 
-if(continueButton && room!=room_Minigame) {
-	if (letterCount < string_length(text[currentPage])) {
-		letterCount = string_length(text[currentPage])
+if (room!=room_Minigame || room==room_Minigame&&obj_MinigameManager.progress==true)
+{
+	if(continueButton) {
+		if (letterCount < string_length(text[currentPage])) {
+			letterCount = string_length(text[currentPage])
+		}
+		else if (currentPage < array_length(text)-1) {
+			currentPage++
+			letterCount = 0
+			timer=0
+		}
+		else
+		{instance_destroy()}
 	}
-	else if (currentPage < array_length(text)-1) {
-		currentPage++
-		letterCount = 0
-		timer=0
-	}
-	else
-	{instance_destroy()}
 }
 
 

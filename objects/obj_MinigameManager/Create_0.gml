@@ -10,3 +10,5 @@ textbox.depth = 1
 
 depth=-10
 opacity = 1
+
+progress = false;
