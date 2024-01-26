@@ -10,3 +10,5 @@ walkingSpeed = 3;
 runningSpeed = 5;
 
 ability = undefined;
+
+damageAmmountToTake = 0;

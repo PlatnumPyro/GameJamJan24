@@ -105,6 +105,11 @@ if (room == ROOM_INDEX.OVERWORLD)
 			clickableList.viewPosX = 960;
 			clickableList.viewPosY = 400;
 			clickableList.stringList = gameOverStringList;
+			
+			titleCardText = instance_create_layer(960, 200, "Instances", obj_TitleCardText);
+			titleCardText.text = "Game Over";
+			
+			deathAnimationForGameOver = instance_create_layer(960, 600, "Instances", obj_PlayerDeathForGameOver);
 		}
 	}
 }
