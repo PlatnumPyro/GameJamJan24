@@ -199,10 +199,10 @@ for (var i = 0; i < curseStartingLocations; i++)
 		selectedTileX = irandom(mapWidthInTiles-1);
 		selectedTileY = irandom(mapHeightInTiles-1);
 	}
-	until (scr_FindArrayValuesInList(cursedTileLocations, [selectedTileX, selectedTileY]) == false)
+	until (scr_FindArrayValuesInList(cursedTilePotentialSpreadLocations, [selectedTileX, selectedTileY]) == false)
 	
 	
-	ds_list_add(cursedTileLocations, [selectedTileX, selectedTileY]);
+	ds_list_add(cursedTilePotentialSpreadLocations, [selectedTileX, selectedTileY]);
 }
 
 event_perform(ev_other, ev_user1);
