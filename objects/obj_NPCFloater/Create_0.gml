@@ -10,6 +10,7 @@ sightRange = 200;
 
 stepsTakenToPrepAttack = 0;
 attackThreshold = 60;
+damageToBeTaken = 0;
 
 image_speed = 0;
 image_xscale = 0.2;
