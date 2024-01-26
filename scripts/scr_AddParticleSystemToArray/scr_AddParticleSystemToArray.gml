@@ -20,7 +20,7 @@ function scr_AddParticleSystemToArray(pArray, pTileX, pTileY, pCurseLevel)
 	part_type_life(_ptype1, 50, 0);
 
 	var _pemit1 = part_emitter_create(particleSystem);
-	part_emitter_region(particleSystem, _pemit1, -32, 32, -32, 32, ps_shape_ellipse, ps_distr_linear);
+	part_emitter_region(particleSystem, _pemit1, -40, 40, -40, 40, ps_shape_rectangle, ps_distr_linear);
 	part_emitter_stream(particleSystem, _pemit1, _ptype1, 1);
 
 	part_system_position(particleSystem, pTileX, pTileY);

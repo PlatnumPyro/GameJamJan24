@@ -6,6 +6,7 @@ hud = undefined;
 hexTileLoadData = undefined;
 titleCardText = undefined;
 deathAnimationForGameOver = undefined;
+creditsText = undefined;
 
 var camera = undefined;
 var keycode = undefined;

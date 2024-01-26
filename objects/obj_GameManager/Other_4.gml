@@ -11,6 +11,8 @@ if (room == room_first)
 	clickableList.viewPosX = room_width/2;
 	clickableList.viewPosY = 400;
 	clickableList.stringList = titleMenuStringList;
+	
+	creditsText = instance_create_layer(1700, 900, "Instances", obj_TeamCredits);
 }
 else if(room == room_HexWorldMap)
 {
