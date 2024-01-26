@@ -8,6 +8,9 @@ attackSpeed = walkSpeed * 0.5;
 attackRange = 150;
 sightRange = 200;
 
+stepsTakenToPrepAttack = 0;
+attackThreshold = 60;
+
 image_speed = 0;
 image_xscale = 0.2;
 image_yscale = 0.2;
