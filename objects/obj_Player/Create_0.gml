@@ -8,6 +8,7 @@ playerMaxHealth = 100;
 playerHealth = playerMaxHealth;
 walkingSpeed = 3;
 runningSpeed = 5;
+invincibilityFrames = 0;
 
 ability = undefined;
 

@@ -15,6 +15,7 @@ if (global.isPaused == false)
 
 	self.depth = -self.y
 
+	invincibilityFrames -= 1;
 
 	//TODO: Add collision
 
