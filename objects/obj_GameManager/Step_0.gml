@@ -111,5 +111,21 @@ if (room == ROOM_INDEX.OVERWORLD)
 			
 			deathAnimationForGameOver = instance_create_layer(960, 600, "Instances", obj_PlayerDeathForGameOver);
 		}
+		else if (global.currentSquareTilesToCurse <= global.levelSuccessNumTiles)
+		{
+			global.levelSuccess = true;
+			global.isPaused = true;
+		
+			clickableList = instance_create_layer(0, 0, "Instances", obj_ClickableStringList);
+				
+			clickableList.viewPosX = 960;
+			clickableList.viewPosY = 800;
+			clickableList.stringList = levelFailedStringList;
+			
+			titleCardText = instance_create_layer(960, 200, "Instances", obj_TitleCardText);
+			titleCardText.text = "Curse Cleared!";
+			
+			global.player.visible = false; //so we dont have two of them running around
+		}
 	}
 }

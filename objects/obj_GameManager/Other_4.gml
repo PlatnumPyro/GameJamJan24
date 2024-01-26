@@ -32,11 +32,22 @@ else if(room == room_HexWorldMap)
 		{
 			event_perform(ev_other, ev_user3);
 		}
+		
 		if (global.levelFailed == true)
 		{
 			global.cursePower += levelFailedCursePowerPenalty;
 			global.levelFailed = false;
 			hexMap.currentStepSinceLastCurseSpread = hexMap.numStepsBetweenCurseSpread; // so the spread starts faster
+		}
+		else if (global.levelSuccess == true)
+		{
+			global.cursePower -= selectedHexTileData.curseLevel;
+			hexMap.displayedCursePower -= selectedHexTileData.curseLevel;
+			hexMap.curseTileIDToClear = selectedHexTileData.tileID;
+			with (hexMap)
+			{
+				event_perform(ev_other, ev_user4);
+			}
 		}
 	}
 }
@@ -57,6 +68,8 @@ else if (room == room_Overworld)
 	
 	global.currentSquareTilesToCurse = curseLevel * 100; 
 	global.maximumAllowedSquareTilesToCurse = (curseLevel * 100) + 100; 
+	global.levelSuccessNumTiles = curseLevel * 50;
+	
 	currentHexTileSelectedCurseLevel = curseLevel;
 	
 	with (squareMap)

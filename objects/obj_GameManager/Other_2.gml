@@ -12,6 +12,7 @@ global.gameManager = self;
 global.isPaused = false;
 global.player = undefined;
 global.levelFailed = false;
+global.levelSuccess = false;
 global.totalLevelsFailed = 0;
 global.maximumAllowedFailedLevels = 3;
 

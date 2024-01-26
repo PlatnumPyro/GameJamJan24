@@ -18,3 +18,5 @@ numLevel1sForEachLevel2 = 2;
 numLevel2sForEachLevel3 = 3;
 
 hexTileLoadData = undefined; //for loading from data
+
+curseTileIDToClear = undefined;
