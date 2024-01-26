@@ -30,13 +30,13 @@ function scr_GameScript(_text_id){
 		// Potion is finished
 		case "progress-potion":
 			scr_text("This is it! My best potion yet! Here goes the final ingredient...",SPEAKERS.PROTAGONIST)
-			scr_text("Poof! You’ve made something special, be proud of your creation! Now to call on the carrier to deliver this to all the wizards they can find.",SPEAKERS.NONE)
+			scr_text("Poof! You've made something special, be proud of your creation! Now to call on the carrier to deliver this to all the wizards they can find.",SPEAKERS.NONE)
 			scr_room(room_HexWorldMap)
 			break;
 		
 		// First map screen
 		case "progress-map":
-			scr_text("Where to use this?",SPEAKERS.PROTAGONIST)
+			scr_text("Where to deliver the potion?",SPEAKERS.CARRIER)
 			break;
 		// After the curse spreads
 		case "progress-map1":
@@ -51,8 +51,8 @@ function scr_GameScript(_text_id){
 			scr_text("I feel stronger... I can move on to the worst parts. Let's do this.",SPEAKERS.PROTAGONIST)
 			break;
 		
-		case "win_dialog":
-			scr_text("You did it... You cleansed the curse from the whole island! You feel accomplished, proud... But still confused. How did one new ingredient cause such an uproar... and where did all the wizards go? You've encountered other mages that you haven't seen on the island before the curse, but no one else. Do you know the true scope of your mistake? Could it still be affecting those outside of the island? Your thoughts swirl out of control. You are worried that this is not truly the end of your mishap. What will you do now?",SPEAKERS.NONE)
+		case "progress-win":
+			scr_text("You did it... You cleansed enough of the curse from the whole island! You feel proud... But still confused. How did one new ingredient cause such an uproar... and where did all the wizards go? You've encountered other mages that you haven't seen on the island before the curse, but no one else. Do you know the true scope of your mistake? Could it still be affecting those outside of the island? Your thoughts swirl out of control. You are worried that this is not truly the end of your mishap. What will you do now?",SPEAKERS.NONE)
 			break;
 		
 		case "potion-five":
