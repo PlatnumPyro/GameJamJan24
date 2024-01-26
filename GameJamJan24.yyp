@@ -199,6 +199,7 @@
     {"id":{"name":"obj_SquareTileMap","path":"objects/obj_SquareTileMap/obj_SquareTileMap.yy",},},
     {"id":{"name":"__scribble_get_macros_map","path":"scripts/__scribble_get_macros_map/__scribble_get_macros_map.yy",},},
     {"id":{"name":"__scribble_class_font","path":"scripts/__scribble_class_font/__scribble_class_font.yy",},},
+    {"id":{"name":"spr_Tree3","path":"sprites/spr_Tree3/spr_Tree3.yy",},},
     {"id":{"name":"scribble_kerning_pair_set","path":"scripts/scribble_kerning_pair_set/scribble_kerning_pair_set.yy",},},
     {"id":{"name":"spr_PlayerDialogue","path":"sprites/spr_PlayerDialogue/spr_PlayerDialogue.yy",},},
     {"id":{"name":"spr_FireDialogue","path":"sprites/spr_FireDialogue/spr_FireDialogue.yy",},},
