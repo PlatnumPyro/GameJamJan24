@@ -36,9 +36,9 @@ else
 }
 
 //Debug
-if(keyboard_check_pressed(vk_lshift) && !instance_exists(obj_dialogbox)) 
+if(keyboard_check_pressed(vk_f2) && !instance_exists(obj_dialogbox)) 
 {
-	scr_textbox("npc-lightning")
+	scr_textbox("npc-fire")
 }
 
 //Timings for the curse
