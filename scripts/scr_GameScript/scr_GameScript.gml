@@ -29,7 +29,9 @@ function scr_GameScript(_text_id){
 			break;
 		// Potion is finished
 		case "progress-potion":
-			scr_text("A potion!",SPEAKERS.PROTAGONIST)
+			scr_text("This is it! My best potion yet! Here goes the final ingredient...",SPEAKERS.PROTAGONIST)
+			scr_text("Poof! You’ve made something special, be proud of your creation! Now to call on the carrier to deliver this to all the wizards they can find.",SPEAKERS.NONE)
+			scr_room(room_HexWorldMap)
 			break;
 		
 		// First map screen
@@ -38,7 +40,7 @@ function scr_GameScript(_text_id){
 			break;
 		// After the curse spreads
 		case "progress-map1":
-			scr_text("uh oh spaghetti-o.",SPEAKERS.PROTAGONIST)
+			scr_text("Woah! What is this mist?? This can't be because of my potion... I even tried it myself before sending it out. It made me feel a little revitalized... it was supposed to make magic users stronger... I've gotta figure out what's going on... WHAT IS THAT?!",SPEAKERS.PROTAGONIST)
 			break;
 		// After unlocking level 2
 		case "progress-map2":
@@ -49,6 +51,9 @@ function scr_GameScript(_text_id){
 			scr_text("I feel stronger... I can move on to the worst parts. Let's do this.",SPEAKERS.PROTAGONIST)
 			break;
 		
+		case "win_dialog":
+			scr_text("You did it... You cleansed the curse from the whole island! You feel accomplished, proud... But still confused. How did one new ingredient cause such an uproar... and where did all the wizards go? You've encountered other mages that you haven't seen on the island before the curse, but no one else. Do you know the true scope of your mistake? Could it still be affecting those outside of the island? Your thoughts swirl out of control. You are worried that this is not truly the end of your mishap. What will you do now?",SPEAKERS.NONE)
+			break;
 		
 		case "potion-five":
 			scr_text("Five ingredients should do it!",SPEAKERS.PROTAGONIST)
@@ -214,27 +219,27 @@ function scr_GameScript(_text_id){
 			
 			
 		case "npc-fire":
-			scr_text("Oh hey, these caves are usually abandoned, save for the mice. It’s dangerous here right now, I’m sorry to bother you but you should escape now",SPEAKERS.PROTAGONIST)
+			scr_text("Oh hey, these caves are usually abandoned, save for the mice. It's dangerous here right now, I'm sorry to bother you but you should escape now.",SPEAKERS.PROTAGONIST)
 			scr_text("...",SPEAKERS.FIRE)
 			scr_text("Hello?",SPEAKERS.PROTAGONIST)
-			scr_text("You become close enough to the figure to see the despair on his face. Even through a shrouded hood, you can see how empty his eyes look. He looks like he’s been here for a very long time. What is there to do in this situation?",SPEAKERS.NONE)
+			scr_text("You become close enough to the figure to see the despair on his face. Even through a shrouded hood, you can see how empty his eyes look. He looks like he's been here for a very long time. What is there to do in this situation?",SPEAKERS.NONE)
 			scr_text("(What do I say?)",SPEAKERS.PROTAGONIST)
 				scr_option("Are you okay? I understand if you need space, but...","npc-fire-1a")
-				scr_option("Look man, there’s a lot going on out here, can you be in distress somewhere else where it’s safer?","npc-fire-1b")
+				scr_option("Look man, there's a lot going on out here, can you be in distress somewhere else where it's safer?","npc-fire-1b")
 				scr_option("I am not emotionally prepared to help an individual with clear anguish... stay frosty, guy.","npc-fire-1c")
 			break;
 			
 		case "npc-fire-1a":
-			scr_text("I understand if you need space, but I’m here if you need to get something o your chest. I could use a break too for just a moment… if you don’t mind me sitting with you.",SPEAKERS.PROTAGONIST)
+			scr_text("I understand if you need space, but I'm here if you need to get something o your chest. I could use a break too for just a moment... if you don't mind me sitting with you.",SPEAKERS.PROTAGONIST)
 			scr_text("... sit.",SPEAKERS.FIRE)
-			scr_text("There’s a few moments of silence. Silence from the curse, the monsters, the regret. The silence is filled only with the droplets of water upon the cave floor. It’s nice. Then, the figure turns to speak with you.",SPEAKERS.NONE)
+			scr_text("There's a few moments of silence. Silence from the curse, the monsters, the regret. The silence is filled only with the droplets of water upon the cave floor. It's nice. Then, the figure turns to speak with you.",SPEAKERS.NONE)
 			scr_text("I haven't seen anyone come here in a very long time.",SPEAKERS.FIRE)
-			scr_text("I’m here to cleanse this curse. I haven’t seen many others around after… This happened.",SPEAKERS.PROTAGONIST)
+			scr_text("I'm here to cleanse this curse. I haven't seen many others around after... This happened.",SPEAKERS.PROTAGONIST)
 			scr_text("What happened?",SPEAKERS.FIRE)
-			scr_text("Oh, well the mist… the monsters… there’s been a curse spreading on this island… I caused it. I’m trying to fix it.",SPEAKERS.PROTAGONIST)
-			scr_text("…So you’re working to fix what you have destroyed, I see.",SPEAKERS.FIRE)
-			scr_text("I am, yes. It was all a huge accident… I still don’t even know how it happened, but I know that I have to fix it",SPEAKERS.PROTAGONIST)
-			scr_text("I have experience with accidental destruction myself… I wish things could have been different.",SPEAKERS.FIRE)
+			scr_text("Oh, well the mist... the monsters... there's been a curse spreading on this island... I caused it. I'm trying to fix it.",SPEAKERS.PROTAGONIST)
+			scr_text("...So you're working to fix what you have destroyed, I see.",SPEAKERS.FIRE)
+			scr_text("I am, yes. It was all a huge accident... I still don't even know how it happened, but I know that I have to fix it",SPEAKERS.PROTAGONIST)
+			scr_text("I have experience with accidental destruction myself... I wish things could have been different.",SPEAKERS.FIRE)
 			scr_text("(What do I say?)",SPEAKERS.PROTAGONIST)
 				scr_option("Talk about it, I'm here to listen.","npc-fire-2a")
 				scr_option("Everything happens for a reason, we're both probably just overreacting","npc-fire-2b")
@@ -242,37 +247,43 @@ function scr_GameScript(_text_id){
 			
 			
 		case "npc-fire-2a":
-			scr_text("I have been sitting here in these caves for many years… I was the destruction of everything I cherished. Everything I loved burnt to the ground by my own hand. Ignis is a fitting name for such a destructive mage I guess. I sit here in contemplation and reclusivity… I am ashamed. I am nothing anymore.",SPEAKERS.FIRE)
-			scr_text("…It was an accident though, wasn’t it?",SPEAKERS.PROTAGONIST)
-			scr_text("Usually an accident can be fixed, a mistake can be mended… this was something… I can’t describe. I can’t bring back who was lost. I couldn’t mend the destruction. So I died to the world.",SPEAKERS.FIRE)
-			scr_text("That really is very sad. I’m sorry it turned out that way… You seem like you have suffered greatly from the grief.",SPEAKERS.PROTAGONIST)
-			scr_text("I haven’t thought about anything else since that day… I haven’t spoken to anyone else. You… Thank you for listening to me. I don’t deserve relief, but I am grateful for your presence. What is your name?",SPEAKERS.FIRE)
-			scr_text("It’s Kai. I know you feel as though you are irredeemable, and it’s not my place to say, but I think everyone deserves peace at some point. You’ve been haunted by this for a while… It might be time to escape your sorrow. You might never forget about what you’ve done, but you can work to improve the reason it happened, perhaps?",SPEAKERS.PROTAGONIST)
-			scr_text("…The reason it happened… You seem smarter than me. Maybe you could put my burden to better use than I. I hope it helps you with your cleanse.",SPEAKERS.FIRE)
+			scr_text("I have been sitting here in these caves for many years... I was the destruction of everything I cherished. Everything I loved burnt to the ground by my own hand. Ignis is a fitting name for such a destructive mage I guess. I sit here in contemplation and reclusivity... I am ashamed. I am nothing anymore.",SPEAKERS.FIRE)
+			scr_text("...It was an accident though, wasn't it?",SPEAKERS.PROTAGONIST)
+			scr_text("Usually an accident can be fixed, a mistake can be mended... this was something... I can't describe. I can't bring back who was lost. I couldn't mend the destruction. So I died to the world.",SPEAKERS.FIRE)
+			scr_text("That really is very sad. I'm sorry it turned out that way... You seem like you have suffered greatly from the grief.",SPEAKERS.PROTAGONIST)
+			scr_text("I haven't thought about anything else since that day... I haven't spoken to anyone else. You... Thank you for listening to me. I don't deserve relief, but I am grateful for your presence. What is your name?",SPEAKERS.FIRE)
+			scr_text("It's Kai. I know you feel as though you are irredeemable, and it's not my place to say, but I think everyone deserves peace at some point. You've been haunted by this for a while... It might be time to escape your sorrow. You might never forget about what you've done, but you can work to improve the reason it happened, perhaps?",SPEAKERS.PROTAGONIST)
+			scr_text("...The reason it happened... You seem smarter than me. Maybe you could put my burden to better use than I. I hope it helps you with your cleanse.",SPEAKERS.FIRE)
 			scr_text("Ignis places his hand on your shoulder as the smoke from his ventilated shoulder pads heats up. You feel warmth throughout your whole body, it is revitalizing, a familiar feeling. You gain fire magic!",SPEAKERS.NONE)
-			scr_text("Thank you, Ignis. I will not let your gift go to waste. I’ll be thinking of your story, and take it as a warning to be careful.",SPEAKERS.PROTAGONIST)
-			scr_text("You are better than I. Good luck, Kai.")
+			scr_text("Thank you, Ignis. I will not let your gift go to waste. I'll be thinking of your story, and take it as a warning to be careful.",SPEAKERS.PROTAGONIST)
+			scr_text("You are better than I. Good luck, Kai.",SPEAKERS.FIRE)
 			// TODO: Give fire ability here.
 			// TODO: Health up
 			break;
 		case "npc-fire-2b":
-			scr_text("…I killed my whole tribe. I burnt their homes, I burnt my home. I do not think me hiding away is overreacting.",SPEAKERS.FIRE)
-			scr_text("Oh. Hmm. Maybe not. Sorry I may have jumped the gun on the comments. We’re all haunted by something though, amiright?",SPEAKERS.PROTAGONIST)
-			scr_text("You are an odd one. I appreciate you sitting with me, I haven’t had company in many years… but I would appreciate it more if you left me be.",SPEAKERS.FIRE)
-			scr_text("Ah. Yeah sorry I’ll get back to clearing this curse… be careful in here.",SPEAKERS.PROTAGONIST)
-			scr_text("You feel as though you weren’t sensitive enough to the situation, but you do have a lot on your own mind right now. You get back to business.",SPEAKERS.NONE)
+			scr_text("...I killed my whole tribe. I burnt their homes, I burnt my home. I do not think me hiding away is overreacting.",SPEAKERS.FIRE)
+			scr_text("Oh. Hmm. Maybe not. Sorry I may have jumped the gun on the comments. We're all haunted by something though, amiright?",SPEAKERS.PROTAGONIST)
+			scr_text("You are an odd one. I appreciate you sitting with me, I haven't had company in many years... but I would appreciate it more if you left me be.",SPEAKERS.FIRE)
+			scr_text("Ah. Yeah sorry I'll get back to clearing this curse... be careful in here.",SPEAKERS.PROTAGONIST)
+			scr_text("You feel as though you weren't sensitive enough to the situation, but you do have a lot on your own mind right now. You get back to business.",SPEAKERS.NONE)
 			break;
 		
 		case "npc-fire-1b":
 			scr_text("... No. Leave me be.",SPEAKERS.FIRE)
-			scr_text("I would, but I’m worried about you getting hurt!",SPEAKERS.PROTAGONIST)
-			scr_text("You don’t believe I can fend for myself? I suggest you leave if it is so dangerous.",SPEAKERS.FIRE)
-			scr_text("I… well it is dangerous… you do seem very strong. Think you could get rid of some of these monsters for me?",SPEAKERS.PROTAGONIST)
+			scr_text("I would, but I'm worried about you getting hurt!",SPEAKERS.PROTAGONIST)
+			scr_text("You don't believe I can fend for myself? I suggest you leave if it is so dangerous.",SPEAKERS.FIRE)
+			scr_text("I... well it is dangerous... you do seem very strong. Think you could get rid of some of these monsters for me?",SPEAKERS.PROTAGONIST)
 			scr_text("Ignis grunts in frustration and stands up. He hurls a flame directly into you and it mildly burns your arm. It stings, but feels different than a simple pain. You feel heat rise up in your throat as your fingers burn as if you touched hot coals. The pain subsides slightly, but you feel a constant twinge of pain every time you move your hands. You gain fire magic!",SPEAKERS.NONE)
-			scr_text("Fix your mistake yourself, runt. Scram",SPEAKERS.PROTAGONIST)
-			scr_text("It’s definitely time to leave before he burns you even more, you run off with your new ability in tow.")
+			scr_text("Fix your mistake yourself, runt. Scram.",SPEAKERS.FIRE)
+			scr_text("It's definitely time to leave before he burns you even more, you run off with your new ability in tow.")
 			// TODO: Give Fire ability here.
 			// TODO: Damage
+			break;
+			
+		case "npc-fire-1c":
+			scr_text("You decide to leave.",SPEAKERS.NONE)
+			break;
+			
 		default:
 			scr_text("")
 			break;

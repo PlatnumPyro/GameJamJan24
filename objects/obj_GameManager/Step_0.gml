@@ -38,7 +38,7 @@ else
 //Debug
 if(keyboard_check_pressed(vk_f2) && !instance_exists(obj_dialogbox)) 
 {
-	scr_textbox("npc-fire")
+	scr_textbox("win_dialog")
 }
 
 //Timings for the curse

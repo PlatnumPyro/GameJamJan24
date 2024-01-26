@@ -27,7 +27,7 @@ if ( i != items) {
 			textbox.depth = 1
 			break;
 		case 5:
-			// Room transition
+			scr_textbox("progress-potion")
 			break;
 	}
 }
