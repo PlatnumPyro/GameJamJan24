@@ -64,38 +64,47 @@ if (room == ROOM_INDEX.OVERWORLD)
 		{
 			global.levelFailed = true;
 			global.isPaused = true;
-		
-			clickableList = instance_create_layer(0, 0, "Instances", obj_ClickableStringList);
+			global.totalLevelsFailed++;
+			
+			if (global.totalLevelsFailed < global.maximumAllowedFailedLevels)
+			{
+				clickableList = instance_create_layer(0, 0, "Instances", obj_ClickableStringList);
 				
-			clickableList.viewPosX = 960;
-			clickableList.viewPosY = 800;
-			clickableList.stringList = levelFailedStringList;
+				clickableList.viewPosX = 960;
+				clickableList.viewPosY = 800;
+				clickableList.stringList = levelFailedStringList;
 			
-			titleCardText = instance_create_layer(960, 200, "Instances", obj_TitleCardText);
-			titleCardText.text = "Level Consumed by the Curse";
+				titleCardText = instance_create_layer(960, 200, "Instances", obj_TitleCardText);
+				titleCardText.text = "Level Consumed by the Curse";
 			
-			deathAnimationForGameOver = instance_create_layer(960, 600, "Instances", obj_PlayerDeathForGameOver);
+				deathAnimationForGameOver = instance_create_layer(960, 600, "Instances", obj_PlayerDeathForGameOver);
 			
-			global.player.visible = false; //so we dont have two of them running around
+				global.player.visible = false; //so we dont have two of them running around
+			}
 		}
 		else if (global.player.playerHealth <= 0 && (global.totalLevelsFailed < global.maximumAllowedFailedLevels))
 		{
 			global.levelFailed = true;
 			global.isPaused = true;
-		
-			clickableList = instance_create_layer(0, 0, "Instances", obj_ClickableStringList);
-			clickableList.viewPosX = 960;
-			clickableList.viewPosY = 400;
-			clickableList.stringList = levelFailedStringList;
+			global.totalLevelsFailed++;
 			
-			titleCardText = instance_create_layer(960, 200, "Instances", obj_TitleCardText);
-			titleCardText.text = "Defeated.";
+			if (global.totalLevelsFailed < global.maximumAllowedFailedLevels)
+			{
+				clickableList = instance_create_layer(0, 0, "Instances", obj_ClickableStringList);
+				clickableList.viewPosX = 960;
+				clickableList.viewPosY = 800;
+				clickableList.stringList = levelFailedStringList;
 			
-			deathAnimationForGameOver = instance_create_layer(960, 600, "Instances", obj_PlayerDeathForGameOver);
+				titleCardText = instance_create_layer(960, 200, "Instances", obj_TitleCardText);
+				titleCardText.text = "Defeated.";
 			
-			global.player.visible = false; //so we dont have two of them running around
+				deathAnimationForGameOver = instance_create_layer(960, 600, "Instances", obj_PlayerDeathForGameOver);
+			
+				global.player.visible = false; //so we dont have two of them running around
+			}
 		}
-		else if (((global.currentSquareTilesToCurse >= global.maximumAllowedSquareTilesToCurse) || (global.player.playerHealth <= 0)) && global.totalLevelsFailed >= global.maximumAllowedFailedLevels)// game over
+		
+		if (global.totalLevelsFailed >= global.maximumAllowedFailedLevels)// game over
 		{
 			global.levelFailed = true;
 			global.isPaused = true;
@@ -103,15 +112,18 @@ if (room == ROOM_INDEX.OVERWORLD)
 			clickableList = instance_create_layer(0, 0, "Instances", obj_ClickableStringList);
 		
 			clickableList.viewPosX = 960;
-			clickableList.viewPosY = 400;
+			clickableList.viewPosY = 800;
 			clickableList.stringList = gameOverStringList;
 			
 			titleCardText = instance_create_layer(960, 200, "Instances", obj_TitleCardText);
 			titleCardText.text = "Game Over";
 			
 			deathAnimationForGameOver = instance_create_layer(960, 600, "Instances", obj_PlayerDeathForGameOver);
+			
+			global.player.visible = false; //so we dont have two of them running around
 		}
-		else if (global.currentSquareTilesToCurse <= global.levelSuccessNumTiles)
+		
+		if ((global.levelFailed == false) && (global.currentSquareTilesToCurse <= global.levelSuccessNumTiles))
 		{
 			global.levelSuccess = true;
 			global.isPaused = true;

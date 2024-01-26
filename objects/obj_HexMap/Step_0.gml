@@ -20,6 +20,7 @@ if (global.isPaused == false)
 				ds_list_add(selectedHexTileData, currentTile.tileCurseLevel);
 				ds_list_add(selectedHexTileData, currentTile.tileDifficulty);
 				ds_list_add(selectedHexTileData, currentTile.tileAreaSize);
+				ds_list_add(selectedHexTileData, currentTile.tileID);
 			
 				if (curseInitialized == true && displayedCursePower == global.cursePower)
 				{

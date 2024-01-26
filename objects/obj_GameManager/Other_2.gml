@@ -15,11 +15,15 @@ global.levelFailed = false;
 global.levelSuccess = false;
 global.totalLevelsFailed = 0;
 global.maximumAllowedFailedLevels = 3;
+global.totalLevelsCleared = 0;
+global.totalCursePowerCleared = 0;
+global.gameWinCurseClearedPoints = 10;
 
 global.cursePower = 15; //total levels of curse to spread on HexTiles (each tile getting 1 to 3 of those points)
 global.currentSquareTilesToCurse = 0; //set in room start with the info from the hex tile selected
 global.maximumAllowedSquareTilesToCurse = 0; //set in room start with the info from the hex tile selected
 global.currentMaximumAllowedCurseTileSelection = 1;
+
 
 clickableList = undefined;
 hexMap = undefined;
