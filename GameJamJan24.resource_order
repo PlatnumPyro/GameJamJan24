@@ -1,8 +1,10 @@
 {
   "FolderOrderSettings": [],
   "ResourceOrderSettings": [
+    {"name":"scr_AddParticleSystemToArray","order":1,"path":"scripts/scr_AddParticleSystemToArray/scr_AddParticleSystemToArray.yy",},
     {"name":"obj_TitleCardText","order":1,"path":"objects/obj_TitleCardText/obj_TitleCardText.yy",},
     {"name":"obj_PlayerDeathForGameOver","order":2,"path":"objects/obj_PlayerDeathForGameOver/obj_PlayerDeathForGameOver.yy",},
+    {"name":"scr_RefreshParticleSystems","order":2,"path":"scripts/scr_RefreshParticleSystems/scr_RefreshParticleSystems.yy",},
     {"name":"obj_AbilityCleansingPotion","order":3,"path":"objects/obj_AbilityCleansingPotion/obj_AbilityCleansingPotion.yy",},
     {"name":"spr_PlayerDowned","order":1,"path":"sprites/spr_PlayerDowned/spr_PlayerDowned.yy",},
   ],

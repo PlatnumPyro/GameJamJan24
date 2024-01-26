@@ -8,18 +8,12 @@ var level3ToBeRemoved = ds_list_create();
 
 if(abilityCleanseLocation != undefined)
 {
-	show_debug_message("ABILITY X: {0}, Y: {1}", abilityCleanseLocation[0], abilityCleanseLocation[1])
 	length = ds_list_size(level1CursedTiles);
 	for (var i = 0; i < length; i++)
 	{
 		currentTile = ds_list_find_value(level1CursedTiles, i);
 		if (is_array(currentTile) == true)
 		{
-			
-	show_debug_message("ABILITY X: {0}, Y: {1}", abilityCleanseLocation[0], abilityCleanseLocation[1]);
-	show_debug_message("TILE X: {0}, Y: {1}", currentTile[0] * SQUARE_TILE_SIZE, currentTile[1] * SQUARE_TILE_SIZE);
-	show_debug_message("DIST: {0}", point_distance(abilityCleanseLocation[0], abilityCleanseLocation[1], currentTile[0] * SQUARE_TILE_SIZE, currentTile[1]* SQUARE_TILE_SIZE));
-	
 			if (point_distance(abilityCleanseLocation[0], abilityCleanseLocation[1], currentTile[0] * SQUARE_TILE_SIZE, currentTile[1]* SQUARE_TILE_SIZE) <= cleanseRadius)
 			{
 				ds_list_add(level1ToBeRemoved, currentTile);

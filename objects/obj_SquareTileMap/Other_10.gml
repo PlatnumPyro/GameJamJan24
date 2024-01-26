@@ -8,6 +8,8 @@ var variationChangeSpacingMin = 0; // minimum number of tiles between variation 
 var variationChangeSpacingMax = 0; // maximum number of tiles between variation changes
 var variationChangeIndex = 0; // to count for the variationChangeSpacing
 var topBoundryOffset = 0;
+var length = 0;
+var currentTile = undefined;
 
 squareTileOverlayMap = layer_tilemap_create("TileMap", 0, 0, ts_SquareTilesOverlay, mapWidthInTiles, mapHeightInTiles);
 squareTileMap = layer_tilemap_create("TileMap", 0, 0, ts_SquareTiles, mapWidthInTiles, mapHeightInTiles);
@@ -204,5 +206,5 @@ for (var i = 0; i < curseStartingLocations; i++)
 	
 	ds_list_add(cursedTilePotentialSpreadLocations, [selectedTileX, selectedTileY]);
 }
-
+//spread the curse
 event_perform(ev_other, ev_user1);

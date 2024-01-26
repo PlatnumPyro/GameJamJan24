@@ -36,3 +36,5 @@ numLevel2sForEachLevel3 = 3;
 
 abilityCleanseLocation = undefined;
 cleanseRadius = 300;
+
+particleArray = ds_list_create();
