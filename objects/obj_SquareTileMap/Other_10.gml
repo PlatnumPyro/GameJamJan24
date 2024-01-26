@@ -1,4 +1,4 @@
-//generate the level
+/// @description generate the level
 
 var topBoundryCurrentY = 0;
 var topBoundryMinimumY = 0;

@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "spr_SquareTileSet",
   "bbox_bottom": 127,
-  "bbox_left": 260,
-  "bbox_right": 767,
+  "bbox_left": 256,
+  "bbox_right": 1920,
   "bbox_top": 0,
   "bboxMode": 2,
   "collisionKind": 1,
@@ -15,8 +15,8 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"723d532a-1183-4fca-abb0-5e5fb7a253cd",},
   ],
-  "gridX": 500,
-  "gridY": 500,
+  "gridX": 128,
+  "gridY": 128,
   "height": 128,
   "HTile": false,
   "layers": [
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 768,
+  "width": 1920,
 }
