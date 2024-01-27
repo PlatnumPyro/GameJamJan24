@@ -14,8 +14,9 @@ mapTopBorderVariationMaximumIncrement = 1;
 mapSidetreeBorderFadeLayers = 2;
 
 //the map  \o/  praise the sun!
-squareTileMap = undefined;
+global.squareTileMap = undefined;
 squareTileOverlayMap = undefined;
+global.collisionMap = undefined;
 
 playerStartPosition = undefined;
 

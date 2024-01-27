@@ -13,7 +13,8 @@ var currentTile = undefined;
 var tree = undefined;
 
 squareTileOverlayMap = layer_tilemap_create("TileMap", 0, 0, ts_SquareTilesOverlay, mapWidthInTiles, mapHeightInTiles);
-squareTileMap = layer_tilemap_create("TileMap", 0, 0, ts_SquareTiles, mapWidthInTiles, mapHeightInTiles);
+global.squareTileMap = layer_tilemap_create("TileMap", 0, 0, ts_SquareTiles, mapWidthInTiles, mapHeightInTiles);
+global.collisionMap = layer_tilemap_create("TileMap", 0, 0, ts_SquareTilesSolid, mapWidthInTiles, mapHeightInTiles);
 
 	
 //TODO: place player intelligently
@@ -44,62 +45,69 @@ if (mapStyle == HEX_TILE_TYPES.FOREST)
 			{
 				if (tileY <= topBoundryOffset - 2)
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
 				}
 				else if (tileY == topBoundryOffset - 1)
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.WALL_TOP, tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.WALL_TOP, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
 				}
 				else if (tileY == topBoundryOffset)
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.WALL_BOTTOM, tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.WALL_BOTTOM, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
 				}
 				else
 				{
 					if (tileX == 0 || tileX == mapWidthInTiles-1)
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS_SOLID, tileX, tileY);
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS_SOLID, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
 						instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
 					}
 					else if (tileX > 0 && tileX < mapSidetreeBorderFadeLayers)
 					{
 						if (random(1) < (mapSidetreeBorderFadeLayers - tileX)/mapSidetreeBorderFadeLayers)
 						{
-							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS_SOLID, tileX, tileY);
+							tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS_SOLID, tileX, tileY);
+							tilemap_set( global.collisionMap, 1, tileX, tileY);
 							instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
 						}
 						else
 						{
-							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
+							tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
 						}
 					}
 					else if (tileX < mapWidthInTiles-1 && mapWidthInTiles - tileX <mapSidetreeBorderFadeLayers)
 					{
 						if (random(1) < (mapWidthInTiles - tileX)/mapSidetreeBorderFadeLayers)
 						{
-							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS_SOLID, tileX, tileY);
+							tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS_SOLID, tileX, tileY);
+							tilemap_set( global.collisionMap, 1, tileX, tileY);
 							instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
 						}
 						else
 						{
-							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
+							tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
 						}
 					}
 					else if (random(1) < 0.99)
 					{
 						if (random(1) > 0.95)
 						{
-							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS_SOLID, tileX, tileY);
+							tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS_SOLID, tileX, tileY);
+							tilemap_set( global.collisionMap, 1, tileX, tileY);
 							instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
 						}
 						else
 						{
-							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
+							tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
 						}
 					}
 					else
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS_ROCK, tileX, tileY);
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS_ROCK, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
 					}
 				}
 			}
@@ -122,28 +130,32 @@ else if (mapStyle == HEX_TILE_TYPES.CAVE)
 			{
 				if (point_distance(mapWidthInTiles/2, mapHeightInTiles/2, tileX, tileY) > 6)
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
 				}
 				else
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.CAVE_MOUND, tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_MOUND, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
 				}
 			}
 			else
 			{
 				if (point_distance(mapWidthInTiles/2, mapHeightInTiles/2, tileX, tileY) > 6)
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
 				}
 				else
 				{
 					if (random(1) < 0.94)
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.CAVE_FLOOR, tileX, tileY);
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_FLOOR, tileX, tileY);
 					}
 					else
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.CAVE_MOUND, tileX, tileY);						
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_MOUND, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
 					}
 				}
 			}
@@ -159,46 +171,53 @@ else if (mapStyle == HEX_TILE_TYPES.MOUNTAIN)
 		{
 			if (tileY == mapHeightInTiles - 1)
 			{
-				tilemap_set(squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
 			}
 			else if (tileY == mapHeightInTiles - 2)
 			{
-				tilemap_set(squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
 			}
 			else if (tileY == 0)
 			{
-				tilemap_set(squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
 			}
 			else if (tileY == 1)
 			{
-				tilemap_set(squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
 			}
 			else if (tileY == 2 || tileY == 3 || tileY == 4 || tileY == mapHeightInTiles - 3 || tileY == mapHeightInTiles - 4 || tileY == mapHeightInTiles - 5)
 			{
 				if(tileX == 0 || tileX == mapWidthInTiles -1)
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND_MOUND, tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND_MOUND, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
 				}
 				else 
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
 				}
 			}
 			else if (tileY == 5 || tileY == 6)
 			{
 				if (tileX == 5 || tileX == 6 || tileX == 7 || tileX == mapWidthInTiles - 6 || tileX == mapWidthInTiles - 7 || tileX == mapWidthInTiles - 8)
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
 				}	
 				else
 				{
 					if (tileY == 5)
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
 					}
 					else if (tileY == 6)
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
 					}
 				}
 			}
@@ -215,53 +234,59 @@ else if (mapStyle == HEX_TILE_TYPES.BEACH)
 		
 		for (var tileY = 0; tileY < mapHeightInTiles; tileY++)
 		{
-			//tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+			//tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
 			
 			if (tileY <= 0)
 			{
-				tilemap_set(squareTileMap, SQUARE_TILE_TYPES.WALL_BOTTOM, tileX, tileY);
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.WALL_BOTTOM, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
 			}
 			else if (tileY == mapHeightInTiles - 2)
 			{
-				tilemap_set(squareTileMap, SQUARE_TILE_TYPES.WATER_TOP, tileX, tileY);
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.WATER_TOP, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
 			}
 			else if (tileY == mapHeightInTiles - 1)
 			{
-				tilemap_set(squareTileMap, SQUARE_TILE_TYPES.WATER_BOTTOM, tileX, tileY);
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.WATER_BOTTOM, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
 			}
 			else
 			{
 				if (tileX == 0 || tileX == mapWidthInTiles -1)
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND_MOUND, tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND_MOUND, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
 				}
 				else if (tileX == 1 || tileX == mapWidthInTiles -2)
 				{
 					if (random(1) < 0.60)
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND_MOUND, tileX, tileY);
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND_MOUND, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
 					}
 					else
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);						
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);						
 					}	
 				}
 				else if (tileX == 2 || tileX == mapWidthInTiles -3)
 				{
 					if (random(1) < 0.15)
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND_MOUND, tileX, tileY);
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND_MOUND, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
 					}
 					else
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);						
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);						
 					}	
 				}
 				else
 				{
 					if (random(1) < 0.98)
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
 						var randomShade = irandom(3);
 						if (randomShade > 0)
 						{
@@ -270,7 +295,8 @@ else if (mapStyle == HEX_TILE_TYPES.BEACH)
 					}
 					else //plant a tree
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND_SOLID, tileX, tileY);
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND_SOLID, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
 					
 						//add some trees below the map so it doesnt just end randomly
 						tree = instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
