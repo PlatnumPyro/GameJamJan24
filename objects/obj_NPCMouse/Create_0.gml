@@ -10,6 +10,8 @@ sightRange = 200;
 
 stepsTakenToPrepAttack = 0;
 attackThreshold = 120;
+resetThreshold = attackThreshold / 2; // used to have the sprite stay at subimg 2 for some time.
+stepsTakenToReset = 0;
 
 damageToBeTaken = 0;
 
