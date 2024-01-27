@@ -27,7 +27,7 @@ gameOverStringList = ds_list_create();
 deleteSavedDataQuestionList = ds_list_create();
 
 ds_list_add(pauseMenuStringList, "Resume", "Return to Title");
-ds_list_add(titleMenuStringList, "Start Game", "Skip Minigame (remove me)", "Options", "Exit");
+ds_list_add(titleMenuStringList, "Start Game", "Options", "Exit");
 ds_list_add(optionsMenuStringList, "Keyboard Controls", "Delete Saved Data", "Back");
 ds_list_add(deleteSavedDataQuestionList, "Yes", "No");
 ds_list_add(levelSuccessStringList, "Continue");
