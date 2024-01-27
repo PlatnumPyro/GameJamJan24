@@ -7,7 +7,9 @@ var directionToPlayer = point_direction(playerX, playerY, x, y);
 var distanceToPlayer = point_distance(x, y, playerX, playerY);
 
 if (npc_Health <= 0)
-{ instance_destroy(); }
+{
+	instance_destroy();
+}
 
 if (global.isPaused == false)
 {

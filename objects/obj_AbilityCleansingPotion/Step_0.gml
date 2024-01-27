@@ -25,20 +25,18 @@ if (currentStep >= stepsToLocation)
 		}
 	}
 	
-	if (instance_exists(global.fox))
+	if (instance_exists( global.fox))
 	{
 		if (point_distance(self.x, self.y, global.fox.x, global.fox.y) < 256)
 		{
 			with (global.fox)
 				{ 
-					global.fox.damageToTaken = 9999999999999950; 
+					global.fox.damageToBeTaken = 50; 
 					event_perform(ev_other, ev_user0); 
 				}
 		}
+	}
 	
 		with (global.gameManager)
-		{
-			event_perform(ev_other, ev_user6);
-		}
-	}
+		{ event_perform(ev_other, ev_user6); }
 }

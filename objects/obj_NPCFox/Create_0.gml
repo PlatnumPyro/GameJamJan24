@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-npc_Health = 50;
+npc_Health = 100;
 walkSpeed = 5;
 attackSpeed = walkSpeed * 0.5;
 attackRange = 50;
