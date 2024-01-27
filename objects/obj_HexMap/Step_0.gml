@@ -65,6 +65,11 @@ if (global.isPaused == false)
 	}
 	else if (curseInitialized == true && displayedCursePower == global.cursePower)
 	{
+		if(global.progressFlag2 == false) {
+			scr_textbox("progress-map1")
+			global.progressFlag2 = true
+		}
+		
 		//enable the tiles to highlighting
 		numTiles = ds_list_size(hexTiles);
 		currentTile = undefined;

@@ -101,5 +101,3 @@ while (displayedCursePower < desiredCursePowerToDisplay)
 		ds_list_add(level3CursedTiles, currentTile);
 	}
 }
-
-

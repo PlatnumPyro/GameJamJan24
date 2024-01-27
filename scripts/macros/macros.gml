@@ -58,10 +58,19 @@ enum SQUARE_TILE_TYPES
 {
 	NONE = 0, //placeholder required by game maker for an empty tile
 	GRASS = 1,
-	GRASS_WITH_ROCK = 2,
-	SAND = 3,
-	WALL_BOTTOM = 4,
-	GRASS_WALL_TOP = 5
+	SAND = 2,
+	CAVE_FLOOR = 3,
+	SAND_SOLID = 4,
+	SAND_MOUND = 5,
+	WATER_TOP = 6,
+	WATER_BOTTOM = 7,
+	CAVE_FLOOR_SOLID = 8,
+	CAVE_MOUND = 9,
+	CAVE_LEDGE = 10,
+	GRASS_SOLID = 11,
+	GRASS_ROCK = 12,
+	WALL_BOTTOM = 13,
+	WALL_TOP = 14
 }
 
 enum SQUARE_TILE_OVERLAY_TYPES

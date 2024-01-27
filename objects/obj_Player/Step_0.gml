@@ -47,7 +47,7 @@ if (global.isPaused == false)
 
 	if (inputRight)
 	{
-		x += currentSpeed;
+		//x += currentSpeed;
 		image_speed = currentSpeed / 3;
 		sprite_index = spr_PlayerWalkRight;
 		direction = 90;
@@ -55,10 +55,11 @@ if (global.isPaused == false)
 		{
 			sprite_index = spr_PlayerUseAbilityRight;
 		}
+		move_and_collide(currentSpeed, 0, global.collisionMap);
 	} 
 	if (inputLeft)
 	{
-		x -= currentSpeed;
+		//x -= currentSpeed;
 		image_speed = currentSpeed / 3;
 		sprite_index = spr_PlayerWalkLeft;
 		direction = 270;
@@ -66,10 +67,11 @@ if (global.isPaused == false)
 		{
 			sprite_index = spr_PlayerUseAbilityLeft;
 		}
+		move_and_collide(-currentSpeed, 0, global.collisionMap);
 	} 
 	if (inputDown)
 	{
-		y += currentSpeed;
+		//y += currentSpeed;
 		image_speed = currentSpeed / 3;
 		sprite_index = spr_PlayerWalkDown;
 		direction = 180;
@@ -77,10 +79,11 @@ if (global.isPaused == false)
 		{
 			sprite_index = spr_PlayerUseAbilityDown;
 		}
+		move_and_collide(0, currentSpeed, global.collisionMap);
 	} 
 	if (inputUp)
 	{
-		y -= currentSpeed;
+		//y -= currentSpeed;
 		image_speed = currentSpeed / 3;
 		sprite_index = spr_PlayerWalkUp;
 		direction = 0;
@@ -88,6 +91,7 @@ if (global.isPaused == false)
 		{
 			sprite_index = spr_PlayerUseAbilityUp;
 		}
+		move_and_collide(0, -currentSpeed, global.collisionMap);
 	} 
 	if (keyboard_check(vk_nokey))
 	{

@@ -10,13 +10,12 @@ var variationChangeIndex = 0; // to count for the variationChangeSpacing
 var topBoundryOffset = 0;
 var length = 0;
 var currentTile = undefined;
+var tree = undefined;
 
 squareTileOverlayMap = layer_tilemap_create("TileMap", 0, 0, ts_SquareTilesOverlay, mapWidthInTiles, mapHeightInTiles);
-squareTileMap = layer_tilemap_create("TileMap", 0, 0, ts_SquareTiles, mapWidthInTiles, mapHeightInTiles);
+global.squareTileMap = layer_tilemap_create("TileMap", 0, 0, ts_SquareTiles, mapWidthInTiles, mapHeightInTiles);
+global.collisionMap = layer_tilemap_create("TileMap", 0, 0, ts_SquareTilesSolid, mapWidthInTiles, mapHeightInTiles);
 
-	
-//TODO: place player intelligently
-playerStartPosition = [(mapWidthInTiles * SQUARE_TILE_SIZE)/2, (mapHeightInTiles * SQUARE_TILE_SIZE)/2];
 	
 if (mapStyle == HEX_TILE_TYPES.FOREST)
 {
@@ -43,62 +42,73 @@ if (mapStyle == HEX_TILE_TYPES.FOREST)
 			{
 				if (tileY <= topBoundryOffset - 2)
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
 				}
 				else if (tileY == topBoundryOffset - 1)
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS_WALL_TOP, tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.WALL_TOP, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
 				}
 				else if (tileY == topBoundryOffset)
 				{
-					tilemap_set(squareTileMap, SQUARE_TILE_TYPES.WALL_BOTTOM, tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.WALL_BOTTOM, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
 				}
 				else
 				{
 					if (tileX == 0 || tileX == mapWidthInTiles-1)
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS_SOLID, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
 						instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
 					}
 					else if (tileX > 0 && tileX < mapSidetreeBorderFadeLayers)
 					{
 						if (random(1) < (mapSidetreeBorderFadeLayers - tileX)/mapSidetreeBorderFadeLayers)
 						{
-							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+							tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS_SOLID, tileX, tileY);
+							tilemap_set( global.collisionMap, 1, tileX, tileY);
 							instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
 						}
 						else
 						{
-							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
+							tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
 						}
 					}
 					else if (tileX < mapWidthInTiles-1 && mapWidthInTiles - tileX <mapSidetreeBorderFadeLayers)
 					{
 						if (random(1) < (mapWidthInTiles - tileX)/mapSidetreeBorderFadeLayers)
 						{
-							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+							tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS_SOLID, tileX, tileY);
+							tilemap_set( global.collisionMap, 1, tileX, tileY);
 							instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
 						}
 						else
 						{
-							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
+							tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
 						}
 					}
-					else if (random(1) < 0.98)
+					else if (random(1) < 0.99)
 					{
-						if (random(1) > 0.85)
+						if (random(1) > 0.95)
 						{
-							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+							tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS_SOLID, tileX, tileY);
+							tilemap_set( global.collisionMap, 1, tileX, tileY);
 							instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
 						}
 						else
 						{
-							tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
+							tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
+							if (playerStartPosition == undefined)
+							{
+								playerStartPosition = [(tileX * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2)];
+							}
 						}
 					}
 					else
 					{
-						tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS_WITH_ROCK, tileX, tileY);
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS_ROCK, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
 					}
 				}
 			}
@@ -110,6 +120,54 @@ if (mapStyle == HEX_TILE_TYPES.FOREST)
 		}
 	}
 }
+else if (mapStyle == HEX_TILE_TYPES.CAVE)
+{
+	//generates tiles for the map column by column
+	for (var tileX = 0; tileX < mapWidthInTiles; tileX++)
+	{
+		for (var tileY = 0; tileY < mapHeightInTiles; tileY++)
+		{
+			if (tileY == mapHeightInTiles -1 || tileY == 0)
+			{
+				if (point_distance(mapWidthInTiles/2, mapHeightInTiles/2, tileX, tileY) > 6)
+				{
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
+				}
+				else
+				{
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_MOUND, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
+				}
+			}
+			else
+			{
+				if (point_distance(mapWidthInTiles/2, mapHeightInTiles/2, tileX, tileY) > 6)
+				{
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
+				}
+				else
+				{
+					if (random(1) < 0.94)
+					{
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_FLOOR, tileX, tileY);
+						
+						if (playerStartPosition == undefined)
+						{
+							playerStartPosition = [(tileX * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2)];
+						}
+					}
+					else
+					{
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_MOUND, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
+					}
+				}
+			}
+		}
+	}
+}
 else if (mapStyle == HEX_TILE_TYPES.MOUNTAIN)
 {
 	//generates tiles for the map column by column
@@ -117,44 +175,67 @@ else if (mapStyle == HEX_TILE_TYPES.MOUNTAIN)
 	{
 		for (var tileY = 0; tileY < mapHeightInTiles; tileY++)
 		{
-			if (point_distance(mapWidthInTiles/2, mapHeightInTiles/2, tileX, tileY) > 5)
+			if (tileY == mapHeightInTiles - 1)
 			{
-				tilemap_set(squareTileMap, SQUARE_TILE_TYPES.WALL_BOTTOM, tileX, tileY);
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
 			}
-			else
+			else if (tileY == mapHeightInTiles - 2)
 			{
-				tilemap_set(squareTileMap, SQUARE_TILE_TYPES.GRASS_WITH_ROCK, tileX, tileY);
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
+			}
+			else if (tileY == 0)
+			{
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
+			}
+			else if (tileY == 1)
+			{
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
+			}
+			else if (tileY == 2 || tileY == 3 || tileY == 4 || tileY == mapHeightInTiles - 3 || tileY == mapHeightInTiles - 4 || tileY == mapHeightInTiles - 5)
+			{
+				if(tileX == 0 || tileX == mapWidthInTiles -1)
+				{
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND_MOUND, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
+				}
+				else 
+				{
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+					if (playerStartPosition == undefined)
+					{
+						playerStartPosition = [(tileX * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2)];
+					}
+				}
+			}
+			else if (tileY == 5 || tileY == 6)
+			{
+				if (tileX == 5 || tileX == 6 || tileX == 7 || tileX == mapWidthInTiles - 6 || tileX == mapWidthInTiles - 7 || tileX == mapWidthInTiles - 8)
+				{
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+				}	
+				else
+				{
+					if (tileY == 5)
+					{
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
+					}
+					else if (tileY == 6)
+					{
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_LEDGE, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
+					}
+				}
 			}
 		}
 	}
 }
 else if (mapStyle == HEX_TILE_TYPES.BEACH)
 {
-	topBoundryCurrentY = 2;//since we have three shades of water, index starts at 0
-	topBoundryMinimumY = 2;// ^
-	variationChangeSpacingMin = 3;
-	variationChangeSpacingMax = 5;
-	
-	//create the variation so its only one tile up or down from the previous and does not look strange
-	for(var i = 0; i < mapWidthInTiles; i++)
-	{
-		variationChangeIndex++;
-		// 20% chance the variation continues at same level until forced at nax to change
-		if (((variationChangeIndex > variationChangeSpacingMin) && (random(1) > 0.2)) || variationChangeIndex == variationChangeSpacingMax) 
-		{
-			variationChangeIndex = 0;
-			if (irandom(1) == 0)
-			{
-				variation = 1;
-			}
-			else
-			{
-				variation = -1;
-			}
-			topBoundryCurrentY = max(min((topBoundryCurrentY + variation), (topBoundryMinimumY + mapTopBorderVariation)), topBoundryMinimumY);
-		}
-		ds_list_add(topBorderTilePositions, topBoundryCurrentY);
-	}
 	
 	//generates tiles for the map column by column
 	for (var tileX = 0; tileX < mapWidthInTiles; tileX++)
@@ -163,26 +244,78 @@ else if (mapStyle == HEX_TILE_TYPES.BEACH)
 		
 		for (var tileY = 0; tileY < mapHeightInTiles; tileY++)
 		{
-			tilemap_set(squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+			//tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
 			
-			if (tileY <= topBoundryOffset - 2)
+			if (tileY <= 0)
 			{
-				tilemap_set(squareTileOverlayMap, SQUARE_TILE_OVERLAY_TYPES.WATER_SHADE_THREE, tileX, tileY);
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.WALL_BOTTOM, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
 			}
-			else if (tileY == topBoundryOffset - 1)
+			else if (tileY == mapHeightInTiles - 2)
 			{
-				tilemap_set(squareTileOverlayMap, SQUARE_TILE_OVERLAY_TYPES.WATER_SHADE_TWO, tileX, tileY);
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.WATER_TOP, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
 			}
-			else if (tileY == topBoundryOffset)
+			else if (tileY == mapHeightInTiles - 1)
 			{
-				tilemap_set(squareTileOverlayMap, SQUARE_TILE_OVERLAY_TYPES.WATER_SHADE_ONE, tileX, tileY);
+				tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.WATER_BOTTOM, tileX, tileY);
+				tilemap_set( global.collisionMap, 1, tileX, tileY);
 			}
 			else
 			{
-				var randomShade = irandom(3);
-				if (randomShade > 0)
+				if (tileX == 0 || tileX == mapWidthInTiles -1)
 				{
-					tilemap_set(squareTileOverlayMap, SQUARE_TILE_OVERLAY_TYPES.SAND_SHADE_ONE + (randomShade - 1), tileX, tileY);
+					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND_MOUND, tileX, tileY);
+					tilemap_set( global.collisionMap, 1, tileX, tileY);
+				}
+				else if (tileX == 1 || tileX == mapWidthInTiles -2)
+				{
+					if (random(1) < 0.60)
+					{
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND_MOUND, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
+					}
+					else
+					{
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);						
+					}	
+				}
+				else if (tileX == 2 || tileX == mapWidthInTiles -3)
+				{
+					if (random(1) < 0.15)
+					{
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND_MOUND, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
+					}
+					else
+					{
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);						
+					}	
+				}
+				else
+				{
+					if (random(1) < 0.98)
+					{
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+						if (playerStartPosition == undefined)
+						{
+							playerStartPosition = [(tileX * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2)];
+						}
+						var randomShade = irandom(3);
+						if (randomShade > 0)
+						{
+							tilemap_set(squareTileOverlayMap, SQUARE_TILE_OVERLAY_TYPES.SAND_SHADE_ONE + (randomShade - 1), tileX, tileY);
+						}
+					}
+					else //plant a tree
+					{
+						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND_SOLID, tileX, tileY);
+						tilemap_set( global.collisionMap, 1, tileX, tileY);
+					
+						//add some trees below the map so it doesnt just end randomly
+						tree = instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_Tree);
+						tree.treeSprite = spr_Tree3;
+					}
 				}
 			}
 		}

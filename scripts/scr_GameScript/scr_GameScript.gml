@@ -40,7 +40,7 @@ function scr_GameScript(_text_id){
 			break;
 		// After the curse spreads
 		case "progress-map1":
-			scr_text("Woah! What is this mist?? This can't be because of my potion... I even tried it myself before sending it out. It made me feel a little revitalized... it was supposed to make magic users stronger... I've gotta figure out what's going on... WHAT IS THAT?!",SPEAKERS.PROTAGONIST)
+			scr_text("Woah! What is this mist?? This can't be because of my potion... I even tried it myself before sending it out. It made me feel a little revitalized... it was supposed to make magic users stronger... I've gotta figure out what's going on... let's start somewhere on the edge of it!",SPEAKERS.PROTAGONIST)
 			break;
 		// After unlocking level 2
 		case "progress-map2":
@@ -53,6 +53,7 @@ function scr_GameScript(_text_id){
 		
 		case "progress-win":
 			scr_text("You did it... You cleansed enough of the curse from the whole island! You feel proud... But still confused. How did one new ingredient cause such an uproar... and where did all the wizards go? You've encountered other mages that you haven't seen on the island before the curse, but no one else. Do you know the true scope of your mistake? Could it still be affecting those outside of the island? Your thoughts swirl out of control. You are worried that this is not truly the end of your mishap. What will you do now?",SPEAKERS.NONE)
+			scr_room(room_TitleScreen)
 			break;
 		
 		case "potion-five":
