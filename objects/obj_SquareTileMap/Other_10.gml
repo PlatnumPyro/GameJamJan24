@@ -153,12 +153,10 @@ else if (mapStyle == HEX_TILE_TYPES.CAVE)
 					{
 						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_FLOOR, tileX, tileY);
 						
-						if (tileY > 10)
+					
+						if (global.npc == undefined)
 						{
-							if (global.npc == undefined)
-							{
-								global.npc = instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_NPC1);
-							}
+							global.npc = instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_NPC1);
 						}
 						
 						if (playerStartPosition == undefined)

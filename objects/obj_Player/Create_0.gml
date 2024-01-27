@@ -14,3 +14,5 @@ ability = undefined;
 
 damageAmmountToTake = 0;
 dialogLock = false;
+
+global.currentAbility = 0;

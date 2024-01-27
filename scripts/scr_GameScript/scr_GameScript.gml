@@ -146,15 +146,15 @@ function scr_GameScript(_text_id){
 			scr_text("All of the sudden, you feel a slight coolness in your stomach. The cold travels through to your chest and into your arms and hands. It's refreshing and calm, you somehow know this feeling. You've gained the elemental magic of water!",SPEAKERS.NONE)
 			scr_text("Oh! Wow, thank you for your gift of magic, it will not go to waste! I hope you come across another... pretty one someday?",SPEAKERS.PROTAGONIST)
 			scr_text("Litore is motionless, but you can somehow feel their contentment through the look in their glowing eyes. You feel rejuvenated.",SPEAKERS.NONE)
-			// TODO: Give water ability here.
+			global.currentAbility = 2;
 			break;
 		case "npc-water-2b":
 			scr_text("Hmm... creepy isn't a trait of the beach. Only pretty. Only calm. You don't want to understand, I think. That is alright with Litore.",SPEAKERS.WATER)
 			scr_text("So are you gonna get out of here? It's still dangerous.",SPEAKERS.PROTAGONIST)
 			scr_text("I don't leave. I stay, always. I watch, I know, I wait for the next one. Goodnight cursed one.",SPEAKERS.WATER)
 			scr_text("You suddenly feel your body begin to burn up from the inside, from your stomach to your fingertips. It's slightly painful, and catches you off guard... but once the pain subsides, you are left feeling different. You notice a change in yourself. You've gained the elemental magic of water!",SPEAKERS.NONE)
-			// TODO: Give water ability here.
-			// TODO: Take damage
+			global.currentAbility = 2;
+			global.player.playerHealth -= 10;
 			break;
 		case "npc-water-2c":
 			scr_text("...Not gross. No, not a pretty thing for you to say. Your intentions are not that of a pretty one. I don't believe you made this one. Be on your way, deceiver.",SPEAKERS.WATER)
@@ -190,8 +190,8 @@ function scr_GameScript(_text_id){
 			scr_text("Lux points her lightning rod towards you and shoots a golden bolt directly into your chest. The electricity blinds you for a brief moment as the shock sends trembling pain down your legs and up your arms. As fast as the pain begins, it ends, leaving you with a feeling of pure concentration and power. This feeling is familiar. You have gained lightning magic!",SPEAKERS.NONE)
 			scr_text("OW?! Oh... Jeez I thought you were gonna kill me. Thank you for giving me your gift, but I suggest you warn someone a bit better next time you do that.",SPEAKERS.PROTAGONIST)
 			scr_text("Like I said, what's so wrong about a little danger? Good luck, hun.",SPEAKERS.LIGHTNING)
-			// TODO: Give lightning ability here.
-			// TODO: Take damage
+			global.currentAbility = 1;
+			global.player.playerHealth -= 10;
 			break;
 		case "npc-lightning-2b":
 			scr_text("I am actually so screwed. Why did I think I could do this alone?",SPEAKERS.PROTAGONIST)
@@ -202,8 +202,8 @@ function scr_GameScript(_text_id){
 			scr_text("I took care of any scratches you may have gotten along the way, since you're being a little baby about fighting your own battle.",SPEAKERS.LIGHTNING)
 			scr_text("Oh uh, thanks for that. I will not let this gift go to waste!",SPEAKERS.PROTAGONIST)
 			scr_text("Lux waves you o and turns back to her business. You have a weird gut feeling that she was hoping you wouldn't ask for her help at all.",SPEAKERS.NONE)
-			// TODO: Give lightning ability here.
-			// TODO: Health up
+			global.currentAbility = 1;
+			global.player.playerHealth = 100;
 			break;
 		
 		case "npc-lightning-1b":
@@ -258,8 +258,8 @@ function scr_GameScript(_text_id){
 			scr_text("Ignis places his hand on your shoulder as the smoke from his ventilated shoulder pads heats up. You feel warmth throughout your whole body, it is revitalizing, a familiar feeling. You gain fire magic!",SPEAKERS.NONE)
 			scr_text("Thank you, Ignis. I will not let your gift go to waste. I'll be thinking of your story, and take it as a warning to be careful.",SPEAKERS.PROTAGONIST)
 			scr_text("You are better than I. Good luck, Kai.",SPEAKERS.FIRE)
-			// TODO: Give fire ability here.
-			// TODO: Health up
+			global.currentAbility = 3;
+			global.player.playerHealth = 100;
 			break;
 		case "npc-fire-2b":
 			scr_text("...I killed my whole tribe. I burnt their homes, I burnt my home. I do not think me hiding away is overreacting.",SPEAKERS.FIRE)
@@ -277,8 +277,8 @@ function scr_GameScript(_text_id){
 			scr_text("Ignis grunts in frustration and stands up. He hurls a flame directly into you and it mildly burns your arm. It stings, but feels different than a simple pain. You feel heat rise up in your throat as your fingers burn as if you touched hot coals. The pain subsides slightly, but you feel a constant twinge of pain every time you move your hands. You gain fire magic!",SPEAKERS.NONE)
 			scr_text("Fix your mistake yourself, runt. Scram.",SPEAKERS.FIRE)
 			scr_text("It's definitely time to leave before he burns you even more, you run off with your new ability in tow.")
-			// TODO: Give Fire ability here.
-			// TODO: Damage
+			global.currentAbility = 3;
+			global.player.playerHealth -= 10;
 			break;
 			
 		case "npc-fire-1c":

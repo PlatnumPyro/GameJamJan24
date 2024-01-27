@@ -49,9 +49,26 @@ if (global.isPaused == false)
 				}
 			}
 		}
-		else if (ability == undefined)
+		
+		if (ability == undefined)
 		{
-			ability = instance_create_layer(self.x, self.y, "Instances", obj_AbilityCleansingPotion);
+			show_debug_message("currentAbility {0}", global.currentAbility)
+			if (global.currentAbility == 0)
+			{
+				ability = instance_create_layer(self.x, self.y, "Instances", obj_AbilityCleansingPotion);
+			}
+			else if (global.currentAbility == 1)
+			{
+				ability = instance_create_layer(mouse_x, mouse_y, "Instances", obj_AbilityLightning);
+			}
+			else if (global.currentAbility == 2)
+			{
+				ability = instance_create_layer(self.x, self.y, "Instances", obj_AbilityWater);
+			}
+			else if (global.currentAbility == 3)
+			{
+				ability = instance_create_layer(self.x, self.y, "Instances", obj_AbilityFire);
+			}
 			ability.targetX = mouse_x;
 			ability.targetY = mouse_y;
 			with(ability)
