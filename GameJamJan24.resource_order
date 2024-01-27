@@ -1,6 +1,12 @@
 {
   "FolderOrderSettings": [],
   "ResourceOrderSettings": [
+    {"name":"spr_NPC3","order":4,"path":"sprites/spr_NPC3/spr_NPC3.yy",},
     {"name":"spr_titleBack","order":1,"path":"sprites/spr_titleBack/spr_titleBack.yy",},
+    {"name":"spr_NPC2","order":3,"path":"sprites/spr_NPC2/spr_NPC2.yy",},
+    {"name":"obj_NPC3","order":3,"path":"objects/obj_NPC3/obj_NPC3.yy",},
+    {"name":"obj_NPC1","order":1,"path":"objects/obj_NPC1/obj_NPC1.yy",},
+    {"name":"spr_NPC1","order":2,"path":"sprites/spr_NPC1/spr_NPC1.yy",},
+    {"name":"obj_NPC2","order":2,"path":"objects/obj_NPC2/obj_NPC2.yy",},
   ],
 }

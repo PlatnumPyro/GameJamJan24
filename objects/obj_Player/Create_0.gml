@@ -13,3 +13,4 @@ invincibilityFrames = 0;
 ability = undefined;
 
 damageAmmountToTake = 0;
+dialogLock = false;

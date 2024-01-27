@@ -153,6 +153,14 @@ else if (mapStyle == HEX_TILE_TYPES.CAVE)
 					{
 						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_FLOOR, tileX, tileY);
 						
+						if (tileY > 10)
+						{
+							if (global.npc == undefined)
+							{
+								global.npc = instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_NPC1);
+							}
+						}
+						
 						if (playerStartPosition == undefined)
 						{
 							playerStartPosition = [(tileX * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2)];
@@ -216,6 +224,10 @@ else if (mapStyle == HEX_TILE_TYPES.MOUNTAIN)
 				if (tileX == 5 || tileX == 6 || tileX == 7 || tileX == mapWidthInTiles - 6 || tileX == mapWidthInTiles - 7 || tileX == mapWidthInTiles - 8)
 				{
 					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+					if (global.npc == undefined)
+					{
+						global.npc = instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_NPC3);
+					}
 				}	
 				else
 				{
@@ -297,6 +309,15 @@ else if (mapStyle == HEX_TILE_TYPES.BEACH)
 					if (random(1) < 0.98)
 					{
 						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+						
+						if (tileY == mapHeightInTiles - 3)
+						{
+							if (global.npc == undefined)
+							{
+								global.npc = instance_create_layer((tileX * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + round(SQUARE_TILE_SIZE/2), "Instances", obj_NPC2);
+							}
+						}
+						
 						if (playerStartPosition == undefined)
 						{
 							playerStartPosition = [(tileX * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2)];

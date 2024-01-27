@@ -26,7 +26,27 @@ if (global.isPaused == false)
 		if (direction == 270) sprite_index = spr_PlayerUseAbilityLeft;
 		if (direction == 0) sprite_index = spr_PlayerUseAbilityUp;
 		if (direction == 180) sprite_index = spr_PlayerUseAbilityDown;
-		if (ability == undefined)
+		
+		if (point_distance(x, y, global.npc.x, global.npc.y) < 100)
+		{
+			if (!instance_exists(obj_dialogbox) && dialogLock == false)
+			{
+				if (global.npc.person == 1)
+				{
+					scr_textbox("npc-fire");
+				}
+				if (global.npc.person == 2)
+				{
+					scr_textbox("npc-water");
+				}
+				if (global.npc.person == 3)
+				{
+					scr_textbox("npc-lightning");
+				}
+				dialogLock = true;
+			}
+		}
+		else if (ability == undefined)
 		{
 			ability = instance_create_layer(self.x, self.y, "Instances", obj_AbilityCleansingPotion);
 			ability.targetX = mouse_x;
@@ -35,7 +55,7 @@ if (global.isPaused == false)
 			{
 				event_perform(ev_other, ev_user0);
 			}
-		
+			
 			//show_debug_message_ext("MOUSE CLICKED AT {0}, {1}", ability.targetX, ability.targetY);
 		}
 	}
