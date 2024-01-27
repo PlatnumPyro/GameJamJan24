@@ -52,7 +52,6 @@ if (global.isPaused == false)
 		
 		if (ability == undefined)
 		{
-			show_debug_message("currentAbility {0}", global.currentAbility)
 			if (global.currentAbility == 0)
 			{
 				ability = instance_create_layer(self.x, self.y, "Instances", obj_AbilityCleansingPotion);
