@@ -11,13 +11,9 @@ if (global.isPaused == false)
 	if (distanceToPlayer < attackRange)
 	{
 		if (stepsTakenToPrepAttack < 0)
-		{
-			image_index = 0;
-		}
+		{ image_index = 0; }
 		if (stepsTakenToPrepAttack > 0 and stepsTakenToPrepAttack <= attackThreshold / 2)
-		{
-			image_index = 1;
-		} 
+		{ image_index = 1; } 
 		if (stepsTakenToPrepAttack > attackThreshold / 2)
 		{
 			image_index = 2;
@@ -29,8 +25,6 @@ if (global.isPaused == false)
 		}
 		if (stepsTakenToPrepAttack > attackThreshold)
 		{
-			//image_index = 2;
-			
 			if (stepsTakenToReset > resetThreshold)
 			{
 				stepsTakenToReset += 1;
@@ -42,11 +36,10 @@ if (global.isPaused == false)
 			stepsTakenToPrepAttack += 1;
 		}
 	} else {
-		spriteSubimageIndex = 0;
 		draw_sprite(sprite_index, 0, self.x, self.y);
 		move_towards_point(playerX, playerY, walkSpeed);
 		speed = attackSpeed;
 	}
-
-
+} else {
+	speed = 0;	
 }
