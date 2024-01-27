@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "spr_SquareTileSet",
   "bbox_bottom": 127,
-  "bbox_left": 256,
+  "bbox_left": 512,
   "bbox_right": 1920,
   "bbox_top": 0,
   "bboxMode": 2,

@@ -7,6 +7,11 @@
     {"name":"obj_TitleCardText","order":1,"path":"objects/obj_TitleCardText/obj_TitleCardText.yy",},
     {"name":"obj_PlayerDeathForGameOver","order":2,"path":"objects/obj_PlayerDeathForGameOver/obj_PlayerDeathForGameOver.yy",},
     {"name":"scr_RefreshParticleSystems","order":2,"path":"scripts/scr_RefreshParticleSystems/scr_RefreshParticleSystems.yy",},
+<<<<<<< HEAD
+    {"name":"spr_Tree3","order":2,"path":"sprites/spr_Tree3/spr_Tree3.yy",},
+=======
+    {"name":"obj_enemyProjectile","order":5,"path":"objects/obj_enemyProjectile/obj_enemyProjectile.yy",},
+>>>>>>> f12163e9c4d262e7aa6533a22d9c83f5859ec5e7
     {"name":"spr_HexMapBackground","order":1,"path":"sprites/spr_HexMapBackground/spr_HexMapBackground.yy",},
     {"name":"spr_SquareTiles","order":2,"path":"sprites/spr_SquareTiles/spr_SquareTiles.yy",},
     {"name":"spr_dialogbox","order":2,"path":"sprites/spr_dialogbox/spr_dialogbox.yy",},
