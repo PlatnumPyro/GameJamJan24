@@ -10,7 +10,11 @@ if (global.isPaused == false)
 {
 	if (distanceToPlayer < attackRange)
 	{
-		if (stepsTakenToPrepAttack > attackThreshold)
+		if (stepsTakenToPrepAttack > 0 and stepsTakenToPrepAttack <= attackThreshold / 2)
+		{
+			// do particle effect or something
+		} 
+		else if (stepsTakenToPrepAttack > attackThreshold)
 		{
 			with (global.player)
 			{
