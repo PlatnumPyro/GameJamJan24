@@ -13,20 +13,32 @@ if (abilityInitialized)
 
 if (currentStep >= stepsToLocation)
 {
-	if (point_distance(self.x, self.y, global.mouse.x, global.mouse.y) < 256)
+	if (instance_exists( global.mouse))
 	{
-		with (global.mouse)
-			{event_perform(ev_other, ev_user0); }
+		if (point_distance(self.x, self.y, global.mouse.x, global.mouse.y) < 256)
+		{
+			with (global.mouse)
+				{ 
+					global.mouse.damageToBeTaken = 50; 
+					event_perform(ev_other, ev_user0); 
+				}
+		}
 	}
 	
-	if (point_distance(self.x, self.y, global.fox.x, global.fox.y) < 256)
+	if (instance_exists(global.fox))
 	{
-		with (global.fox)
-			{event_perform(ev_other, ev_user0); }
-	}
+		if (point_distance(self.x, self.y, global.fox.x, global.fox.y) < 256)
+		{
+			with (global.fox)
+				{ 
+					global.fox.damageToTaken = 9999999999999950; 
+					event_perform(ev_other, ev_user0); 
+				}
+		}
 	
-	with (global.gameManager)
-	{
-		event_perform(ev_other, ev_user6);
+		with (global.gameManager)
+		{
+			event_perform(ev_other, ev_user6);
+		}
 	}
 }

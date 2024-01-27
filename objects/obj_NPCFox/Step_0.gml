@@ -6,6 +6,9 @@ var playerY = global.player.y - 100;
 var directionToPlayer = point_direction(playerX, playerY, x, y);
 var distanceToPlayer = point_distance(x, y, playerX, playerY);
 
+if (npc_Health <= 0)
+{ instance_destroy(); }
+
 if (global.isPaused == false)
 {
 	if (distanceToPlayer < attackRange)
