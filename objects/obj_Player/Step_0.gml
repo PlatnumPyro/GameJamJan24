@@ -27,23 +27,26 @@ if (global.isPaused == false)
 		if (direction == 0) sprite_index = spr_PlayerUseAbilityUp;
 		if (direction == 180) sprite_index = spr_PlayerUseAbilityDown;
 		
-		if (point_distance(x, y, global.npc.x, global.npc.y) < 100)
+		if (global.npc != undefined)
 		{
-			if (!instance_exists(obj_dialogbox) && dialogLock == false)
+			if (point_distance(x, y, global.npc.x, global.npc.y) < 100)
 			{
-				if (global.npc.person == 1)
+				if (!instance_exists(obj_dialogbox) && dialogLock == false)
 				{
-					scr_textbox("npc-fire");
+					if (global.npc.person == 1)
+					{
+						scr_textbox("npc-fire");
+					}
+					if (global.npc.person == 2)
+					{
+						scr_textbox("npc-water");
+					}
+					if (global.npc.person == 3)
+					{
+						scr_textbox("npc-lightning");
+					}
+					dialogLock = true;
 				}
-				if (global.npc.person == 2)
-				{
-					scr_textbox("npc-water");
-				}
-				if (global.npc.person == 3)
-				{
-					scr_textbox("npc-lightning");
-				}
-				dialogLock = true;
 			}
 		}
 		else if (ability == undefined)
