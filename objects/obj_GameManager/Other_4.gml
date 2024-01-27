@@ -46,11 +46,6 @@ else if(room == room_HexWorldMap)
 			global.totalLevelsCleared++;
 			global.totalCursePowerCleared += ds_list_find_value(selectedHexTileData, HEX_TILE_DATA.CURSE_LEVEL);
 			
-			if (global.totalCursePowerCleared == global.gameWinCurseClearedPoints)
-			{
-				//Do the game success dialog here
-			}
-			
 			global.cursePower -= ds_list_find_value(selectedHexTileData, HEX_TILE_DATA.CURSE_LEVEL);
 			hexMap.displayedCursePower -= ds_list_find_value(selectedHexTileData, HEX_TILE_DATA.CURSE_LEVEL);
 			hexMap.curseTileIDToClear = ds_list_find_value(selectedHexTileData, HEX_TILE_DATA.ID);
@@ -58,6 +53,8 @@ else if(room == room_HexWorldMap)
 			{
 				event_perform(ev_other, ev_user4);
 			}
+			
+			global.levelSuccess=false
 		}
 	}
 }
