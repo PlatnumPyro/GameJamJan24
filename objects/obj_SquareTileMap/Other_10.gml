@@ -17,9 +17,6 @@ global.squareTileMap = layer_tilemap_create("TileMap", 0, 0, ts_SquareTiles, map
 global.collisionMap = layer_tilemap_create("TileMap", 0, 0, ts_SquareTilesSolid, mapWidthInTiles, mapHeightInTiles);
 
 	
-//TODO: place player intelligently
-playerStartPosition = [(mapWidthInTiles * SQUARE_TILE_SIZE)/2, (mapHeightInTiles * SQUARE_TILE_SIZE)/2];
-	
 if (mapStyle == HEX_TILE_TYPES.FOREST)
 {
 	
@@ -102,6 +99,10 @@ if (mapStyle == HEX_TILE_TYPES.FOREST)
 						else
 						{
 							tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.GRASS, tileX, tileY);
+							if (playerStartPosition == undefined)
+							{
+								playerStartPosition = [(tileX * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2)];
+							}
 						}
 					}
 					else
@@ -151,6 +152,11 @@ else if (mapStyle == HEX_TILE_TYPES.CAVE)
 					if (random(1) < 0.94)
 					{
 						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.CAVE_FLOOR, tileX, tileY);
+						
+						if (playerStartPosition == undefined)
+						{
+							playerStartPosition = [(tileX * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2)];
+						}
 					}
 					else
 					{
@@ -199,6 +205,10 @@ else if (mapStyle == HEX_TILE_TYPES.MOUNTAIN)
 				else 
 				{
 					tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+					if (playerStartPosition == undefined)
+					{
+						playerStartPosition = [(tileX * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2)];
+					}
 				}
 			}
 			else if (tileY == 5 || tileY == 6)
@@ -287,6 +297,10 @@ else if (mapStyle == HEX_TILE_TYPES.BEACH)
 					if (random(1) < 0.98)
 					{
 						tilemap_set( global.squareTileMap, SQUARE_TILE_TYPES.SAND, tileX, tileY);
+						if (playerStartPosition == undefined)
+						{
+							playerStartPosition = [(tileX * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2), (tileY * SQUARE_TILE_SIZE) + (SQUARE_TILE_SIZE/2)];
+						}
 						var randomShade = irandom(3);
 						if (randomShade > 0)
 						{

@@ -105,6 +105,7 @@
     {"id":{"name":"scr_AddParticleSystemToArray","path":"scripts/scr_AddParticleSystemToArray/scr_AddParticleSystemToArray.yy",},},
     {"id":{"name":"spr_cursebar","path":"sprites/spr_cursebar/spr_cursebar.yy",},},
     {"id":{"name":"string_height_scribble_ext","path":"scripts/string_height_scribble_ext/string_height_scribble_ext.yy",},},
+    {"id":{"name":"spr_titleBack","path":"sprites/spr_titleBack/spr_titleBack.yy",},},
     {"id":{"name":"scribble_font_add_from_sprite","path":"scripts/scribble_font_add_from_sprite/scribble_font_add_from_sprite.yy",},},
     {"id":{"name":"scribble_flush_everything","path":"scripts/scribble_flush_everything/scribble_flush_everything.yy",},},
     {"id":{"name":"__scribble_font_add_all_from_project","path":"scripts/__scribble_font_add_all_from_project/__scribble_font_add_all_from_project.yy",},},
