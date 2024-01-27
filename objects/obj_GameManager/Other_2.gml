@@ -11,6 +11,7 @@ global.textHighlightColor = make_color_rgb(221, 148, 255);
 global.gameManager = self;
 global.isPaused = false;
 global.player = undefined;
+global.npc = undefined;
 global.levelFailed = false;
 global.levelSuccess = false;
 global.totalLevelsFailed = 0;

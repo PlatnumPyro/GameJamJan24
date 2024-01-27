@@ -60,6 +60,7 @@ else if(room == room_HexWorldMap)
 }
 else if (room == room_Overworld)
 {
+	global.npc = undefined;
 	squareMap = instance_create_layer(0, 0, "Instances", obj_SquareTileMap);
 	
 	//TODO: tailor the map data to the difficulty
